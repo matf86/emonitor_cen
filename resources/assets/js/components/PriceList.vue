@@ -1,82 +1,82 @@
 <template>
-<div>
     <el-row>
-        <span>Dane dla dnia:</span>
-        <el-date-picker
-                v-model="date"
-                type="date"
-                placeholder="Wybierz date"
-                format="yyyy-MM-dd"
-                @change="fetchProducts">
-        </el-date-picker>
-    </el-row>
-    <el-row style="margin: 15px 0;">
-        <el-col :xs="24" :sm="24" :md="10" :lg="10" style="margin: 5px 0;"> 
-          <el-checkbox-group v-model="checkedTypes" size="small" @change='setProductsList'>
-            <el-checkbox v-for="type in types" :label="type" :key="type">{{type}}</el-checkbox>
-          </el-checkbox-group>
-        </el-col> 
-        <el-col :xs="24" :sm="24" :md="14" :lg="14" style="margin: 5px 0;"> 
+        <el-row>
+            <span>Dane dla dnia:</span>
+            <el-date-picker
+                    v-model="date"
+                    type="date"
+                    placeholder="Wybierz date"
+                    format="yyyy-MM-dd"
+                    @change="fetchProducts">
+            </el-date-picker>
+        </el-row>
+        <el-row style="margin: 15px 0;">
+            <el-col :xs="24" :sm="24" :md="10" :lg="10" style="margin: 5px 0;">
+                <el-checkbox-group v-model="checkedTypes" size="small" @change='setProductsList'>
+                    <el-checkbox v-for="type in types" :label="type" :key="type">{{type}}</el-checkbox>
+                </el-checkbox-group>
+            </el-col>
+            <el-col :xs="24" :sm="24" :md="14" :lg="14" style="margin: 5px 0;">
                 <el-autocomplete
-                  class="inline-input"
-                  v-model="searchInput"
-                  :fetch-suggestions="querySearch"
-                  placeholder="Znajdź produkt..."
-                  :triggerOnFocus="true"
-                  size="large"
-                  @select="showProduct"
-                  @input="resetData">
-                  <template slot="append"><i class="el-icon-search"></i></template>
+                        class="inline-input"
+                        v-model="searchInput"
+                        :fetch-suggestions="querySearch"
+                        placeholder="Znajdź produkt..."
+                        :triggerOnFocus="true"
+                        size="large"
+                        @select="showProduct"
+                        @input="resetData">
+                    <template slot="append"><i class="el-icon-search"></i></template>
                 </el-autocomplete>
-        </el-col> 
+            </el-col>
+        </el-row>
+        <el-row>
+            <el-table
+                    :data="productsList"
+                    style="width: 100%"
+                    empty-text="Brak danch..."
+                    @sort-change='sortProducts'>
+                <el-table-column
+                        fixed
+                        sortable="custom"
+                        prop="product"
+                        label="Produkt"
+                        min-width="120">
+                </el-table-column>
+                <el-table-column
+                        sortable
+                        prop="origin"
+                        label="Pochodzenie"
+                        min-width="150">
+                </el-table-column>
+                <el-table-column
+                        prop="package"
+                        label="Ilość">
+                </el-table-column>
+                <el-table-column
+                        sortable
+                        prop="price_min"
+                        label="Cena min"
+                        min-width="120">
+                </el-table-column>
+                <el-table-column
+                        sortable
+                        prop="price_max"
+                        label="Cena max"
+                        min-width="120">
+                </el-table-column>
+            </el-table>
+        </el-row>
+        <el-row v-show="total > pageSize">
+            <el-pagination
+                    @current-change= 'handleCurrentChange'
+                    :current-page="currentPage"
+                    :page-size="pageSize"
+                    layout="prev, pager, next"
+                    :total="total">
+            </el-pagination>
+        </el-row>
     </el-row>
-    <el-row>
-      <el-table
-        :data="productsList"
-        style="width: 100%"
-        empty-text="Brak danch..."
-        @sort-change='sortProducts'>
-        <el-table-column
-          fixed
-          sortable="custom"
-          prop="product"
-          label="Produkt"
-          min-width="120">
-        </el-table-column>
-        <el-table-column
-          sortable
-          prop="origin"
-          label="Pochodzenie"
-          min-width="150">
-        </el-table-column>
-        <el-table-column
-          prop="package"
-          label="Ilość">
-        </el-table-column>
-        <el-table-column
-          sortable
-          prop="price_min"
-          label="Cena min"
-          min-width="120">
-        </el-table-column>
-        <el-table-column
-          sortable
-          prop="price_max"
-          label="Cena max"
-          min-width="120">
-        </el-table-column>
-      </el-table>
-   </el-row>
-   <el-row v-show="total > pageSize">
-       <el-pagination
-          @current-change= 'handleCurrentChange'   
-          :current-page="currentPage"
-          :page-size="pageSize"
-          layout="prev, pager, next"
-          :total="total">
-        </el-pagination>
-    </el-row>
-</div>
 </template>
 
 <script>
@@ -85,9 +85,9 @@
         props: ['products'],
         data() {
             return {
-                date: this.products[0]['date'],
-                data: this.products,
-                slug: this.products[0]['slug'],
+                date: '',
+                dataSet:[],
+                slug: '',
                 types: [],
                 checkedTypes: [],
                 searchInput:'',
@@ -96,27 +96,39 @@
                 currentPage: 1
             }
         },
+        watch:{
+            products() {
+                this.dataSet = this.products;
+                this.slug = this.products[0]['slug'];
+                this.date = this.products[0]['date'];
+                this.productsNames = this.loadProductsNames(this.products);
+                this.types = this.loadProductsTypes();
+                this.checkedTypes = this.types;
+            }
+        },
         computed: {
             total() {
-                return this.data.length; 
+                return this.dataSet.length;
             },
             productsList() {
               let from = this.pageSize * (this.currentPage - 1);
               let to = from + this.pageSize;
-              return this.data.slice(from, to);
+              return this.dataSet.slice(from, to);
             }
         },
         methods: {
             fetchProducts(date) {
-               axios.get('/offers/'+this.slug, { params:
-                    {
-                        date: date
-                    }
-                }).then(response => {
-                   this.data = response.data;
-                }).catch(error => {
-                    console.log(error.response.data);
-                })
+               if(date !== this.date) {
+                   axios.get('/offers/'+this.slug, { params:
+                       {
+                           date: date
+                       }
+                   }).then(response => {
+                       this.$emit('new-data-set', response.data);
+                   }).catch(error => {
+                       console.log(error.response.data);
+                   })
+               }
             },
             querySearch(queryString, cb) {
                 let query = queryString.trim().toLowerCase();
@@ -130,21 +142,21 @@
                     product.value.toLowerCase().includes(query)
                 );
             },
-            loadProductsNames() {
-                let uniqeProductList = _.uniq(_.map(this.data, 'product'));
+            loadProductsNames(data) {
+                let uniqeProductList = _.uniq(_.map(data, 'product'));
 
                 return uniqeProductList.map(item => {
                         return {'value': item};
                 });
             },
             loadProductsTypes() {
-                return _.uniq(_.map(this.data, 'type'));
+                return _.uniq(_.map(this.products, 'type'));
             },
             handleCurrentChange(currentPage) {
               this.currentPage = currentPage;
             },
             sortProducts(column) {
-                this.data.sort((a, b) => {
+                this.dataSet.sort((a, b) => {
                   if (a[column.prop] > b[column.prop]) {
                     return 1
                   } else if (a[column.prop] < b[column.prop]) {
@@ -154,7 +166,7 @@
                   }
                 })
                 if (column.order === 'descending') {
-                  this.data.reverse()
+                  this.dataSet.reverse()
                 }
             },
             filterProductsByType() {
@@ -163,7 +175,8 @@
               )
             },
             setProductsList() {
-              this.data = this.filterProductsByType();
+              this.dataSet = this.filterProductsByType();
+              this.productsNames = this.loadProductsNames(this.dataSet);
               this.searchInput = '';
             },
             showProduct(item) {
@@ -175,21 +188,22 @@
               )
 
               if(product.length > 0) {
-                return this.data = product;
+                return this.dataSet = product;
               }
 
              return noData('Brak wybranego produktu.'); 
             },
             resetData(item) {
               if(!item) {
-                this.data = this.filterProductsByType();
+                this.dataSet = this.filterProductsByType();
               }
             }
         },
-        mounted() {
-           this.productsNames = this.loadProductsNames();
-           this.types = this.loadProductsTypes();
-           this.checkedTypes = this.loadProductsTypes();
-        }
+//        mounted() {
+//
+//           this.productsNames = this.loadProductsNames();
+//           this.types = this.loadProductsTypes();
+//           this.checkedTypes = this.loadProductsTypes();
+//        }
     }
 </script>

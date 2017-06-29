@@ -8,7 +8,7 @@
 require('./bootstrap');
 import ElementUI from 'element-ui';
 import locale from 'element-ui/lib/locale/lang/en'
-// import DataTables from 'vue-data-tables';
+
 
 window.Vue = require('vue');
 
@@ -19,9 +19,8 @@ window.Vue = require('vue');
  */
 
 Vue.use(ElementUI, {locale});
-// Vue.use(DataTables);
-// 
-Vue.component('price-list', require('./components/PriceList.vue'));
+
+Vue.component('market-offer', require('./components/MarketOffer.vue'));
 
 const app = new Vue({
     el: '#app'
