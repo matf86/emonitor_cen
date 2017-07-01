@@ -1,5 +1,5 @@
 <template>
-    <el-row>
+    <div>
         <el-row>
             <span>Dane dla dnia:</span>
             <el-date-picker
@@ -13,7 +13,7 @@
         <el-row style="margin: 15px 0;">
             <el-col :xs="24" :sm="24" :md="10" :lg="10" style="margin: 5px 0;">
                 <el-checkbox-group v-model="checkedTypes" size="small" @change='setProductsList'>
-                    <el-checkbox v-for="type in types" :label="type" :key="type">{{type}}</el-checkbox>
+                    <el-checkbox v-for="type in productTypes" :label="type" :key="type">{{type}}</el-checkbox>
                 </el-checkbox-group>
             </el-col>
             <el-col :xs="24" :sm="24" :md="14" :lg="14" style="margin: 5px 0;">
@@ -76,19 +76,19 @@
                     :total="total">
             </el-pagination>
         </el-row>
-    </el-row>
+    </div>
 </template>
 
 <script>
 
     export default {
-        props: ['products'],
+        props: ['products', 'types', 'names'],
         data() {
             return {
                 date: '',
                 dataSet:[],
                 slug: '',
-                types: [],
+                productTypes: [],
                 checkedTypes: [],
                 searchInput:'',
                 productsNames: [],
@@ -101,9 +101,13 @@
                 this.dataSet = this.products;
                 this.slug = this.products[0]['slug'];
                 this.date = this.products[0]['date'];
-                this.productsNames = this.loadProductsNames(this.products);
-                this.types = this.loadProductsTypes();
-                this.checkedTypes = this.types;
+            },
+            types() {
+                this.productTypes = this.types;
+                this.checkedTypes = this.productTypes;
+            },
+            names() {
+                this.productsNames = this.names;
             }
         },
         computed: {
@@ -119,7 +123,7 @@
         methods: {
             fetchProducts(date) {
                if(date !== this.date) {
-                   axios.get('/offers/'+this.slug, { params:
+                   axios.get('/api/offers/'+this.slug+'/products', { params:
                        {
                            date: date
                        }
@@ -142,16 +146,6 @@
                     product.value.toLowerCase().includes(query)
                 );
             },
-            loadProductsNames(data) {
-                let uniqeProductList = _.uniq(_.map(data, 'product'));
-
-                return uniqeProductList.map(item => {
-                        return {'value': item};
-                });
-            },
-            loadProductsTypes() {
-                return _.uniq(_.map(this.products, 'type'));
-            },
             handleCurrentChange(currentPage) {
               this.currentPage = currentPage;
             },
@@ -164,7 +158,7 @@
                   } else {
                     return 0
                   }
-                })
+                });
                 if (column.order === 'descending') {
                   this.dataSet.reverse()
                 }
@@ -176,7 +170,7 @@
             },
             setProductsList() {
               this.dataSet = this.filterProductsByType();
-              this.productsNames = this.loadProductsNames(this.dataSet);
+              this.productsNames = this.$parent.loadProductsNames(this.dataSet);
               this.searchInput = '';
             },
             showProduct(item) {
@@ -185,7 +179,7 @@
 
               let product = filteredProducts.filter(element => 
                   _.includes(item.value, element.product)              
-              )
+              );
 
               if(product.length > 0) {
                 return this.dataSet = product;
@@ -198,12 +192,6 @@
                 this.dataSet = this.filterProductsByType();
               }
             }
-        },
-//        mounted() {
-//
-//           this.productsNames = this.loadProductsNames();
-//           this.types = this.loadProductsTypes();
-//           this.checkedTypes = this.loadProductsTypes();
-//        }
+        }
     }
 </script>
