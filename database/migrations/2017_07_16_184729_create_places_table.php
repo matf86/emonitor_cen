@@ -4,8 +4,9 @@ use Illuminate\Support\Facades\Schema;
 use Moloquent\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateOffersTable extends Migration
+class CreatePlacesTable extends Migration
 {
+
     /**
      * The name of the database connection to use.
      *
@@ -21,18 +22,17 @@ class CreateOffersTable extends Migration
     public function up()
     {
         Schema::connection($this->connection)->
-        table('offers', function (Blueprint $collection) {
-            $collection->index('product');
-            $collection->string('type');
-            $collection->string('origin');
-            $collection->string('package');
-            $collection->string('places_id');
-            $collection->integer('price_min');
-            $collection->integer('price_max');
-            $collection->date('date');
+        table('places', function (Blueprint $collection) {
+            $collection->index('slug');
+            $collection->string('name');
+            $collection->string('street');
+            $collection->string('zip_code');
+            $collection->string('city');
+            $collection->string('www');
+            $collection->string('www');
+            $collection->jsonb('cords');
         });
     }
-
     /**
      * Reverse the migrations.
      *
@@ -41,7 +41,7 @@ class CreateOffersTable extends Migration
     public function down()
     {
         Schema::connection($this->connection)
-            ->table('offers', function (Blueprint $collection)
+            ->table('places', function (Blueprint $collection)
             {
                 $collection->drop();
             });

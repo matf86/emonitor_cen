@@ -35,7 +35,8 @@
                     :data="productsList"
                     style="width: 100%"
                     empty-text="Brak danch..."
-                    @sort-change='sortProducts'>
+                    @sort-change='sortProducts'
+                    @row-click='showModalEvent'>
                 <el-table-column
                         fixed
                         sortable="custom"
@@ -87,19 +88,17 @@
             return {
                 date: '',
                 dataSet:[],
-                slug: '',
                 productTypes: [],
                 checkedTypes: [],
                 searchInput:'',
                 productsNames: [],
                 pageSize: 10,
-                currentPage: 1
+                currentPage: 1,
             }
         },
         watch:{
             products() {
                 this.dataSet = this.products;
-                this.slug = this.products[0]['slug'];
                 this.date = this.products[0]['date'];
             },
             types() {
@@ -123,7 +122,7 @@
         methods: {
             fetchProducts(date) {
                if(date !== this.date) {
-                   axios.get('/api/offers/'+this.slug+'/products', { params:
+                   axios.get('/api'+ window.location.pathname +'/products', { params:
                        {
                            date: date
                        }
@@ -191,7 +190,17 @@
               if(!item) {
                 this.dataSet = this.filterProductsByType();
               }
+            },
+            showModalEvent(data) {
+                this.$emit('show-graph-modal', {'slug': data.slug, 'product': data.product});
             }
         }
     }
 </script>
+
+<style>
+    .el-table tr {
+        background-color: #fff;
+        cursor: pointer;
+    }
+</style>

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Place;
 
 class OffersController extends Controller
 {
@@ -13,6 +14,12 @@ class OffersController extends Controller
      */
     public function index($slug, Request $request)
     {
+        $place = Place::where('slug', $slug)->get()->toArray();
+
+        if(count($place) == 0) {
+            return response()->redirectToRoute('home')->with('page-not-found', "Brak podstrony dla adresu: ". $request->fullUrl());
+        }
+
         return view('products');
     }
 

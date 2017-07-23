@@ -14,8 +14,34 @@ use Illuminate\Http\Request;
 */
 
 Route::get('/offers/{slug}/products', 'Api\ApiOffersController@index');
-
+Route::get('/offers/{slug}/products/{name}', 'Api\ApiOffersController@show');
 
 //TO DO:
-// PRICELIST COMPONENT REFACTOR
+
 // - CLEANUP TEMPLATE CODE, CREATE NEW COMPONENTS
+
+// MarketInfo component with google maps
+
+// MongoDb relation Obiekt z danymi danej giełdy: adres, tel, www, połozenie
+//zmiany w componencie google maps
+
+//TO DO
+//-relacje place -> offer i offer -> place
+// dodanie do zwracanych danych na stale danych o miejscu
+//
+
+
+
+
+//wczytywanie danych z zakresu dat !!
+//data wyswietlana w placeholderze
+
+
+//Testy reorganizacja controllerów
+
+// Notifications for errors
+//zmiana strony startowej
+
+// RabbitMQ jako queue
+
+

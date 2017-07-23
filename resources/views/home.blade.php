@@ -1,6 +1,16 @@
 @extends('layout.app')
 
 @section('content')
+    @if(session()->has('page-not-found'))
+        <el-col :span="12" :offset="6">
+            <el-alert
+                    title="Error"
+                    type="error"
+                    description="{{session()->get('page-not-found')}}"
+                    show-icon>
+            </el-alert>
+        </el-col>
+    @endif
     <div style="margin-top: 20%">
         <el-row>
             <h1 class="center">Cennik warzyw i owoców</h1>

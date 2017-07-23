@@ -21,6 +21,7 @@ window.Vue = require('vue');
 Vue.use(ElementUI, {locale});
 
 Vue.component('market-offer', require('./components/MarketOffer.vue'));
+Vue.component('graph', require('./components/Graph.vue'));
 
 const app = new Vue({
     el: '#app'
