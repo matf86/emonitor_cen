@@ -52,9 +52,9 @@
                 axios.get('/api' + this.path + '/products')
                 .then(response => {
                     this.prepareProductsData(response.data);
-                    this.preparePlaceData(response.data.data.place_data[0]);
+                    this.preparePlaceData(response.data.data.place_data);
                 }).catch(error => {
-                    window.location.replace(window.location.origin);
+//                    window.location.replace(window.location.origin);
                 })
             },
             getProductData(productName) {
@@ -75,18 +75,32 @@
                     }).then(response => {
                         this.product = response.data.data.products_list;
                     }).catch(error => {
-                    console.log(error.response.data);
+                    this.product = [];
+                    this.$notify.error({
+                        title: 'Error',
+                        message: error.response.data,
+                        duration: 0
+                    });
                 })
             },
             setProducts(data) {
                 this.prepareProductsData(data);
             },
             prepareProductsData(dataToPrep) {
-                let data = dataToPrep.data;
 
-                this.products = data.products_list;
-                this.types = this.productTypes(data.products_list);
-                this.names = this.loadProductsNames(data.products_list);
+                if(dataToPrep.length === 0) {
+                    this.products = [];
+                    this.types = [];
+                    this.names = [];
+                } else {
+
+                    let data = dataToPrep.data;
+
+                    this.products = data.products_list;
+                    this.types = this.productTypes(data.products_list);
+                    this.names = this.loadProductsNames(data.products_list);
+                }
+
             },
             preparePlaceData(dataToPrep) {
                 this.place = dataToPrep;

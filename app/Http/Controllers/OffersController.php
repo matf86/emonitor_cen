@@ -12,26 +12,16 @@ class OffersController extends Controller
      * @param string $slug
      * @return \Illuminate\Http\Response
      */
-    public function index($slug, Request $request)
+    public function index($slug, Request $request, Place $place)
     {
-        $place = Place::where('slug', $slug)->get()->toArray();
+        $place = $place->getPlaceBySlug($slug);
 
-        if(count($place) == 0) {
-            return response()->redirectToRoute('home')->with('page-not-found', "Brak podstrony dla adresu: ". $request->fullUrl());
+        if($place->isEmpty()) {
+            return response()->redirectToRoute('home')
+                ->with('page-not-found', "Brak podstrony dla adresu: ". $request->fullUrl());
         }
 
         return view('products');
     }
 
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
 }

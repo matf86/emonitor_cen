@@ -65,18 +65,6 @@
         background-color: rgb(32, 160, 255);
     }
 
-    /*.card_header:after {*/
-        /*content:'';*/
-        /*position: absolute;*/
-        /*top: 100%;*/
-        /*left: 50%;*/
-        /*margin-left: -10px;*/
-        /*width: 0;*/
-        /*height: 0;*/
-        /*border-top: solid 10px rgb(218, 97, 97);*/
-        /*border-left: solid 10px transparent;*/
-        /*border-right: solid 10px transparent;*/
-    /*}*/
 
     .card_header h3 {
         margin-top: 0;
@@ -95,4 +83,5 @@
     .fade-enter, .fade-leave-to  {
         opacity: 0
     }
+
 </style>

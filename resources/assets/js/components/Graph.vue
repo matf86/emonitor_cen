@@ -118,7 +118,12 @@
                         columns: [
                             price_max,
                             price_min
-                        ]
+                        ],
+                        empty: {
+                            label: {
+                                text: "Brak danych..."
+                            }
+                        }
                     },
                     axis: {
                         x: {

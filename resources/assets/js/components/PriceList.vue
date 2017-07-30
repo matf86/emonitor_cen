@@ -98,8 +98,12 @@
         },
         watch:{
             products() {
-                this.dataSet = this.products;
-                this.date = this.products[0]['date'];
+                if(this.products.length > 0) {
+                    this.dataSet = this.products;
+                    this.date = this.products[0]['date'];
+                } else {
+                    this.dataSet = [];
+                }
             },
             types() {
                 this.productTypes = this.types;
@@ -129,7 +133,12 @@
                    }).then(response => {
                        this.$emit('new-data-set', response.data);
                    }).catch(error => {
-                       console.log(error.response.data);
+                       this.$notify.error({
+                           title: 'Error',
+                           message: error.response.data,
+                           duration: 0
+                       });
+                       this.$emit('new-data-set', []);
                    })
                }
             },

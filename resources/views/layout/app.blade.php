@@ -22,7 +22,11 @@
 <body>
 <div id="app">
     <el-row>
-        <el-col :span="20" :offset="2">
+        <el-col :span="22" :offset="1">
+            @if(Request::path() !== '/')
+                @include('layout.nav')
+            @endif
+
             @yield('content')
         </el-col>
     </el-row>

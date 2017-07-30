@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Api;
 
 
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Offer;
@@ -11,6 +12,18 @@ use App\Place;
 
 class ApiOffersController extends Controller
 {
+    protected $place;
+    protected $offer;
+    /**
+     * ApiOffersController constructor.
+     */
+    public function __construct(Place $place, Offer $offer)
+    {
+        $this->place = $place;
+        $this->offer = $offer;
+    }
+
+
     /**
      * Display a listing of the offers.
      *
@@ -19,37 +32,20 @@ class ApiOffersController extends Controller
      */
     public function index($slug, Request $request)
     {
-        $place = Place::where('slug', $slug)->get()->toArray();
+        $place_data = $this->place->getPlaceBySlug($slug);
 
+        $placeId = $this->generateMongoId($place_data[0]->id);
 
-        if($request->query('date')) {
+        $date = $this->setDate($request->query('date'), $placeId);
 
-            $date = new \MongoDB\BSON\UTCDateTime(new \DateTime($request->query('date')));
+        $products = $this->offer->getOfferByDate($slug, $date, $placeId);
 
-
-            $products = Offer::where([
-                ['date', '=', $date],
-                ['places_id', '=', new \MongoDB\BSON\ObjectID($place[0]['_id'])]])->get()->toArray();
-
-
-                if(!$products) {
-                    return response('Brak danych dla wskazanej daty', 422);
-                }
-
-                return ['data' => ['products_list' => $products,
-                                   'place_data' => $place]];
-            }
-
-        $latestDate = Offer::where('places_id', '=', new \MongoDB\BSON\ObjectID($place[0]['_id']))->orderBy('date', 'desc')->select('date')->first();
-
-        $products = Offer::where([
-            ['date', '=', $latestDate->date],
-            ['places_id', '=', new \MongoDB\BSON\ObjectID($place[0]['_id'])]])->get();
-
+        if($products->isEmpty()) {
+            return response('Brak danych dla wskazanej daty', 422);
+        }
 
         return ['data' => ['products_list' => $products,
-            'place_data' => $place]];
-
+                'place_data' => $place_data[0]]];
     }
 
     /**
@@ -61,29 +57,43 @@ class ApiOffersController extends Controller
      */
     public function show($slug, $name, Request $request)
     {
-        $place = Place::where('slug', $slug)->get()->toArray();
-
-        if($request->query('minDate') && $request->query('maxDate')) {
-
-            $minDate = new \MongoDB\BSON\UTCDateTime(new \DateTime($request->query('minDate')));
-            $maxDate = new \MongoDB\BSON\UTCDateTime(new \DateTime($request->query('maxDate')));
+        //$placeData = $this->placeService->findBySlug($slug);
+        //$products = $this->offerService->getProductsForTimeRange($name, $placeId, $dateRange);
 
 
-            $products = Offer::where([
-                ['product', '=', $name],
-                ['places_id', '=', new \MongoDB\BSON\ObjectID($place[0]['_id'])]
-            ])->whereBetween('date', [$minDate, $maxDate])
-            ->orderBy('date', 'asc')->get();
+        $place_data = $this->place->getPlaceBySlug($slug);
 
-            return ['data' => ['products_list' => $products]];
+        $placeId = $this->generateMongoId($place_data[0]->id);
+
+        $dateRange = $this->setDateRange($request->query('minDate'),$request->query('maxDate'), $placeId);
+
+        $products = $this->offer->getProductInTimeRange($name, $placeId, $dateRange['timeStartPoint'], $dateRange['timeEndPoint']);
+
+        if($products->isEmpty()) {
+            return response('Brak danych dla wskazanego przedziału dat', 422);
         }
 
-        $products = Offer::where([
-            ['product', '=', $name],
-            ['places_id', '=', new \MongoDB\BSON\ObjectID($place[0]['_id'])]
-        ])->orderBy('date', 'asc')->get();
-
-
         return ['data' => ['products_list' => $products]];
+
+    }
+
+    protected function generateMongoId($value) {
+        return new \MongoDB\BSON\ObjectID($value);
+    }
+
+    protected function setDate($date, $placeId) {
+        return ($date)? new Carbon($date): $this->offer->getLatestDate($placeId);
+    }
+
+    protected function setDateRange($minDate = null , $maxDate = null, $placeId) {
+
+        $timeEndPoint = ($maxDate)? new Carbon($maxDate) : $this->offer->getLatestDate($placeId);
+
+        $timeStartPoint = ($minDate)? new Carbon($minDate) : $timeEndPoint->copy()->subMonth();
+
+        return [
+            'timeEndPoint' => $timeEndPoint,
+            'timeStartPoint' => $timeStartPoint,
+            ];
     }
 }
