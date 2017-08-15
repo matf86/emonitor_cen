@@ -2,27 +2,18 @@
 
 use Illuminate\Database\Seeder;
 use MongoDB\BSON\ObjectID;
-use Illuminate\Support\Facades\DB;
 
-class OffersTableSeeder extends Seeder
+class TestOffersTableSeeder extends Seeder
 {
-    protected $products = [ 'Ananasy' => 'Owoce',
-                            'Ziemniaki' => 'Warzywa',
-                            'Buraki' => 'Warzywa',
-                            'Maliny' => 'Warzywa',
+    protected $products = [
                             'Cytryny' => 'Owoce',
                             'Banany' => 'Owoce',
                             'Kapusta' => 'Warzywa',
-                            'Ogórki' => 'Warzywa',
                             'Kalafior' => 'Warzywa',
-                            'Mandarynki' => 'Owoce',
-                            'Pomarancze' => 'Owoce',
-                            'Winogrona' => 'Owoce',
-                            'Marchew' => 'Warzywa',
-                            'Pietruszka' => 'Warzywa',
-                            'Seler' => 'Warzywa'];
+                            'Mandarynki' => 'Owoce'
+                           ];
 
-    protected $package = ['1 szt.', '5kg', '15kg', '1 karton'];
+    protected $package = ['1 szt.', '5kg'];
     protected $origin = ['Import', 'Kraj'];
 
     /**
@@ -38,7 +29,7 @@ class OffersTableSeeder extends Seeder
 
 
             foreach ($this->products as $name => $type) {
-                for ($x = 10; $x <= 30; $x++) {
+                for ($x = 10; $x <= 15; $x++) {
                     DB::table('offers')->insert([
                         "product" => $name,
                         "type" => $type,
@@ -53,7 +44,7 @@ class OffersTableSeeder extends Seeder
             }
 
             foreach ($this->products as $name => $type) {
-                for ($x = 10; $x <= 30; $x++) {
+                for ($x = 10; $x <= 15; $x++) {
                     DB::table('offers')->insert([
                         "product" => $name,
                         "type" => $type,

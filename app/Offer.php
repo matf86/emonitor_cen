@@ -2,8 +2,9 @@
 
 namespace App;
 
-use Moloquent\Eloquent\Model;
 use Illuminate\Support\Facades\Cache;
+use App\Exceptions\EmptyResourceException;
+use Moloquent\Eloquent\Model;
 
 
 class Offer extends Model
@@ -14,49 +15,44 @@ class Offer extends Model
 
     public function place()
     {
-        return $this->belongsTo(Place::class, 'places_id');
+        return $this->belongsTo(Place::class, 'place_id');
     }
 
-    public function scopeByDate($query, $date, $placeId)
-    {
-        return $query->where([
-            ['date', '=', $date],
-            ['places_id', '=', $placeId]
-        ]);
+
+    public function getProductInTimeRange($name, $placeId, $dateRangeStartPoint, $dateRangeEndpoint) {
+
+        $offers = $this->where([['product', '=', $name],['place_id', '=', $placeId]])
+            ->whereBetween('date', [$dateRangeStartPoint, $dateRangeEndpoint])
+            ->orderBy('date', 'asc')->get();
+
+        if($offers->count() == 0) {
+            throw new EmptyResourceException('Brak danych dla wskazanego przedziału dat.');
+        }
+
+        return $offers;
+
     }
 
-    public function scopeOrderByDate($query, $placeId)
-    {
-        return $query->where('places_id', '=', $placeId)
-                     ->orderBy('date', 'desc');
-    }
+    public function getByDate($slug, $placeId, $date) {
 
-    public function scopeByProductName($query, $name, $placeId)
-    {
-        return $query->where([
-            ['product', '=', $name],
-            ['places_id', '=', $placeId]
-        ]);
-    }
+        return Cache::rememberForever($slug.'-'.$date->toDateString(), function() use($date, $placeId) {
 
-    public function getOfferByDate($slug, $date, $placeId) {
+            $offers = $this->where([
+                ['date', '=', $date],
+                ['place_id', '=', $placeId]
+            ])->get();
 
-        return Cache::remember($date.'-'.$slug.'-offer', 10080 ,function () use ($date, $placeId) {
-            return  $this->byDate($date, $placeId)->get();
+            if($offers->count() == 0) {
+                throw new EmptyResourceException('Brak danych dla wskazanej daty.');
+            }
+
+            return $offers;
         });
-    }
-
-    public function getProductInTimeRange($name, $placeId, $dateRangeStartpoint, $dateRangeEndpoint) {
-
-        return  $this->byProductName($name, $placeId)
-            ->whereBetween('date', [$dateRangeStartpoint, $dateRangeEndpoint])
-            ->orderBy('date', 'asc')
-            ->get();
     }
 
     public function getLatestDate($placeId) {
 
-        return $this->orderByDate($placeId)->first()->date;
+        return $this->where('place_id', '=', $placeId)->orderBy('date', 'desc')->first()->date;
     }
 
 }

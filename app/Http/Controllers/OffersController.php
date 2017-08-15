@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Cache;
 use App\Place;
 
 class OffersController extends Controller
@@ -12,11 +13,13 @@ class OffersController extends Controller
      * @param string $slug
      * @return \Illuminate\Http\Response
      */
-    public function index($slug, Request $request, Place $place)
+    public function index($slug, Request $request)
     {
-        $place = $place->getPlaceBySlug($slug);
-
-        if($place->isEmpty()) {
+        try {
+            Cache::rememberForever('place-'.$slug, function () use ($slug) {
+                return Place::whereSlug($slug)->firstOrFail();
+            });
+        } catch(\Exception $exception) {
             return response()->redirectToRoute('home')
                 ->with('page-not-found', "Brak podstrony dla adresu: ". $request->fullUrl());
         }

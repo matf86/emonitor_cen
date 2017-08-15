@@ -26,7 +26,7 @@ class CreateOffersTable extends Migration
             $collection->string('type');
             $collection->string('origin');
             $collection->string('package');
-            $collection->string('places_id');
+            $collection->string('place_id');
             $collection->integer('price_min');
             $collection->integer('price_max');
             $collection->date('date');

@@ -1,7 +1,5 @@
-<el-menu :default-active="activeIndex"
-         class="el-menu-demo"
-         mode="horizontal"
-         @select="handleSelect">
+<el-menu class="el-menu-demo"
+         mode="horizontal">
     <el-menu-item index="1"><a href="{{route('home')}}">PriceMonitor</a></el-menu-item>
     <el-submenu index="2">
         <template slot="title">Giełdy</template>
