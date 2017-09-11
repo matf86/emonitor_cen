@@ -24,9 +24,13 @@ class DateConverter
         return ($date)? new Carbon($date): $this->offer->getLatestDate($placeId);
     }
 
-    public function setDateRange($placeId, $minDate = null, $maxDate = null)
+    public function setDateRange($placeIds, $minDate = null, $maxDate = null)
     {
-        $timeEndPoint = ($maxDate)? new Carbon($maxDate) : $this->offer->getLatestDate($placeId);
+        if(is_array($placeIds)) {
+            $timeEndPoint = ($maxDate)? new Carbon($maxDate) : new Carbon();
+        } else {
+            $timeEndPoint = ($maxDate)? new Carbon($maxDate) : $this->offer->getLatestDate($placeIds);
+        }
 
         $timeStartPoint = ($minDate)? new Carbon($minDate) : $timeEndPoint->copy()->subMonth();
 

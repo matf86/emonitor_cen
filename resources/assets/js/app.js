@@ -20,8 +20,14 @@ window.Vue = require('vue');
 
 Vue.use(ElementUI, {locale});
 
-Vue.component('market-offer', require('./components/MarketOffer.vue'));
-Vue.component('graph', require('./components/Graph.vue'));
+Vue.component('offer-showcase', require('./components/UserFrontend/OfferShowcase.vue'));
+Vue.component('vertical-nav', require('./components/Dashboard/VerticalNav.vue'));
+Vue.component('offer-manager', require('./components/Dashboard/OfferManager.vue'));
+Vue.component('date-range-picker', require('./components/DateRangePicker.vue'));
+Vue.component('date-picker', require('./components/DatePicker.vue'));
+Vue.component('pagination', require('./components/Pagination.vue'));
+
+
 
 const app = new Vue({
     el: '#app'
@@ -32,3 +38,5 @@ window.events = new Vue();
 window.noData = function(message) {
     window.events.$emit('no-data', message);
 };
+
+

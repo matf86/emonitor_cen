@@ -8,6 +8,7 @@ use App\Place;
 use Carbon\Carbon;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Cache;
+use Illuminate\Support\Facades\DB;
 use Tests\TestCase;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 
@@ -163,6 +164,26 @@ class OfferTest extends TestCase
 
         $this->assertNull($initialCache);
         $this->assertNull($afterCaching);
+    }
+
+    /***
+     * @test
+     */
+    public function testItFetchDistinctOffersForGivenPlaceAndDate()
+    {
+        $this->seed('TestDatabaseSeeder');
+
+        $slug1 = 'lrh';
+        $slug2 = 'wgro';
+        $placeId[] = Place::whereSlug($slug1)->firstOrfail()->id;
+        $placeId[] = Place::whereSlug($slug2)->firstOrfail()->id;
+
+        $dateMin = Carbon::createFromFormat('Y-m-d H:i:s', '2017-05-11 00:00:00');
+        $dateMax = Carbon::createFromFormat('Y-m-d H:i:s', '2017-05-11 00:00:00');
+
+        $result =  app()->make(Offer::class)->distinctEntriesInTimeRange($placeId, $dateMin, $dateMax);
+
+//        dd($result->toArray());
     }
 
 

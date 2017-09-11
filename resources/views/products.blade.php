@@ -1,5 +1,5 @@
 @extends('layout.app')
 
 @section('content')
-    <market-offer></market-offer>
+    <offer-showcase></offer-showcase>
 @endsection

@@ -23,10 +23,10 @@ class CreateUsersTable extends Migration
             Schema::connection($this->connection)->
             table('users', function (Blueprint $collection) {
                   $collection->index('name');
-                    $collection->unique('email');
-                    $collection->string('password');
-                    $collection->rememberToken();
-                    $collection->timestamps();
+                  $collection->unique('email');
+                  $collection->string('password');
+                  $collection->rememberToken();
+                  $collection->timestamps();
             });
         }
         /**

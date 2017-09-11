@@ -46,7 +46,7 @@ class OffersTableSeeder extends Seeder
                         "package" => $this->package[array_rand($this->package)],
                         "price_min" => rand(1,15),
                         "price_max" => rand(15,25),
-                        "date" => new MongoDB\BSON\UTCDateTime(new DateTime('2017-05-'.$x)),
+                        "date" => new MongoDB\BSON\UTCDateTime(new DateTime('2017-08-'.$x)),
                         "place_id" => new ObjectID($wgro->id),
                     ]);
                 }
@@ -61,7 +61,7 @@ class OffersTableSeeder extends Seeder
                         "package" => $this->package[array_rand($this->package)],
                         "price_min" => rand(1,15),
                         "price_max" => rand(15,30),
-                        "date" => new MongoDB\BSON\UTCDateTime(new DateTime('2017-05-'.$x)),
+                        "date" => new MongoDB\BSON\UTCDateTime(new DateTime('2017-08-'.$x)),
                         "place_id" => new ObjectID($lrh->id),
                     ]);
                 }

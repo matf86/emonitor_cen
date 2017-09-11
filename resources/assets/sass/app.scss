@@ -1,3 +1,11 @@
+@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+@import 'node_modules/element-ui/lib/theme-default/index';
+@import 'node_modules/c3/c3';
+
+body {
+  margin: 0;
+}
+
 //Links reset styles
 a:link {
   color: inherit;
@@ -23,9 +31,55 @@ a:active {
   text-align: center;
 }
 
-@import 'node_modules/element-ui/lib/theme-default/index';
-@import 'node_modules/c3/c3';
+$tablet-width: 768px;
+$small-desktop: 992px;
+$desktop-width: 1200px;
+$big-desktop: 1600px;
 
-body {
-  margin: 0;
+@mixin tablet {
+  @media (max-width: #{$small-desktop - 1px}) {
+    @content;
+  }
 }
+
+@mixin small-desktop {
+  @media (min-width: #{$small-desktop}) and (max-width: #{$desktop-width - 1px}) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: #{$desktop-width}) and (max-width: #{$big-desktop - 1px}) {
+    @content;
+  }
+}
+
+@mixin big-desktop {
+  @media (min-width: #{$big-desktop}) {
+    @content;
+  }
+}
+
+.manager-size {
+
+  @include big-desktop {
+    padding-left: 5px;
+    margin: 0 40px 0 50px;
+  }
+
+  @include desktop {
+    padding-left: 10px;
+    margin: 0 10px 0 100px;
+  }
+
+  @include small-desktop {
+    padding-left: 10px;
+    margin: 0 5px 0 105px;
+  }
+
+  @include tablet {
+    padding-left: 5px;
+    margin: 0 2px 0 15px;
+  }
+}
+

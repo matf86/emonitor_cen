@@ -4,6 +4,7 @@ namespace App\Services;
 
 use App\Offer;
 use App\Utilities\DateConverter;
+use Carbon\Carbon;
 
 
 class OfferService
@@ -45,6 +46,24 @@ class OfferService
         $offers = $this->offer->getProductInTimeRange($name, $placeId, $dateRange['minDate'], $dateRange['maxDate']);
 
         return $offers;
+    }
+
+    public function getDistinctEntriesInTimeRange($placeIds, $minDate = null, $maxDate = null)
+    {
+        $dateRange = $this->converter->setDateRange($placeIds, $minDate, $maxDate);
+
+        $result = $this->offer->distinctEntriesInTimeRange($placeIds, $dateRange['minDate'], $dateRange['maxDate']);
+
+        $result = $result->map(function($item) {
+            return [
+               'date' => Carbon::createFromTimestamp($item['_id']['date']->toDateTime()->getTimestamp())->toDateString(),
+               'place' => $item['_id']['place_name'],
+               'place_id' => $item['_id']['place_id'],
+               'count' => $item['count']
+           ];
+        });
+
+        return $result;
     }
 
     protected function invalidArguments($string, $id) {

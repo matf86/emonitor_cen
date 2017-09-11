@@ -1,6 +1,5 @@
 <?php
 
-use Illuminate\Http\Request;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,8 +15,17 @@ use Illuminate\Http\Request;
 Route::get('/offers/{slug}/products', 'Api\ApiOffersController@index')->middleware('date');
 Route::get('/offers/{slug}/products/{name}', 'Api\ApiOffersController@show')->middleware('dateRange');
 
-//TO DO:
 
-// RabbitMQ jako queue
-//zmiana strony startowej
+Route::prefix('dashboard')->group(function () {
+    Route::get('/offers/entries', 'Api\Dashboard\ApiOffersController@showDistinctEntries')->middleware('dateRange');
+    Route::delete('/offers', 'Api\Dashboard\ApiOffersController@destroy')->middleware('date');
+    Route::delete('/offers/selected', 'Api\Dashboard\ApiOffersController@destroySelected');
+    Route::get('/offers', 'Api\Dashboard\ApiOffersController@index');
+    Route::post('/offers', 'Api\Dashboard\ApiOffersController@store');
+    Route::patch('/offers/{id}', 'Api\Dashboard\ApiOffersController@update');
+
+});
+
+
+
 

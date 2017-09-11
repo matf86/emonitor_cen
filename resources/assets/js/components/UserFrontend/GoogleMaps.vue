@@ -38,7 +38,6 @@
                         map: map,
                         position:{lat: this.lat, lng: this.lng},
                     });
-
                 }
             }
         }

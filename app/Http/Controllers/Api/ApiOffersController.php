@@ -47,4 +47,10 @@ class ApiOffersController extends Controller
         return response()->json(['data' => ['products_list' => $products]]);
     }
 
+
+
 }
+
+//query_string dla slugów
+//zakresy dat
+//frontend api calls kiedy??

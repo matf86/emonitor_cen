@@ -22,13 +22,11 @@
 <body>
 <div id="app">
     <el-row>
-        <el-col :span="22" :offset="1">
-            @if(Request::path() !== '/')
-                @include('layout.nav')
-            @endif
+        @if(Route::current()->getName() !=='home')
+            @include('layout.nav')
+        @endif
 
-            @yield('content')
-        </el-col>
+        @yield('content')
     </el-row>
 </div>
 <script src="{{ mix('js/app.js') }}"></script>

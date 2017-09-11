@@ -16,3 +16,11 @@ Route::get('/', function () {
 })->name('home');
 
 Route::get('/offers/{slug}', 'OffersController@index')->name('offers');
+
+Route::prefix('dashboard')->group(function () {
+    Auth::routes();
+    Route::get('/', function () {
+        return view('dashboard.index');
+    })->name('dashboard')->middleware('auth');
+});
+
