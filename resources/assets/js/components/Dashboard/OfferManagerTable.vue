@@ -19,7 +19,7 @@
         </el-table-column>
         <el-table-column
                     sortable
-                    prop="place"
+                    prop="market_name"
                     label="Nazwa"
                     min-width="300">
         </el-table-column>
@@ -73,19 +73,18 @@
             },
             deleteOffers(data) {
                 let date = data.date;
-                let id = data.place_id.$oid;
+                let slug = data.market_slug;
 
-                axios.delete('/api/dashboard/offers', {
+                axios.delete('/dashboard/markets/'+ slug  +'/offers', {
                     params: {
                         date: date,
-                        id: id
                     }
-                }).then(response => {
-                    this.$root.$emit('delete-table-entry', {'date':date, 'id':id});
+                }).then(() => {
+                    this.$root.$emit('delete-table-entry', {'date':date, 'slug': slug});
                     this.$notify.success({
-                        title: 'Success',
-                        message: response.data.data,
-                        duration: 2500
+                        title: 'Sukces!',
+                        message: `Wszystkie oferty z dnia ${date} dla ${data.market_name} zostały usunięte.`,
+                        duration: 3500
                     });
                 }).catch(error => {
                     this.$notify.error({
@@ -96,7 +95,7 @@
                 })
             },
             deleteConfirm(index, row) {
-                this.$confirm(`Czy napewno chcesz usnąc wszystkie wpisy dla ${row.place} z dnia: ${row.date}`, 'Uwaga!', {
+                this.$confirm(`Czy napewno chcesz usnąc wszystkie wpisy dla ${row.market} z dnia: ${row.date}`, 'Uwaga!', {
                     confirmButtonText: 'Usuń',
                     confirmButtonClass: 'el-button--danger',
                     cancelButtonText: 'Anuluj',

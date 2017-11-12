@@ -1,15 +1,16 @@
 <template>
-    <el-row>
-    <el-form :model="form" :rules="rules" ref="offerForm">
-        <el-col :xs="24" :sm="24" :md="24" :lg="24">
+    <el-form :model="form" :rules="rules" ref="offerForm" label-position="top">
+         <el-col :xs="22" :sm="22" :md="20" :lg="20">
             <el-form-item label="Nazwa produktu:" prop="product">
-                <el-input v-model="form.product" placeholder="..." auto-complete="off"></el-input>
+                <el-input v-model="form.product" placeholder="..." auto-complete="on"></el-input>
             </el-form-item>
+         </el-col>
+        <el-col :xs="22" :sm="22" :md="20" :lg="20">
             <el-form-item label="Opakowanie / Waga:" prop="package">
-                <el-input v-model="form.package" placeholder="np: skrzynka 15kg" auto-complete="off"></el-input>
+                <el-input v-model="form.package" placeholder="np: skrzynka 15kg" auto-complete="on"></el-input>
             </el-form-item>
         </el-col>
-        <el-col :xs="24" :sm="24" :md="24" :lg="12">
+        <el-col :xs="22" :sm="11" :md="11" :lg="11">
             <el-form-item label="Pochodzenie:" prop="origin">
                 <el-select v-model="form.origin" clearable placeholder="...">
                     <el-option
@@ -21,7 +22,7 @@
                 </el-select>
             </el-form-item>
         </el-col>
-        <el-col :xs="24" :sm="24" :md="24" :lg="12">
+        <el-col :xs="22" :sm="11" :md="11" :lg="11">
             <el-form-item label="Typ:" prop="type">
                 <el-select v-model="form.type" clearable placeholder="...">
                     <el-option
@@ -33,18 +34,17 @@
                 </el-select>
             </el-form-item>
         </el-col>
-        <el-col :xs="24" :sm="24" :md="24" :lg="12">
+        <el-col :xs="22" :sm="11" :md="11" :lg="11">
             <el-form-item label="Cena minimalna:" prop="price_min">
-                <el-input-number :step="0.1" :debounce="900" :min="0" style="line-height: 0px" v-model="form.price_min" size="small"></el-input-number>
+                <el-input-number :step="0.1" :debounce="450" :min="0" style="line-height: 0px" v-model="form.price_min" size="small"></el-input-number>
             </el-form-item>
         </el-col>
-        <el-col :xs="24" :sm="24" :md="24" :lg="12">
+        <el-col :xs="22" :sm="11" :md="11" :lg="11">
             <el-form-item label="Cena maksymalna:" prop="price_max">
-                <el-input-number :step="0.1" :debounce="900" :min="0" style="line-height: 0px" v-model="form.price_max" size="small"></el-input-number>
+                <el-input-number :step="0.1" :debounce="450" :min="0" style="line-height: 0px" v-model="form.price_max" size="small"></el-input-number>
             </el-form-item>
         </el-col>
     </el-form>
-    </el-row>
 </template>
 
 <script>
@@ -66,7 +66,7 @@
                         { required: true, message: 'Wskaż pochodzenie produktu.', trigger: 'change' },
                     ],
                     type: [
-                        { required: true, message: 'Wskaż pochodzenie produktu.', trigger: 'change' }
+                        { required: true, message: 'Wskaż typ produktu.', trigger: 'change' }
                     ],
                     price_max: [
                         { required: true, type: 'number', message: 'Wprowadź maksymalną cene.', trigger: 'change' }
@@ -76,13 +76,15 @@
                     ]
                 },
                 options: {
-                    type: ['Owoce', 'Warzywa', 'Grzyby'],
-                    origin: ['Kraj', 'Import']
+                    type: null,
+                    origin: null
                 }
             }
         },
         created() {
             this.assignPropsData(this.data);
+            this.getTypes();
+            this.getOrigins();
         },
         watch: {
             data() {
@@ -95,6 +97,20 @@
                 for(let prop in data) {
                     this.form[prop] = data[prop];
                 }
+            },
+            getTypes() {
+                axios.get('/dashboard/offers/types').then(response => {
+                    this.options.type = response.data.data;
+                }).catch(response => {
+                    console.log(response.error);
+                });
+            },
+            getOrigins() {
+                axios.get('/dashboard/offers/origins').then(response => {
+                    this.options.origin = response.data.data;
+                }).catch(response => {
+                    console.log(response.error);
+                });
             }
         }
     }

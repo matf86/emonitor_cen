@@ -1,12 +1,11 @@
 <template>
     <el-autocomplete
-            style="width: 450px;"
-            class="inline-input"
+            class="inline-input input-size"
+            size="large"
             v-model="searchInput"
             :fetch-suggestions="querySearch"
             placeholder="Znajdź produkt..."
             :triggerOnFocus="true"
-            size="large"
             @select="showProduct"
             @input="resetData"
             icon="search">
@@ -23,11 +22,15 @@
             }
         },
         created() {
+            this.$root.$on('update-offer-list', this.clearSearchInput); //event emitted by OfferManagerTable component
             this.$root.$on('filter-by-type', () => {
                 this.searchInput = '';
             });
         },
         methods: {
+            clearSearchInput() {
+              this.searchInput = '';
+            },
             querySearch(queryString, cb) {
                 let query = queryString.trim().toLowerCase();
                 let productsNames = this.data;

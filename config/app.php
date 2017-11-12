@@ -163,11 +163,15 @@ return [
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
         Moloquent\MongodbServiceProvider::class,
+        Bschmitt\Amqp\AmqpServiceProvider::class,
+        VladimirYuldashev\LaravelQueueRabbitMQ\LaravelQueueRabbitMQServiceProvider::class,
+
 
         /*
          * Package Service Providers...
          */
         Laravel\Tinker\TinkerServiceProvider::class,
+
 
         /*
          * Application Service Providers...
@@ -228,6 +232,7 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
         'Moloquent' => 'Moloquent\Eloquent\Model',
+        'Amqp' => 'Bschmitt\Amqp\Facades\Amqp',
 
     ],
 

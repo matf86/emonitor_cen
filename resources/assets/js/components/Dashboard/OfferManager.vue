@@ -19,8 +19,8 @@
             }
         },
         created() {
-            this.$root.$on('update-offer-list', this.updateOfferList);
-            this.$root.$on('get-offers', this.getOffers);
+            this.$root.$on('update-offer-list', this.updateOfferList);// event emitted by OfferDetailsTable and OfferFormDialog
+            this.$root.$on('get-offers', this.getOffers);// event emitted by OfferManager
         },
         methods: {
             hideDialog() {
@@ -28,19 +28,23 @@
                 this.offerData = {};
                 this.offersList = [];
             },
+            //Dispatched on "get-offers" event emitted by OfferManager component,
+            //
+            //@param payload Object parameters{count, date, market_id, market_name, market_slug}
+            //
+            //@return ajax response - all offers from given market on given date
             getOffers(payload) {
                 let date = payload.data.date;
-                let id = payload.data.place_id.$oid;
-                let place = payload.data.place;
+                let id = payload.data.market_id.$oid;
+                let market = payload.data.market_name;
 
-                axios.get('/api/dashboard/offers', {
+                axios.get('/markets/'+ payload.data.market_slug +'/offers', {
                     params: {
                         date: date,
-                        id: id
                     }
                 }).then(response => {
-                    this.offersList = response.data.data.offers;
-                    this.offerData = {'date': date, 'place_id': id, 'place': place};
+                    this.offersList = response.data.data;
+                    this.offerData = {'date': date, 'market_id': id, 'market': market};
                     this.dialogFormVisible = true;
                 }).catch(error => {
                     this.$notify.error({
@@ -52,23 +56,17 @@
             },
             updateOfferList(response) {
                 if(response.type === 'delete') {
-                   return this.offersList = response.data;
+                   return this.offersList = this.offersList.filter(x => response.ids.indexOf(x._id) == -1);
                 }
 
                 let index = _.findIndex(this.offersList, {_id: response.data._id});
 
-                if(index === -1) {
-                    return this.offersList.push(response.data);
+                if(index !== -1) {
+                    this.offersList.splice(index, 1);
                 }
 
-                this.offersList.splice(index, 1, response.data);
+                return this.offersList.unshift(response.data);
             },
         }
     }
 </script>
-
-<style>
-    el-dialog {
-        margin-bottom: 0px;
-    }
-</style>

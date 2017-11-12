@@ -1,11 +1,11 @@
 <template>
     <div>
     <el-row>
-        <date-range-picker @set-date-range="setDateRange"></date-range-picker>
+        <date-range-picker :init-days="30" @set-date-range="setDateRange"></date-range-picker>
         <checkbox-places :data="places" @set-places-list="setCheckedPlaces"></checkbox-places>
-        <el-button type="success" icon="search" style="margin: 5px 0 0 0;" @click="updateTableData">Szukaj</el-button>
+        <el-button type="success" icon="search" style="margin: 5px 0 0 0;" @click="getTableData">Szukaj</el-button>
     </el-row>
-        <offer-manager-table :data="entriesList"></offer-manager-table>
+        <offer-manager-table v-loading="loading" element-loading-text="Wczytuje..." :data="entriesList"></offer-manager-table>
         <pagination :data="tableData" @set-sliced-table-data="setEntriesList"></pagination>
     </div>
 </template>
@@ -13,10 +13,11 @@
 <script>
     import OfferManagerTable from './OfferManagerTable.vue';
     import CheckboxPlaces from './CheckboxPlaces.vue';
+    import { Loading } from 'element-ui';
 
 
     export default {
-        components: { OfferManagerTable, CheckboxPlaces },
+        components: { OfferManagerTable, CheckboxPlaces, Loading },
         data() {
             return {
                 checkedPlaces:[],
@@ -24,13 +25,16 @@
                 tableData: [],
                 places: [],
                 entriesList:[],
+                loading:  false,
             }
         },
         created() {
-            this.$root.$on('update-offer-manager-table', this.updateTableData);
-            this.$root.$on('delete-table-entry', this.deleteTableData);
+            this.$root.$on('delete-table-entry', this.deleteTableData); //event emitted by OfferManagerTable component
+            this.$root.$on('decrease-offers-count', this.decreaseOffersCount); //event emitted by OfferDetailsTable component
+            this.$root.$on('increase-offers-count', this.increaseOffersCount); //event emitted by OfferFormDialog component
 
-            this.getInitialTableData();
+            this.getTableData('initial');
+            this.getMarketsData();
         },
         methods: {
             setEntriesList(data) {
@@ -42,11 +46,38 @@
             setCheckedPlaces(payload) {
                 this.checkedPlaces = payload;
             },
-            getInitialTableData() {
-                axios.get('/api/dashboard/offers/entries').then(response => {
-                    let data = response.data.data.entries_list;
+            getTableData(type) {
+                this.loading = true;
+                let ids = null;
+                let dateRange = null;
+
+                if(type !== 'initial') {
+                    ids = (this.checkedPlaces.length === 0)? [null] : this.checkedPlaces;
+                    dateRange = [this.dateRange[0], this.dateRange[1]];
+                }
+
+                axios.get('/dashboard/offers/stats/count', {
+                    params: {
+                        markets: ids,
+                        dateRange: dateRange
+                    }
+                }).then(response => {
+                    let data = response.data.data;
                     this.tableData = _.orderBy(data, ['date'],['desc']);
-                    this.setPlacesList(response.data.data.entries_list);
+                    this.loading = false;
+                }).catch(() => {
+                    this.$notify.error({
+                        title: 'Error',
+                        message: 'Brak danych dla wskazanych parametrów wyszukiwania',
+                        duration: 4000
+                    });
+                    this.tableData = [];
+                    this.loading = false;
+                });
+            },
+            getMarketsData() {
+                axios.get('/dashboard/markets').then(response => {
+                    this.setPlacesList(response.data);
                 }).catch(error => {
                     this.$notify.error({
                         title: 'Error',
@@ -55,38 +86,32 @@
                     });
                 })
             },
-            updateTableData() {
-                axios.get('/api/dashboard/offers/entries', {
-                    params: {
-                        id: (this.checkedPlaces.length === 0)? [null] : this.checkedPlaces,
-                        minDate: this.dateRange[0],
-                        maxDate: this.dateRange[1]
-                    }
-                }).then(response => {
-                    let data = response.data.data.entries_list;
-                    this.tableData = _.orderBy(data, ['date'],['desc']);
-                }).catch(error => {
-                  this.$notify.error({
-                    title: 'Error',
-                    message: error.response.data,
-                    duration: 0
-                  });
-                })
-            },
             deleteTableData(data) {
                     this.tableData = this.tableData.filter(e => {
-                        return !(e.place_id.$oid === data.id && e.date === data.date);
+                        return !(e.market_slug === data.slug && e.date === data.date);
                 });
             },
             setPlacesList(data) {
-                let results =  _.uniqWith(_.map(data, function(item) {
+                this.places =  _.uniqWith(_.map(data, function(item) {
                     return {
-                        label: item.place,
-                        value: item.place_id.$oid
+                        label: item.name,
+                        value: item._id
                     }
                 }), _.isEqual);
+            },
+            increaseOffersCount(data) {
+                let item = _.find(this.tableData, function(o) {
+                    return (o.date === data.date && o.market_id.$oid === data.market_id);
+                });
 
-                this.places = results;
+                item.count ++;
+            },
+            decreaseOffersCount(data) {
+               let item = _.find(this.tableData, function(o) {
+                   return (o.date === data.date && o.market_id.$oid === data.market_id);
+               });
+
+               item.count -= data.ids.length;
             }
         }
     }

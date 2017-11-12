@@ -2,13 +2,9 @@
 
 namespace Tests\Unit;
 
-use App\Exceptions\EmptyResourceException;
+use App\Market;
 use App\Offer;
-use App\Place;
 use Carbon\Carbon;
-use Illuminate\Support\Collection;
-use Illuminate\Support\Facades\Cache;
-use Illuminate\Support\Facades\DB;
 use Tests\TestCase;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 
@@ -16,175 +12,51 @@ class OfferTest extends TestCase
 {
     use DatabaseMigrations;
 
-    public function setUp() {
+    public function setUp()
+    {
         parent::setUp();
 
-        Cache::flush();
+        $this->seed('TestDatabaseSeeder');
     }
 
-    /***
+    /**
      * @test
      */
-    public function testItCanFetchDateOfLatestOfferForGivenMarketPlace()
+    public function it_shows_number_of_offers_for_given_market_grouped_by_date()
     {
-        $this->seed('TestDatabaseSeeder');
+        $markets = Market::all()->pluck('_id')->toArray();
+        $dateRange = [new Carbon('10-05-2017'), new Carbon('11-05-2017')];
+        $offer = new Offer();
 
-        $date = Carbon::createFromFormat('Y-m-d', '2017-05-15');
+        $data = $offer->countByDateAndMarket($markets, $dateRange);
 
-        $placeId = Place::whereSlug('wgro')->firstOrfail()->id;
+        $data =$data->toArray();
 
-
-        $result_date = app()->make(Offer::class)->getLatestDate($placeId);
-
-
-        $this->assertInstanceOf('Carbon\Carbon', $result_date);
-
-        $this->assertEquals($date->toDateString(), $result_date->toDateString());
-
+        $this->assertCount(4, $data);
+        $this->assertEquals(5, $data[0]['count']);
     }
 
-
-    /***
+    /**
      * @test
      */
-    public function testItCanFetchDataAboutOfferedProductsInGivenTimeRangeForGivenMarketPlace()
+    public function it_shows_all_distinct_types_of_products()
     {
-        $this->seed('TestDatabaseSeeder');
+       $offer = new Offer();
 
-        $dateStartPoint = Carbon::createFromFormat('Y-m-d', '2017-05-10');
-        $dateEndpoint = Carbon::createFromFormat('Y-m-d', '2017-05-15');
-        $placeId = Place::whereSlug('wgro')->firstOrfail()->id;
-        $name = 'Banany';
+       $types = $offer->getTypes();
 
-
-        $result = app()->make(Offer::class)
-            ->getProductInTimeRange($name, $placeId, $dateStartPoint, $dateEndpoint);
-
-
-        $this->assertInstanceOf(Collection::class, $result);
-        $this->assertEquals(5, $result->count());
+       $this->assertCount(2, $types);
     }
 
-    /***
+    /**
      * @test
      */
-    public function testItThrowEmptyResourceExceptionWhenThereAreNoProductsOffersInGivenTimeRange()
+    public function it_shows_all_distinct_origins_of_products()
     {
-        $this->seed('TestDatabaseSeeder');
+        $offer = new Offer();
 
-        $dateStartPoint = Carbon::createFromFormat('Y-m-d', '2017-01-01');
-        $dateEndpoint = Carbon::createFromFormat('Y-m-d', '2017-01-15');
-        $placeId = Place::whereSlug('wgro')->firstOrfail()->id;
-        $name = 'Banany';
+        $origins = $offer->getOrigins();
 
-        $this->expectException(EmptyResourceException::class);
-
-        app()->make(Offer::class)
-             ->getProductInTimeRange($name, $placeId, $dateStartPoint, $dateEndpoint);
-
+        $this->assertCount(2, $origins);
     }
-
-
-    /***
-     * @test
-     */
-    public function testItFetchAllOffersForGivenDateInSpecifiedMarketPlace()
-    {
-        $this->seed('TestDatabaseSeeder');
-
-        $slug = 'wgro';
-        $date = Carbon::createFromFormat('Y-m-d H:i:s', '2017-05-12 00:00:00');
-        $placeId = Place::whereSlug($slug)->firstOrfail()->id;
-
-        $result = app()->make(Offer::class)->getByDate($slug, $placeId, $date);
-
-        $this->assertInstanceOf(Collection::class, $result);
-        $this->assertEquals(5, $result->count());
-
-    }
-
-    /***
-     * @test
-     */
-    public function testItThrowEmptyResourceExceptionIfThereIsNoOffersForGivenDate()
-    {
-        $this->seed('TestDatabaseSeeder');
-
-        $slug = 'wgro';
-        $date = Carbon::createFromFormat('Y-m-d H:i:s', '2017-01-01 00:00:00');
-        $placeId = Place::whereSlug($slug)->firstOrfail()->id;
-
-        $this->expectException(EmptyResourceException::class);
-
-        app()->make(Offer::class)->getByDate($slug, $placeId, $date);
-    }
-
-    /***
-     * @test
-     */
-    public function testItWriteDataToCacheAfterRetrievingThemFromDb()
-    {
-        $this->seed('TestDatabaseSeeder');
-
-        $slug = 'wgro';
-        $date = Carbon::createFromFormat('Y-m-d H:i:s', '2017-05-11 00:00:00');
-        $placeId = Place::whereSlug($slug)->firstOrfail()->id;
-
-        $initialCache = Cache::get($slug.'-'.$date->toDateString());
-
-        $result = app()->make(Offer::class)->getByDate($slug, $placeId, $date);
-
-        $afterCaching = Cache::get($slug.'-'.$date->toDateString());
-
-        $this->assertNull($initialCache);
-        $this->assertInstanceOf(Collection::class, $afterCaching);
-        $this->assertEquals($result, $afterCaching);
-    }
-
-    /***
-     * @test
-     */
-    public function testItDoesntCacheResultIfQueryWasEmpty()
-    {
-        $this->seed('TestDatabaseSeeder');
-
-        $slug = 'wgro';
-        $date = Carbon::createFromFormat('Y-m-d H:i:s', '2017-01-11 00:00:00');
-        $placeId = Place::whereSlug($slug)->firstOrfail()->id;
-
-        $initialCache = Cache::get($slug.'-'.$date->toDateString());
-
-        try {
-            app()->make(Offer::class)->getByDate($slug, $placeId, $date);
-        } catch(\Exception $e) {
-
-        }
-
-        $afterCaching = Cache::get($slug.'-'.$date->toDateString());
-
-        $this->assertNull($initialCache);
-        $this->assertNull($afterCaching);
-    }
-
-    /***
-     * @test
-     */
-    public function testItFetchDistinctOffersForGivenPlaceAndDate()
-    {
-        $this->seed('TestDatabaseSeeder');
-
-        $slug1 = 'lrh';
-        $slug2 = 'wgro';
-        $placeId[] = Place::whereSlug($slug1)->firstOrfail()->id;
-        $placeId[] = Place::whereSlug($slug2)->firstOrfail()->id;
-
-        $dateMin = Carbon::createFromFormat('Y-m-d H:i:s', '2017-05-11 00:00:00');
-        $dateMax = Carbon::createFromFormat('Y-m-d H:i:s', '2017-05-11 00:00:00');
-
-        $result =  app()->make(Offer::class)->distinctEntriesInTimeRange($placeId, $dateMin, $dateMax);
-
-//        dd($result->toArray());
-    }
-
-
 }

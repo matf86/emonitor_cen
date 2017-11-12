@@ -12,6 +12,7 @@
 <script>
 
 export default {
+    props: ['init-days'],
     data() {
         return {
             dateRange:[],
@@ -67,11 +68,11 @@ export default {
         initDateRange() {
                 const end = new Date();
                 const start = new Date();
-                start.setTime(start.getTime() - 3600 * 1000 * 24 * 30);
+                start.setTime(start.getTime() - 3600 * 1000 * 24 * this.initDays);
                 this.dateRange = [start, end];
 
                 this.setDateRange(this.dateRange);
-            },
+        },
         setDateRange(payload) {
            this.$emit('set-date-range', this.convertDate(payload));
         },

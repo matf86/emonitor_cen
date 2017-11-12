@@ -18,6 +18,7 @@
         data() {
             return {
                 pickedDate: '',
+                slug: location.pathname,
             }
         },
         watch: {
@@ -27,23 +28,10 @@
         },
         methods: {
             fetchProducts(date) {
-                if(date !== this.pickedDate) {
-                    axios.get('/api'+ window.location.pathname +'/products', { params:
-                        {
-                            date: date
-                        }
-                    }).then(response => {
-                        this.$root.$emit('reload-products-data', response.data.data.products_list);
-                    }).catch(error => {
-                        this.$notify.error({
-                            title: 'Error',
-                            message: error.response.data,
-                            duration: 2500
-                        });
-                        this.$root.$emit('reload-products-data', []);
-                    })
+                if(date !==  this.pickedDate) {
+                    this.$root.$emit('reload-products-data', date);
                 }
-            },
-        }
+            }
+        },
     }
 </script>

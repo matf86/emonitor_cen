@@ -1,7 +1,7 @@
 <template>
     <div>
         <el-row>
-            <date-range-picker ref="picker" @set-date-range="setDateRange"></date-range-picker>
+            <date-range-picker :init-days="30" ref="picker" @set-date-range="setDateRange"></date-range-picker>
             <el-button type="success" icon="search" style="margin: 5px 0;" @click="updateGraphData">Szukaj</el-button>
         </el-row>
         <hr/>
@@ -10,9 +10,10 @@
 </template>
 
 <script>
+    import { chartInit } from '../../utils/zingchart';
 
     export default {
-        props: ['product', 'selected'],
+        props: ['products', 'selected'],
         data() {
             return {
                 dateRange:[],
@@ -24,7 +25,7 @@
             this.prepChart();
         },
         watch: {
-            product() {
+            products() {
                 this.prepChart();
             },
         },
@@ -36,62 +37,28 @@
                 this.$refs['picker'].initDateRange();
             },
             prepChart() {
-                let price_max = ['cena_max'];
-                let price_min = ['cena_min'];
-                let dates = [];
+                let title;
+                let labels= [];
+                let values = [];
 
-                this.product.forEach((item) => {
-                    price_max.push(item.price_max);
-                    price_min.push(item.price_min);
-                    dates.push(item.date);
-                });
+                if(this.products.length > 0) {
+                    title = this.products[0].product + " - ceny za: " + this.products[0].package;
 
+                    this.products.forEach((item) => {
+                        labels.push([item.date]);
+                        values.push([item.price_min, item.price_max]);
+                    });
+                }
 
-                let chart = c3.generate({
-                    bindto: '#chart',
-                    data: {
-                        columns: [
-                            price_max,
-                            price_min
-                        ],
-                        empty: {
-                            label: {
-                                text: "Brak danych..."
-                            }
-                        }
-                    },
-                    axis: {
-                        x: {
-                            type: 'category',
-                            categories: dates
-                        },
-                        y: {
-                            label: {
-                                text: 'PLN',
-                                position: 'outer-middle'
-                            }
-                        }
-                    },
-                    grid: {
-                        y: {
-                            show: true
-                        }
-                    },
-                    zoom: {
-                        enabled: true
-                    },
-                    point: {
-                        r: 4
-                    }
-                });
+                chartInit(title, labels, values);
             },
             updateGraphData() {
                 this.$root.$emit('update-graph-data', {
                     'dateRange': {
-                                  'minDate': this.dateRange[0],
-                                  'maxDate': this.dateRange[1]
+                                  'from': this.dateRange[0],
+                                  'to': this.dateRange[1]
                                  },
-                    'productName': this.selected
+                    'productName': this.selected.product
                 });
             }
         }
@@ -100,8 +67,8 @@
 </script>
 
 <style>
-    #chart .c3-line {
-        stroke-width: 4px;
+    #chart {
+        width: 100%;
+        height: 70vh;
     }
-
 </style>

@@ -14,7 +14,7 @@
             </el-col>
         </el-row>
         <el-row>
-            <products-price-list-table :data="entriesList"></products-price-list-table>
+            <products-price-list-table :data="entriesList" :market="market"></products-price-list-table>
         </el-row>
         <pagination :data="tableData"  @set-sliced-table-data="setEntriesList"></pagination>
     </div>
@@ -28,7 +28,7 @@
 
     export default {
         components: { CheckboxTypes, ProductsPriceListTable, SearchProduct },
-        props: ['data', 'date', 'types'],
+        props: ['data', 'date', 'types', 'market'],
         data() {
             return {
                 entriesList: [],

@@ -6,10 +6,12 @@
  */
 
 require('./bootstrap');
+
 import ElementUI from 'element-ui';
-import locale from 'element-ui/lib/locale/lang/en'
+import locale from 'element-ui/lib/locale/lang/en';
+import { scroll } from './utils/smoothscroll';
 
-
+window.scroll = scroll;
 window.Vue = require('vue');
 
 /**
@@ -23,14 +25,23 @@ Vue.use(ElementUI, {locale});
 Vue.component('offer-showcase', require('./components/UserFrontend/OfferShowcase.vue'));
 Vue.component('vertical-nav', require('./components/Dashboard/VerticalNav.vue'));
 Vue.component('offer-manager', require('./components/Dashboard/OfferManager.vue'));
+Vue.component('markets-manager', require('./components/Dashboard/MarketsManager/MarketsManager.vue'));
 Vue.component('date-range-picker', require('./components/DateRangePicker.vue'));
 Vue.component('date-picker', require('./components/DatePicker.vue'));
 Vue.component('pagination', require('./components/Pagination.vue'));
+Vue.component('contactForm', require('./components/ContactForm.vue'));
+Vue.component('marketBox', require('./components/MarketBox.vue'));
 
-
-
-const app = new Vue({
-    el: '#app'
+const app = window.app = new Vue({
+    el: '#app',
+    methods: {
+      showContactForm() {
+          this.$emit('show-contact-form');
+      }
+    },
+    mounted() {
+        window.scroll();
+    }
 });
 
 window.events = new Vue();

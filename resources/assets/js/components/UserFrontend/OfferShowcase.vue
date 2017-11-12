@@ -1,7 +1,7 @@
 <template>
     <div>
-        <market-info :data="placeData"></market-info>
-        <products-price-list :data="products" :date="date" :types="productsTypes"></products-price-list>
+        <market-info :data="marketData"></market-info>
+        <products-price-list :data="products" :date="date" :types="productsTypes" :market="marketData"></products-price-list>
     </div>
 </template>
 
@@ -10,26 +10,29 @@
     import ProductsPriceList from './ProductsPriceList.vue';
 
     export default {
+        props: ['marketData'],
         components: { MarketInfo,  ProductsPriceList },
         data() {
             return {
                 date:'',
                 products: [],
-                productsTypes: [],
-                placeData: {},
-                path: location.pathname,
+                productsTypes: []
+//                placeData: {},
             }
         },
         created() {
-            this.$root.$on('reload-products-data', this.setProductsData);
-            this.getMarketData();
+            this.$root.$on('reload-products-data', this.getOffers);
+            this.getOffers(null);
         },
         methods: {
-            getMarketData() {
-                axios.get('/api' + this.path + '/products')
-                .then(response => {
-                    this.setProductsData(response.data.data.products_list);
-                    this.placeData = response.data.data.place_data;
+            getOffers(date) {
+                console.log(date);
+                axios.get('/markets/'+this.marketData.slug+'/offers',{ params:
+                    {
+                        date: date
+                    }
+                }).then(response => {
+                    this.setProductsData(response.data.data);
                 }).catch(error => {
                     return noData('Błąd serwera, spróbój ponownie puźniej.');
                 })

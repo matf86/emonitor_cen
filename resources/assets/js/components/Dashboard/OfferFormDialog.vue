@@ -3,9 +3,11 @@
                ref="dialog">
         <offer-form :data="data" :emptyForm="form" ref="form"></offer-form>
         <span slot="footer" class="dialog-footer">
-            <el-button @click="hideForm(false)">Anuluj</el-button>
-            <el-button type="primary" @click="addOffer">Dodaj</el-button>
-    </span>
+            <el-col class="mb-1 btn-stacked">
+                <el-button class="btn-mobile" @click="hideForm(false)">Anuluj</el-button>
+                <el-button class="btn-mobile" type="primary" @click="addOffer">Dodaj</el-button>
+            </el-col>
+        </span>
     </el-dialog>
 </template>
 
@@ -24,7 +26,7 @@
                     price_min: 0,
                     product: '',
                     type: '',
-                    place_id: '',
+                    market_id: '',
                     date: ''
                 }
             }
@@ -54,10 +56,10 @@
                 }
             },
             axiosAdd() {
-                axios.post('/api/dashboard/offers', this.form)
+                axios.post('/dashboard/offers', this.form)
                     .then(response => {
                         this.$root.$emit('update-offer-list', response.data);
-                        this.$root.$emit('update-offer-manager-table');
+                        this.$root.$emit('increase-offers-count', {'market_id': this.form.market_id, 'date': this.form.date});
                         this.hideForm(false);
                         this.$notify.success({
                             title: 'Sukces',
@@ -69,13 +71,13 @@
                 });
             },
             axiosUpdate() {
-                axios.patch('/api/dashboard/offers/' + this.data._id, this.form)
+                axios.patch('/dashboard/offers/' + this.data._id, this.form)
                     .then(response => {
                         this.$root.$emit('update-offer-list', response.data);
                         this.hideForm(false);
                         this.$notify.success({
                             title: 'Sukces',
-                            message: 'Operacja aktualizacj ofert powiodla się.',
+                            message: 'Operacja aktualizacji ofert powiodła się.',
                             duration: 2500
                         });
                     }).catch(response => {

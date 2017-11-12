@@ -40,7 +40,7 @@
                 if(data.index === null) {
                     this.rowData = {
                         'date': this.offerData['date'],
-                        'place_id': this.offerData['place_id']
+                        'market_id': this.offerData['market_id']
                     }
                     this.dialogType = 'create';
                 }

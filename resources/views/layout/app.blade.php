@@ -7,29 +7,24 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>{{ config('app.name', 'PriceList') }}</title>
     <link href="{{ mix('css/app.css') }}" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Mogra&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB-EvHFWq7GkFpW0Z3_CQJx1xXpUTboSfs"></script>
     <script>
         window.Laravel = {!! json_encode([
             'csrfToken' => csrf_token(),
         ]) !!};
     </script>
-    <style>
-        [v-cloak] {
-            display: none;
-        }
-    </style>
 </head>
 <body>
 <div id="app">
-    <el-row>
-        @if(Route::current()->getName() !=='home')
-            @include('layout.nav')
-        @endif
+    @if(Route::current()->getName() !=='home')
+        @include('layout.nav')
+    @endif
 
-        @yield('content')
-    </el-row>
+    @yield('content')
 </div>
 <script src="{{ mix('js/app.js') }}"></script>
+@yield('additional-scripts')
 </body>
 </html>
 

@@ -1,13 +1,15 @@
 <template>
-    <el-dialog :title="'Szczegółowa oferta dla ' + offerData.place + ' z dnia: '+ offerData.date"
+    <el-dialog :title="'Szczegółowa oferta dla: ' + offerData.market + ' z dnia '+ offerData.date"
                :visible.sync="dialogFormVisible"
                @visible-change="hideDialog"
-               size="large">
+               size="full">
         <offer-details :offers-list="offersList"
                        :offer-data="offerData">
         </offer-details>
         <span slot="footer" class="dialog-footer">
-        <el-button type="primary" size="small" @click="hideDialog(false)">Zamknij</el-button>
+            <el-col class="mb-1 btn-stacked">
+                <el-button class="btn-mobile" type="primary" size="small" @click="hideDialog(false)">Zamknij</el-button>
+            </el-col>
         </span>
     </el-dialog>
 </template>

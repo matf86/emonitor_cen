@@ -1,7 +1,7 @@
 <template>
     <div>
         <el-table
-                :default-sort = "{prop: 'product', order: 'descending'}"
+                :default-sort = "{prop: 'product', order: 'ascending'}"
                 @sort-change="sortAndPaginate"
                 :data="entriesList"
                 border
@@ -13,7 +13,7 @@
                     sortable="custom"
                     prop="product"
                     label="Produkt"
-                    min-width="120">
+                    min-width="230">
             </el-table-column>
             <el-table-column
                     sortable
@@ -40,7 +40,9 @@
             </el-table-column>
         </el-table>
         <product-price-graph-dialog :data="productPriceList"
-                                    :visible="dialogFormVisible">
+                                    :visible="dialogFormVisible"
+                                    :product="selectedProduct"
+                                    :market="market">
         </product-price-graph-dialog>
     </div>
 
@@ -51,13 +53,14 @@
 
     export default {
         components: { ProductPriceGraphDialog },
-        props: ['data'],
+        props: ['data', 'market'],
         data() {
             return {
+                selectedProduct: '',
                 entriesList: this.data,
                 productPriceList: [],
                 dialogFormVisible: false,
-                path: location.pathname,
+                slug: location.pathname,
             }
         },
         watch: {
@@ -77,35 +80,55 @@
                 this.$root.$emit('paginate', data);
             },
             showDialog(data) {
-                this.getProductData(data.product);
+                this.getProductData(data);
             },
             hideDialog() {
                 this.dialogFormVisible = false;
                 this.productPriceList = [];
             },
-            getProductData(productName) {
-                axios.get('/api' + this.path + '/products/' + productName)
-                    .then(response => {
-                        this.productPriceList = response.data.data.products_list;
+            // Invoked by showDialog event handler.
+            // @productName string - passed by @row-click event.
+            getProductData(data) {
+                let params = { params: {
+                    product: data.product,
+                    package: data.package,
+                    origin: data.origin
+                }};
+
+
+                axios.get(this.slug +'/offers', params).then(response => {
+                        this.productPriceList = response.data.data;
+                        this.selectedProduct = data;
                         this.dialogFormVisible = true;
                     }).catch(error => {
-                    console.log(error.response.data);
+                    this.productList = [];
+                    this.$notify.error({
+                        title: 'Error',
+                        message: 'Wystąpił błąd podczas pobierania danych. Spróbój ponownie.',
+                        duration: 4000
+                    });
                 })
             },
+            // Updates product price graph after picking new date range.
+            // @data Object - passed by @update-graph-data event.
             updateProductList(data) {
-                axios.get('/api' + this.path + '/products/' + data.productName, { params:
+                let dateRange = [];
+                dateRange[0] = data.dateRange.from;
+                dateRange[1] = data.dateRange.to;
+
+                axios.get(this.slug +'/offers', { params:
                     {
-                        minDate: data.dateRange.minDate,
-                        maxDate: data.dateRange.maxDate
+                        product: data.productName,
+                        dateRange: dateRange
                     }
                 }).then(response => {
-                    this.productPriceList = response.data.data.products_list;
+                    this.productPriceList = response.data.data;
                 }).catch(error => {
                     this.productList = [];
                     this.$notify.error({
                         title: 'Error',
-                        message: error.response.data,
-                        duration: 0
+                        message: 'Wystąpił błąd podczas pobierania danych. Spróbój ponownie.',
+                        duration: 4000
                     });
                 })
             },

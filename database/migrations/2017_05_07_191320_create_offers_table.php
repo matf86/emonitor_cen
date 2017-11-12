@@ -24,12 +24,12 @@ class CreateOffersTable extends Migration
         table('offers', function (Blueprint $collection) {
             $collection->index('product');
             $collection->string('type');
-            $collection->string('origin');
-            $collection->string('package');
-            $collection->string('place_id');
+            $collection->index('origin');
+            $collection->index('package');
+            $collection->string('market_id');
             $collection->integer('price_min');
             $collection->integer('price_max');
-            $collection->date('date');
+            $collection->index('date');
         });
     }
 

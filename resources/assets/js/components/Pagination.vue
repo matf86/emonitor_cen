@@ -1,5 +1,5 @@
 <template>
-    <el-row v-show="pageSize < total">
+    <el-row v-show="pageSize < total" class="mb-2">
         <el-pagination
                 @current-change="handleCurrentChange"
                 :current-page.sync="currentPage"

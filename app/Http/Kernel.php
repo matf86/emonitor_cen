@@ -56,7 +56,5 @@ class Kernel extends HttpKernel
         'can' => \Illuminate\Auth\Middleware\Authorize::class,
         'guest' => \App\Http\Middleware\RedirectIfAuthenticated::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
-        'date' => \App\Http\Middleware\ValidateDateQueryString::class,
-        'dateRange' => \App\Http\Middleware\ValidateDateRangeQueryString::class
     ];
 }

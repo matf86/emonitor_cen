@@ -1,8 +1,11 @@
 <template>
-    <el-dialog :title="'Produkt: '+ selectedProduct" :visible.sync="dialogFormVisible" size="large" @close="hideDialog(false)">
-        <product-price-graph :product="productList" :selected="selectedProduct"></product-price-graph>
+    <el-dialog :visible.sync="dialogFormVisible" size="full" @close="hideDialog(false)">
+        <h4 class="center">{{market.name}} | {{product.product}} | {{ product.package }}</h4>
+        <product-price-graph :products="productsList" :selected="selectedProduct" :market="market"></product-price-graph>
         <span slot="footer" class="dialog-footer">
-            <el-button type="primary" @click="hideDialog(false)">Zamknij</el-button>
+            <el-col class="mb-1 btn-stacked">
+                <el-button class="btn-mobile" type="primary" @click="hideDialog(false)">Zamknij</el-button>
+            </el-col>
         </span>
     </el-dialog>
 </template>
@@ -12,28 +15,23 @@
 
     export default {
         components: { ProductPriceGraph },
-        props: ['data', 'visible'],
+        props: ['data', 'visible', 'product', 'market'],
         data() {
             return {
-                productList: [],
-                dialogFormVisible: false
-
+                productsList: [],
+                dialogFormVisible: false,
+                selectedProduct: ''
             }
         },
         watch: {
             data() {
-                this.productList = this.data;
+                this.productsList = this.data;
             },
             visible() {
                 this.dialogFormVisible = this.visible;
-            }
-        },
-        computed: {
-            selectedProduct() {
-                if(this.productList.length > 0) {
-                    return this.productList[0].product;
-                }
-                return '';
+            },
+            product() {
+                this.selectedProduct = this.product;
             }
         },
         methods: {
