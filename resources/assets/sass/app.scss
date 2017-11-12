@@ -249,40 +249,47 @@ a:active {
 }
 
 .logo-text-size {
-  width: 100vw;
+  width: 99vw;
   font-family: $header-font;
   font-size: 5em;
 
   @include desktop {
+    width: 99vw;
     font-size: 4em;
   }
 
   @include small-desktop {
+    width: 98vw;
     font-size: 3em;
   }
 
   @include tablet {
+    width: 98vw;
     font-size: 2.7em;
   }
 
   @include mobile {
+    width: 96vw;
     font-size: 2.2em;
   }
 }
 
 .logo-text p {
-  width: 100vw;
+  width: 99vw;
   font-size: 2em;
 
   @include desktop {
+    width: 99vw;
     font-size: 1.75em;
   }
 
   @include small-desktop {
+    width: 98vw;
     font-size: 1.3em;
   }
 
   @include tablet {
+    width: 98vw;
     font-size: 1.3em;
   }
 
