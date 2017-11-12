@@ -15,7 +15,7 @@ class ProdMarketsTableSeeder extends Seeder
         DB::table('markets')->insert([
             "_id" => new \MongoDB\BSON\ObjectID('10d3ec860774d5e62c000001'),
             "slug" => "wgro",
-            "name" => "Wielkopolska Giełda Rolno-Ogrodnicza",
+            "name" => "Wielkopolska Gildia Rolno-Ogrodnicza S.A",
             "city" => "Poznań",
             "street" => "Franowo 1",
             "zip_code" => "61-302",
