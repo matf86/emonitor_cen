@@ -29,7 +29,7 @@ class Kernel extends ConsoleKernel
 
         $schedule->call(function () use ($scraper)  {
             $scraper->handle();
-        })->weekdays()->everyThirtyMinutes()->timezone('UTC')->between('06:00', '12:00');
+        })->weekdays()->everyThirtyMinutes()->timezone('UTC')->between('06:00', '23:00');
     }
 
     /**
