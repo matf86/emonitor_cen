@@ -12,7 +12,7 @@ class MarketLogsController extends Controller
     {
         $logs = $market->logs()
             ->filter($filters)
-            ->orderBy('created_at')
+            ->orderBy('created_at', 'DESC')
             ->get();
 
         return response()->json(['status' => (count($logs) === 0) ? 'no data': 'success', 'data' => $logs], 200);

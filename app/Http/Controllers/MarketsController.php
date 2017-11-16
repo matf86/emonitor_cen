@@ -15,6 +15,7 @@ class MarketsController extends Controller
     {
         $markets = Market::all();
 
+
         if(request()->ajax()) {
             return response()->json($markets,200);
         }
