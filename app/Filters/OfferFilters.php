@@ -5,7 +5,7 @@ use Carbon\Carbon;
 
 class OfferFilters extends Filters
 {
-    protected $filters = ['date', 'product', 'dateRange', 'origin', 'package'];
+    protected $filters = ['date', 'dateRange', 'product', 'origin', 'package'];
 
     protected function product($value) {
         return $this->builder->where('product', $value);

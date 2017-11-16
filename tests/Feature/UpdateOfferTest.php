@@ -49,8 +49,8 @@ class UpdateOfferTest extends TestCase
 
         $response = $this->actingAs($user)->json('patch', "/dashboard/offers/".$product->_id, [
             'product' => 'Pomelo',
-            'type' => 'Owoce',
-            'origin' => 'Import',
+            'type' => 'owoce',
+            'origin' => 'import',
             'package' => '10kg',
             'price_min' => '10',
             'price_max' => '25',

@@ -27,7 +27,7 @@ return [
             'connect_options'       => [],
             'ssl_options'           => [],
 
-            'exchange'              => 'amq.direct',
+            'exchange'              => 'emonitor_cen',
             'exchange_type'         => 'direct',
             'exchange_passive'      => false,
             'exchange_durable'      => true,

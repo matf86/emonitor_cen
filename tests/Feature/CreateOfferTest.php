@@ -52,8 +52,8 @@ class CreateOfferTest extends TestCase
 
         $response = $this->actingAs($user)->json('post', "/dashboard/offers", [
             'product' => 'Pomelo',
-            'type' => 'Owoce',
-            'origin' => 'Import',
+            'type' => 'owoce',
+            'origin' => 'import',
             'package' => '10kg',
             'market_id' => $market_id[0],
             'price_min' => '10',

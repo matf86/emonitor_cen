@@ -28,6 +28,7 @@ class MarketOffersController extends Controller
             $offers = $market->offers()
                 ->filter($filters)
                 ->orderBy('product')
+                ->orderBy('date')
                 ->get();
 
             return response()->json(['status' => (count($offers) === 0) ? 'no data': 'success', 'data' => $offers], 200);
@@ -35,6 +36,7 @@ class MarketOffersController extends Controller
             $offers = $market->offers()
                 ->where('date',  $market->getLatestOfferDate())
                 ->orderBy('product')
+                ->orderBy('date')
                 ->get();
 
         return response()->json(['status' => (count($offers) === 0) ? 'no data': 'success', 'data' => $offers], 200);

@@ -42,7 +42,7 @@ class ScrapeMarkets
         ];
 
         if (count($marketsToScrape) > 0) {
-            Amqp::publish('', new \Bschmitt\Amqp\Message(json_encode($msg), ['content_type' => 'application/json', 'delivery_mode' => 1]));
+            Amqp::publish('', new \Bschmitt\Amqp\Message(json_encode($msg), ['exchange'=>'emonitor_cen','content_type' => 'application/json', 'delivery_mode' => 1]));
         }
     }
 }
