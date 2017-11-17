@@ -41,9 +41,8 @@
                     this.dialogFormVisible = true;
                 }).catch(()=> {
                     this.$notify.error({
-                        title: 'Error',
                         message: 'Błąd podczas pobierania danych.',
-                        duration: 4500
+                        duration: 0
                     });
                 });
             },
@@ -68,9 +67,8 @@
                     this.logs = data.data;
                 }).catch(()=> {
                     this.$notify.error({
-                        title: 'Error',
                         message: 'Błąd podczas pobierania danych.',
-                        duration: 4500
+                        duration: 0
                     });
                })
             },

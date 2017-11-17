@@ -67,7 +67,6 @@
                     this.loading = false;
                 }).catch(() => {
                     this.$notify.error({
-                        title: 'Error',
                         message: 'Brak danych dla wskazanych parametrów wyszukiwania',
                         duration: 4000
                     });
@@ -80,10 +79,10 @@
                     this.setPlacesList(response.data);
                 }).catch(error => {
                     this.$notify.error({
-                        title: 'Error',
-                        message: error.response.data,
+                        message: 'Brak danych...',
                         duration: 0
                     });
+                    console.log(error);
                 })
             },
             deleteTableData(data) {

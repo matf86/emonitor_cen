@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Zilla+Slab+Highlight|Open+Sans');
+@import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css);
 @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
 @import 'node_modules/element-ui/lib/theme-default/index';
-@import 'node_modules/c3/c3';
 
 $main-font: 'Open Sans', sans-serif;
 $header-font:'Zilla Slab Highlight', sans-serif;
@@ -254,7 +254,7 @@ a:active {
   font-size: 5em;
 
   @include desktop {
-    width: 99vw;
+    width: 98vw;
     font-size: 4em;
   }
 
@@ -279,7 +279,7 @@ a:active {
   font-size: 2em;
 
   @include desktop {
-    width: 99vw;
+    width: 98vw;
     font-size: 1.75em;
   }
 
@@ -596,6 +596,15 @@ footer {
 
 .el-checkbox {
   margin-right: 10px;
+}
+
+.login-footer {
+  position: relative;
+}
+
+.btn-login {
+  position:absolute;
+  right: 0;
 }
 
 

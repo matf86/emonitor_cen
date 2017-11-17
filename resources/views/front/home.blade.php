@@ -59,7 +59,7 @@
     <contact-form ref="contactForm"></contact-form>
     <footer>
         <div class="footer-date">
-            <p>{{ date('Y') }} - kontak@emonitorcen.pl</p>
+            <p>&copy{{ date('Y') }} E-MONITOR CEN</p>
         </div>
     </footer>
 @endsection

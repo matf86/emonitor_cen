@@ -91,7 +91,6 @@
                         grecaptcha.execute();
                     } else {
                         this.$notify.error({
-                            title: 'Error',
                             message: 'Formularz nie może być przesłany, popraw wskazane błędy.',
                             duration: 4000
                         });
@@ -115,13 +114,16 @@
                    'g-recaptcha-response': token
                }).then(response => {
                    this.$notify.success({
-                       title: 'Sukces...',
-                       message: response.data,
+                       message: 'Dziękuje za wiadomość...',
                        duration: 4000
                    });
                    this.btnLoading = false;
                    this.closeForm();
                }).catch(error => {
+                   this.$notify.error({
+                       message: 'Wystąpił błąd...',
+                       duration: 4000
+                   });
                    console.log(error);
                })
             }

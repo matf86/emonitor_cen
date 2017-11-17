@@ -104,9 +104,10 @@
                     this.productList = [];
                     this.$notify.error({
                         title: 'Error',
-                        message: 'Wystąpił błąd podczas pobierania danych. Spróbój ponownie.',
-                        duration: 4000
+                        message: 'Wystąpił błąd podczas pobierania danych...',
+                        duration: 0
                     });
+                    console.log(error);
                 })
             },
             // Updates product price graph after picking new date range.
@@ -126,10 +127,10 @@
                 }).catch(error => {
                     this.productList = [];
                     this.$notify.error({
-                        title: 'Error',
-                        message: 'Wystąpił błąd podczas pobierania danych. Spróbój ponownie.',
-                        duration: 4000
+                        message: 'Wystąpił błąd podczas pobierania danych...',
+                        duration: 0
                     });
+                    console.log(error);
                 })
             },
         }

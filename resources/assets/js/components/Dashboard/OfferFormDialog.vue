@@ -62,9 +62,8 @@
                         this.$root.$emit('increase-offers-count', {'market_id': this.form.market_id, 'date': this.form.date});
                         this.hideForm(false);
                         this.$notify.success({
-                            title: 'Sukces',
                             message: 'Operacja dodania oferty powiodła się.',
-                            duration: 2500
+                            duration: 4000
                         });
                     }).catch(response => {
                     console.log('error:' + response);
@@ -76,9 +75,8 @@
                         this.$root.$emit('update-offer-list', response.data);
                         this.hideForm(false);
                         this.$notify.success({
-                            title: 'Sukces',
                             message: 'Operacja aktualizacji ofert powiodła się.',
-                            duration: 2500
+                            duration: 4000
                         });
                     }).catch(response => {
                     console.log('error:' + response);
@@ -94,7 +92,6 @@
                        }
                     } else {
                         this.$notify.error({
-                            title: 'Error',
                             message: 'Formularz nie może być przesłany, popraw wskazane błędy.',
                             duration: 0
                         });

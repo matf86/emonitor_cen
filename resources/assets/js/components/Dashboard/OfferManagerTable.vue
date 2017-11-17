@@ -82,16 +82,15 @@
                 }).then(() => {
                     this.$root.$emit('delete-table-entry', {'date':date, 'slug': slug});
                     this.$notify.success({
-                        title: 'Sukces!',
                         message: `Wszystkie oferty z dnia ${date} dla ${data.market_name} zostały usunięte.`,
-                        duration: 3500
+                        duration: 4000
                     });
                 }).catch(error => {
                     this.$notify.error({
-                        title: 'Error',
-                        message: error.response,
+                        message: 'Operacja usunięcia nie powiodla się...',
                         duration: 0
                     });
+                    console.log(error);
                 })
             },
             deleteConfirm(index, row) {

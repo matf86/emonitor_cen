@@ -159,17 +159,16 @@
                     this.$root.$emit('decrease-offers-count', {'ids': ids, 'market_id': market_id, 'date': date});
                     this.$root.$emit('update-offer-list', {'ids': ids, 'type': 'delete'});
                     this.$notify.success({
-                        title: 'Success',
-                        message: 'Wskazane oferty zostały usunięte',
-                        duration: 2500
+                        message: 'Oferty zostały usunięte...',
+                        duration: 4000
                     });
                     this.loading = false;
                 }).catch(error => {
                     this.$notify.error({
-                        title: 'Error',
-                        message: error.response,
+                        message: 'Wystapił błąd...',
                         duration: 0
                     });
+                    console.log(error);
                 })
             }
         }

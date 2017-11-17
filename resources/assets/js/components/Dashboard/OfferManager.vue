@@ -48,10 +48,10 @@
                     this.dialogFormVisible = true;
                 }).catch(error => {
                     this.$notify.error({
-                        title: 'Error',
-                        message: error.response.data,
+                        message: 'Wystąpił błąd podczas pobierania danych...',
                         duration: 0
                     });
+                    console.log(error);
                 })
             },
             updateOfferList(response) {
