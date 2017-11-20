@@ -33,11 +33,11 @@ export function chartInit(title, labels, values) {
             },
         },
         backgroundColor : "#ffffff",
-        title : {
-            text : title,
-            backgroundColor : "#ffffff",
-            fontColor : "#000"
-        },
+        // title : {
+        //     text : title,
+        //     backgroundColor : "#ffffff",
+        //     fontColor : "#000"
+        // },
         plot : {
             aspect : "spline",
             marker : {

@@ -54,11 +54,13 @@
             },
             updateGraphData() {
                 this.$root.$emit('update-graph-data', {
-                    'dateRange': {
+                    dateRange: {
                                   'from': this.dateRange[0],
                                   'to': this.dateRange[1]
                                  },
-                    'productName': this.selected.product
+                    productName: this.selected.product,
+                    package: this.selected.package,
+                    origin: this.selected.origin
                 });
             }
         }

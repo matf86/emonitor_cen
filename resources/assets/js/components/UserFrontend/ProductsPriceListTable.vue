@@ -101,7 +101,7 @@
                         this.selectedProduct = data;
                         this.dialogFormVisible = true;
                     }).catch(error => {
-                    this.productList = [];
+                    this.productPriceList = [];
                     this.$notify.error({
                         title: 'Error',
                         message: 'Wystąpił błąd podczas pobierania danych...',
@@ -120,12 +120,14 @@
                 axios.get(this.slug +'/offers', { params:
                     {
                         product: data.productName,
+                        package: data.package,
+                        origin: data.origin,
                         dateRange: dateRange
                     }
                 }).then(response => {
                     this.productPriceList = response.data.data;
                 }).catch(error => {
-                    this.productList = [];
+                    this.productPriceList = [];
                     this.$notify.error({
                         message: 'Wystąpił błąd podczas pobierania danych...',
                         duration: 0
