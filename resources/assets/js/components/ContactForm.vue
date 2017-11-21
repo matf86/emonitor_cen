@@ -2,6 +2,7 @@
      <el-dialog
              :visible.sync="dialogVisible"
              :close-on-click-modal="false"
+             :modal-append-to-body="true"
              size="full"
              @close="resetForm">
                 <div>
