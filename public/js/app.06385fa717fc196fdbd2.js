@@ -3260,11 +3260,15 @@ function mergeFn (a, b) {
 
 /***/ }),
 
-/***/ "./node_modules/babel-loader/lib/index.js?{\"cacheDirectory\":true,\"presets\":[[\"env\",{\"modules\":false,\"targets\":{\"browsers\":[\"> 2%\"],\"uglify\":true}}]]}!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./resources/assets/js/components/ContactForm.vue":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ "./node_modules/babel-loader/lib/index.js?cacheDirectory!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./resources/assets/js/components/ContactForm.vue":
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
 //
 //
 //
@@ -3310,7 +3314,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 
 
-/* harmony default export */ __webpack_exports__["default"] = ({
+exports.default = {
     data: function data() {
         return {
             btnLoading: false,
@@ -3393,15 +3397,19 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             });
         }
     }
-});
+};
 
 /***/ }),
 
-/***/ "./node_modules/babel-loader/lib/index.js?{\"cacheDirectory\":true,\"presets\":[[\"env\",{\"modules\":false,\"targets\":{\"browsers\":[\"> 2%\"],\"uglify\":true}}]]}!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./resources/assets/js/components/Dashboard/CheckboxPlaces.vue":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ "./node_modules/babel-loader/lib/index.js?cacheDirectory!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./resources/assets/js/components/Dashboard/CheckboxPlaces.vue":
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
 //
 //
 //
@@ -3410,7 +3418,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 
 
-/* harmony default export */ __webpack_exports__["default"] = ({
+exports.default = {
     props: ['data'],
     data: function data() {
         return {
@@ -3432,15 +3440,19 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             this.checkedPlacesList();
         }
     }
-});
+};
 
 /***/ }),
 
-/***/ "./node_modules/babel-loader/lib/index.js?{\"cacheDirectory\":true,\"presets\":[[\"env\",{\"modules\":false,\"targets\":{\"browsers\":[\"> 2%\"],\"uglify\":true}}]]}!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./resources/assets/js/components/Dashboard/MarketsManager/CheckboxCategories.vue":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ "./node_modules/babel-loader/lib/index.js?cacheDirectory!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./resources/assets/js/components/Dashboard/MarketsManager/CheckboxCategories.vue":
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
 //
 //
 //
@@ -3449,7 +3461,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 
 
-/* harmony default export */ __webpack_exports__["default"] = ({
+exports.default = {
     props: ['data'],
     data: function data() {
         return {
@@ -3471,15 +3483,19 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             this.checkedCategories = this.data;
         }
     }
-});
+};
 
 /***/ }),
 
-/***/ "./node_modules/babel-loader/lib/index.js?{\"cacheDirectory\":true,\"presets\":[[\"env\",{\"modules\":false,\"targets\":{\"browsers\":[\"> 2%\"],\"uglify\":true}}]]}!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./resources/assets/js/components/Dashboard/MarketsManager/MarketCard.vue":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ "./node_modules/babel-loader/lib/index.js?cacheDirectory!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./resources/assets/js/components/Dashboard/MarketsManager/MarketCard.vue":
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
 //
 //
 //
@@ -3498,49 +3514,43 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 
 
-/* harmony default export */ __webpack_exports__["default"] = ({
+exports.default = {
   props: ['data'],
   methods: {
     showDialog: function showDialog() {
       this.$emit('show-dialog', this.data);
     }
   }
-});
+};
 
 /***/ }),
 
-/***/ "./node_modules/babel-loader/lib/index.js?{\"cacheDirectory\":true,\"presets\":[[\"env\",{\"modules\":false,\"targets\":{\"browsers\":[\"> 2%\"],\"uglify\":true}}]]}!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./resources/assets/js/components/Dashboard/MarketsManager/MarketLogsDialog.vue":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ "./node_modules/babel-loader/lib/index.js?cacheDirectory!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./resources/assets/js/components/Dashboard/MarketsManager/MarketLogsDialog.vue":
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__MarketLogsList_vue__ = __webpack_require__("./resources/assets/js/components/Dashboard/MarketsManager/MarketLogsList.vue");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__MarketLogsList_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__MarketLogsList_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__DateRangePicker_vue__ = __webpack_require__("./resources/assets/js/components/DateRangePicker.vue");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__DateRangePicker_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__DateRangePicker_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__CheckboxCategories_vue__ = __webpack_require__("./resources/assets/js/components/Dashboard/MarketsManager/CheckboxCategories.vue");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__CheckboxCategories_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__CheckboxCategories_vue__);
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
 
+var _MarketLogsList = __webpack_require__("./resources/assets/js/components/Dashboard/MarketsManager/MarketLogsList.vue");
 
+var _MarketLogsList2 = _interopRequireDefault(_MarketLogsList);
 
-/* harmony default export */ __webpack_exports__["default"] = ({
-    components: { MarketLogsList: __WEBPACK_IMPORTED_MODULE_0__MarketLogsList_vue___default.a, DateRangePicker: __WEBPACK_IMPORTED_MODULE_1__DateRangePicker_vue___default.a, CheckboxCategories: __WEBPACK_IMPORTED_MODULE_2__CheckboxCategories_vue___default.a },
+var _DateRangePicker = __webpack_require__("./resources/assets/js/components/DateRangePicker.vue");
+
+var _DateRangePicker2 = _interopRequireDefault(_DateRangePicker);
+
+var _CheckboxCategories = __webpack_require__("./resources/assets/js/components/Dashboard/MarketsManager/CheckboxCategories.vue");
+
+var _CheckboxCategories2 = _interopRequireDefault(_CheckboxCategories);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.default = {
+    components: { MarketLogsList: _MarketLogsList2.default, DateRangePicker: _DateRangePicker2.default, CheckboxCategories: _CheckboxCategories2.default },
     props: ['show', 'data', 'market', 'categories'],
     data: function data() {
         return {
@@ -3576,15 +3586,32 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         }
     }
 
-});
+}; //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /***/ }),
 
-/***/ "./node_modules/babel-loader/lib/index.js?{\"cacheDirectory\":true,\"presets\":[[\"env\",{\"modules\":false,\"targets\":{\"browsers\":[\"> 2%\"],\"uglify\":true}}]]}!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./resources/assets/js/components/Dashboard/MarketsManager/MarketLogsList.vue":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ "./node_modules/babel-loader/lib/index.js?cacheDirectory!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./resources/assets/js/components/Dashboard/MarketsManager/MarketLogsList.vue":
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
 //
 //
 //
@@ -3598,24 +3625,35 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 
 
-/* harmony default export */ __webpack_exports__["default"] = ({
+exports.default = {
     props: ['data'],
     data: function data() {
         return {};
     }
-});
+};
 
 /***/ }),
 
-/***/ "./node_modules/babel-loader/lib/index.js?{\"cacheDirectory\":true,\"presets\":[[\"env\",{\"modules\":false,\"targets\":{\"browsers\":[\"> 2%\"],\"uglify\":true}}]]}!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./resources/assets/js/components/Dashboard/MarketsManager/MarketsManager.vue":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ "./node_modules/babel-loader/lib/index.js?cacheDirectory!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./resources/assets/js/components/Dashboard/MarketsManager/MarketsManager.vue":
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__MarketCard_vue__ = __webpack_require__("./resources/assets/js/components/Dashboard/MarketsManager/MarketCard.vue");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__MarketCard_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__MarketCard_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__MarketLogsDialog_vue__ = __webpack_require__("./resources/assets/js/components/Dashboard/MarketsManager/MarketLogsDialog.vue");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__MarketLogsDialog_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__MarketLogsDialog_vue__);
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _MarketCard = __webpack_require__("./resources/assets/js/components/Dashboard/MarketsManager/MarketCard.vue");
+
+var _MarketCard2 = _interopRequireDefault(_MarketCard);
+
+var _MarketLogsDialog = __webpack_require__("./resources/assets/js/components/Dashboard/MarketsManager/MarketLogsDialog.vue");
+
+var _MarketLogsDialog2 = _interopRequireDefault(_MarketLogsDialog);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
 //
 //
 //
@@ -3626,11 +3664,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 
-
-
-
-/* harmony default export */ __webpack_exports__["default"] = ({
-    components: { MarketCard: __WEBPACK_IMPORTED_MODULE_0__MarketCard_vue___default.a, MarketLogsDialog: __WEBPACK_IMPORTED_MODULE_1__MarketLogsDialog_vue___default.a },
+exports.default = {
+    components: { MarketCard: _MarketCard2.default, MarketLogsDialog: _MarketLogsDialog2.default },
     data: function data() {
         return {
             markets: [],
@@ -3712,19 +3747,30 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             });
         }
     }
-});
+};
 
 /***/ }),
 
-/***/ "./node_modules/babel-loader/lib/index.js?{\"cacheDirectory\":true,\"presets\":[[\"env\",{\"modules\":false,\"targets\":{\"browsers\":[\"> 2%\"],\"uglify\":true}}]]}!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./resources/assets/js/components/Dashboard/OfferDetails.vue":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ "./node_modules/babel-loader/lib/index.js?cacheDirectory!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./resources/assets/js/components/Dashboard/OfferDetails.vue":
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__OfferDetailsTable_vue__ = __webpack_require__("./resources/assets/js/components/Dashboard/OfferDetailsTable.vue");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__OfferDetailsTable_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__OfferDetailsTable_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__OfferFormDialog_vue__ = __webpack_require__("./resources/assets/js/components/Dashboard/OfferFormDialog.vue");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__OfferFormDialog_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__OfferFormDialog_vue__);
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _OfferDetailsTable = __webpack_require__("./resources/assets/js/components/Dashboard/OfferDetailsTable.vue");
+
+var _OfferDetailsTable2 = _interopRequireDefault(_OfferDetailsTable);
+
+var _OfferFormDialog = __webpack_require__("./resources/assets/js/components/Dashboard/OfferFormDialog.vue");
+
+var _OfferFormDialog2 = _interopRequireDefault(_OfferFormDialog);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
 //
 //
 //
@@ -3739,11 +3785,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 
-
-
-
-/* harmony default export */ __webpack_exports__["default"] = ({
-    components: { OfferFormDialog: __WEBPACK_IMPORTED_MODULE_1__OfferFormDialog_vue___default.a, OfferDetailsTable: __WEBPACK_IMPORTED_MODULE_0__OfferDetailsTable_vue___default.a },
+exports.default = {
+    components: { OfferFormDialog: _OfferFormDialog2.default, OfferDetailsTable: _OfferDetailsTable2.default },
     props: ['offersList', 'offerData'],
     data: function data() {
         return {
@@ -3781,19 +3824,28 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             this.offerFormDialogVisible = true;
         }
     }
-});
+};
 
 /***/ }),
 
-/***/ "./node_modules/babel-loader/lib/index.js?{\"cacheDirectory\":true,\"presets\":[[\"env\",{\"modules\":false,\"targets\":{\"browsers\":[\"> 2%\"],\"uglify\":true}}]]}!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./resources/assets/js/components/Dashboard/OfferDetailsTable.vue":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ "./node_modules/babel-loader/lib/index.js?cacheDirectory!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./resources/assets/js/components/Dashboard/OfferDetailsTable.vue":
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_element_ui__ = __webpack_require__("./node_modules/element-ui/lib/element-ui.common.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_element_ui___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_element_ui__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__SearchProduct_vue__ = __webpack_require__("./resources/assets/js/components/SearchProduct.vue");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__SearchProduct_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__SearchProduct_vue__);
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _elementUi = __webpack_require__("./node_modules/element-ui/lib/element-ui.common.js");
+
+var _SearchProduct = __webpack_require__("./resources/assets/js/components/SearchProduct.vue");
+
+var _SearchProduct2 = _interopRequireDefault(_SearchProduct);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
 //
 //
 //
@@ -3872,11 +3924,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 
-
-
-
-/* harmony default export */ __webpack_exports__["default"] = ({
-    components: { Loading: __WEBPACK_IMPORTED_MODULE_0_element_ui__["Loading"], SearchProduct: __WEBPACK_IMPORTED_MODULE_1__SearchProduct_vue___default.a },
+exports.default = {
+    components: { Loading: _elementUi.Loading, SearchProduct: _SearchProduct2.default },
     props: ['data'],
     data: function data() {
         return {
@@ -3973,15 +4022,19 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             });
         }
     }
-});
+};
 
 /***/ }),
 
-/***/ "./node_modules/babel-loader/lib/index.js?{\"cacheDirectory\":true,\"presets\":[[\"env\",{\"modules\":false,\"targets\":{\"browsers\":[\"> 2%\"],\"uglify\":true}}]]}!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./resources/assets/js/components/Dashboard/OfferForm.vue":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ "./node_modules/babel-loader/lib/index.js?cacheDirectory!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./resources/assets/js/components/Dashboard/OfferForm.vue":
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
 //
 //
 //
@@ -4032,7 +4085,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 
-/* harmony default export */ __webpack_exports__["default"] = ({
+exports.default = {
     props: ['data', 'emptyForm', 'valid'],
     data: function data() {
         return {
@@ -4088,35 +4141,28 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             });
         }
     }
-});
+};
 
 /***/ }),
 
-/***/ "./node_modules/babel-loader/lib/index.js?{\"cacheDirectory\":true,\"presets\":[[\"env\",{\"modules\":false,\"targets\":{\"browsers\":[\"> 2%\"],\"uglify\":true}}]]}!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./resources/assets/js/components/Dashboard/OfferFormDialog.vue":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ "./node_modules/babel-loader/lib/index.js?cacheDirectory!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./resources/assets/js/components/Dashboard/OfferFormDialog.vue":
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__OfferForm_vue__ = __webpack_require__("./resources/assets/js/components/Dashboard/OfferForm.vue");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__OfferForm_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__OfferForm_vue__);
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
 
-/* harmony default export */ __webpack_exports__["default"] = ({
-    components: { OfferForm: __WEBPACK_IMPORTED_MODULE_0__OfferForm_vue___default.a },
+var _OfferForm = __webpack_require__("./resources/assets/js/components/Dashboard/OfferForm.vue");
+
+var _OfferForm2 = _interopRequireDefault(_OfferForm);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.default = {
+    components: { OfferForm: _OfferForm2.default },
     props: ['visible', 'data', 'type'],
     data: function data() {
         return {
@@ -4206,19 +4252,42 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             });
         }
     }
-});
+}; //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /***/ }),
 
-/***/ "./node_modules/babel-loader/lib/index.js?{\"cacheDirectory\":true,\"presets\":[[\"env\",{\"modules\":false,\"targets\":{\"browsers\":[\"> 2%\"],\"uglify\":true}}]]}!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./resources/assets/js/components/Dashboard/OfferManager.vue":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ "./node_modules/babel-loader/lib/index.js?cacheDirectory!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./resources/assets/js/components/Dashboard/OfferManager.vue":
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__OfferManagerList_vue__ = __webpack_require__("./resources/assets/js/components/Dashboard/OfferManagerList.vue");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__OfferManagerList_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__OfferManagerList_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__OfferManagerDialog_vue__ = __webpack_require__("./resources/assets/js/components/Dashboard/OfferManagerDialog.vue");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__OfferManagerDialog_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__OfferManagerDialog_vue__);
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _OfferManagerList = __webpack_require__("./resources/assets/js/components/Dashboard/OfferManagerList.vue");
+
+var _OfferManagerList2 = _interopRequireDefault(_OfferManagerList);
+
+var _OfferManagerDialog = __webpack_require__("./resources/assets/js/components/Dashboard/OfferManagerDialog.vue");
+
+var _OfferManagerDialog2 = _interopRequireDefault(_OfferManagerDialog);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
 //
 //
 //
@@ -4227,11 +4296,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 
-
-
-
-/* harmony default export */ __webpack_exports__["default"] = ({
-    components: { OfferManagerList: __WEBPACK_IMPORTED_MODULE_0__OfferManagerList_vue___default.a, OfferManagerDialog: __WEBPACK_IMPORTED_MODULE_1__OfferManagerDialog_vue___default.a },
+exports.default = {
+    components: { OfferManagerList: _OfferManagerList2.default, OfferManagerDialog: _OfferManagerDialog2.default },
     data: function data() {
         return {
             offersList: [],
@@ -4295,39 +4361,29 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             return this.offersList.unshift(response.data);
         }
     }
-});
+};
 
 /***/ }),
 
-/***/ "./node_modules/babel-loader/lib/index.js?{\"cacheDirectory\":true,\"presets\":[[\"env\",{\"modules\":false,\"targets\":{\"browsers\":[\"> 2%\"],\"uglify\":true}}]]}!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./resources/assets/js/components/Dashboard/OfferManagerDialog.vue":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ "./node_modules/babel-loader/lib/index.js?cacheDirectory!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./resources/assets/js/components/Dashboard/OfferManagerDialog.vue":
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__OfferDetails_vue__ = __webpack_require__("./resources/assets/js/components/Dashboard/OfferDetails.vue");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__OfferDetails_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__OfferDetails_vue__);
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
 
-/* harmony default export */ __webpack_exports__["default"] = ({
+var _OfferDetails = __webpack_require__("./resources/assets/js/components/Dashboard/OfferDetails.vue");
+
+var _OfferDetails2 = _interopRequireDefault(_OfferDetails);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.default = {
     props: ['data', 'list', 'show'],
-    components: { OfferDetails: __WEBPACK_IMPORTED_MODULE_0__OfferDetails_vue___default.a },
+    components: { OfferDetails: _OfferDetails2.default },
     data: function data() {
         return {
             offersList: [],
@@ -4354,40 +4410,49 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             }
         }
     }
-});
+}; //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /***/ }),
 
-/***/ "./node_modules/babel-loader/lib/index.js?{\"cacheDirectory\":true,\"presets\":[[\"env\",{\"modules\":false,\"targets\":{\"browsers\":[\"> 2%\"],\"uglify\":true}}]]}!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./resources/assets/js/components/Dashboard/OfferManagerList.vue":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ "./node_modules/babel-loader/lib/index.js?cacheDirectory!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./resources/assets/js/components/Dashboard/OfferManagerList.vue":
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__OfferManagerTable_vue__ = __webpack_require__("./resources/assets/js/components/Dashboard/OfferManagerTable.vue");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__OfferManagerTable_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__OfferManagerTable_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__CheckboxPlaces_vue__ = __webpack_require__("./resources/assets/js/components/Dashboard/CheckboxPlaces.vue");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__CheckboxPlaces_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__CheckboxPlaces_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_element_ui__ = __webpack_require__("./node_modules/element-ui/lib/element-ui.common.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_element_ui___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_element_ui__);
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
 
+var _OfferManagerTable = __webpack_require__("./resources/assets/js/components/Dashboard/OfferManagerTable.vue");
 
+var _OfferManagerTable2 = _interopRequireDefault(_OfferManagerTable);
 
-/* harmony default export */ __webpack_exports__["default"] = ({
-    components: { OfferManagerTable: __WEBPACK_IMPORTED_MODULE_0__OfferManagerTable_vue___default.a, CheckboxPlaces: __WEBPACK_IMPORTED_MODULE_1__CheckboxPlaces_vue___default.a, Loading: __WEBPACK_IMPORTED_MODULE_2_element_ui__["Loading"] },
+var _CheckboxPlaces = __webpack_require__("./resources/assets/js/components/Dashboard/CheckboxPlaces.vue");
+
+var _CheckboxPlaces2 = _interopRequireDefault(_CheckboxPlaces);
+
+var _elementUi = __webpack_require__("./node_modules/element-ui/lib/element-ui.common.js");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.default = {
+    components: { OfferManagerTable: _OfferManagerTable2.default, CheckboxPlaces: _CheckboxPlaces2.default, Loading: _elementUi.Loading },
     data: function data() {
         return {
             checkedPlaces: [],
@@ -4488,15 +4553,30 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             item.count -= data.ids.length;
         }
     }
-});
+}; //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /***/ }),
 
-/***/ "./node_modules/babel-loader/lib/index.js?{\"cacheDirectory\":true,\"presets\":[[\"env\",{\"modules\":false,\"targets\":{\"browsers\":[\"> 2%\"],\"uglify\":true}}]]}!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./resources/assets/js/components/Dashboard/OfferManagerTable.vue":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ "./node_modules/babel-loader/lib/index.js?cacheDirectory!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./resources/assets/js/components/Dashboard/OfferManagerTable.vue":
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
 //
 //
 //
@@ -4548,7 +4628,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 
 
-/* harmony default export */ __webpack_exports__["default"] = ({
+exports.default = {
     props: ['data'],
     data: function data() {
         return {
@@ -4607,15 +4687,19 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             }).catch(function () {});
         }
     }
-});
+};
 
 /***/ }),
 
-/***/ "./node_modules/babel-loader/lib/index.js?{\"cacheDirectory\":true,\"presets\":[[\"env\",{\"modules\":false,\"targets\":{\"browsers\":[\"> 2%\"],\"uglify\":true}}]]}!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./resources/assets/js/components/Dashboard/VerticalNav.vue":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ "./node_modules/babel-loader/lib/index.js?cacheDirectory!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./resources/assets/js/components/Dashboard/VerticalNav.vue":
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
 //
 //
 //
@@ -4639,7 +4723,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 
-/* harmony default export */ __webpack_exports__["default"] = ({
+exports.default = {
     data: function data() {
         return {
             active: '',
@@ -4700,15 +4784,19 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             this.active = index;
         }
     }
-});
+};
 
 /***/ }),
 
-/***/ "./node_modules/babel-loader/lib/index.js?{\"cacheDirectory\":true,\"presets\":[[\"env\",{\"modules\":false,\"targets\":{\"browsers\":[\"> 2%\"],\"uglify\":true}}]]}!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./resources/assets/js/components/DatePicker.vue":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ "./node_modules/babel-loader/lib/index.js?cacheDirectory!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./resources/assets/js/components/DatePicker.vue":
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
 //
 //
 //
@@ -4724,7 +4812,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 
 
-/* harmony default export */ __webpack_exports__["default"] = ({
+exports.default = {
     props: ['date'],
     data: function data() {
         return {
@@ -4745,15 +4833,19 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             }
         }
     }
-});
+};
 
 /***/ }),
 
-/***/ "./node_modules/babel-loader/lib/index.js?{\"cacheDirectory\":true,\"presets\":[[\"env\",{\"modules\":false,\"targets\":{\"browsers\":[\"> 2%\"],\"uglify\":true}}]]}!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./resources/assets/js/components/DateRangePicker.vue":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ "./node_modules/babel-loader/lib/index.js?cacheDirectory!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./resources/assets/js/components/DateRangePicker.vue":
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
 //
 //
 //
@@ -4767,7 +4859,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 
 
-/* harmony default export */ __webpack_exports__["default"] = ({
+exports.default = {
     props: ['init-days'],
     data: function data() {
         return {
@@ -4847,15 +4939,19 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             }
         }
     }
-});
+};
 
 /***/ }),
 
-/***/ "./node_modules/babel-loader/lib/index.js?{\"cacheDirectory\":true,\"presets\":[[\"env\",{\"modules\":false,\"targets\":{\"browsers\":[\"> 2%\"],\"uglify\":true}}]]}!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./resources/assets/js/components/MarketBox.vue":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ "./node_modules/babel-loader/lib/index.js?cacheDirectory!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./resources/assets/js/components/MarketBox.vue":
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
 //
 //
 //
@@ -4871,17 +4967,21 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 
-/* harmony default export */ __webpack_exports__["default"] = ({
+exports.default = {
     props: ['data']
-});
+};
 
 /***/ }),
 
-/***/ "./node_modules/babel-loader/lib/index.js?{\"cacheDirectory\":true,\"presets\":[[\"env\",{\"modules\":false,\"targets\":{\"browsers\":[\"> 2%\"],\"uglify\":true}}]]}!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./resources/assets/js/components/Pagination.vue":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ "./node_modules/babel-loader/lib/index.js?cacheDirectory!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./resources/assets/js/components/Pagination.vue":
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
 //
 //
 //
@@ -4895,7 +4995,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 
-/* harmony default export */ __webpack_exports__["default"] = ({
+exports.default = {
     props: ['data'],
     data: function data() {
         return {
@@ -4948,15 +5048,19 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             }
         }
     }
-});
+};
 
 /***/ }),
 
-/***/ "./node_modules/babel-loader/lib/index.js?{\"cacheDirectory\":true,\"presets\":[[\"env\",{\"modules\":false,\"targets\":{\"browsers\":[\"> 2%\"],\"uglify\":true}}]]}!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./resources/assets/js/components/SearchProduct.vue":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ "./node_modules/babel-loader/lib/index.js?cacheDirectory!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./resources/assets/js/components/SearchProduct.vue":
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
 //
 //
 //
@@ -4973,7 +5077,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 
 
-/* harmony default export */ __webpack_exports__["default"] = ({
+exports.default = {
     props: ['data'],
     data: function data() {
         return {
@@ -5016,15 +5120,19 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             }
         }
     }
-});
+};
 
 /***/ }),
 
-/***/ "./node_modules/babel-loader/lib/index.js?{\"cacheDirectory\":true,\"presets\":[[\"env\",{\"modules\":false,\"targets\":{\"browsers\":[\"> 2%\"],\"uglify\":true}}]]}!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./resources/assets/js/components/UserFrontend/CheckboxTypes.vue":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ "./node_modules/babel-loader/lib/index.js?cacheDirectory!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./resources/assets/js/components/UserFrontend/CheckboxTypes.vue":
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
 //
 //
 //
@@ -5033,7 +5141,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 
 
-/* harmony default export */ __webpack_exports__["default"] = ({
+exports.default = {
     props: ['data'],
     data: function data() {
         return {
@@ -5051,15 +5159,19 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             this.checkedTypes = this.data;
         }
     }
-});
+};
 
 /***/ }),
 
-/***/ "./node_modules/babel-loader/lib/index.js?{\"cacheDirectory\":true,\"presets\":[[\"env\",{\"modules\":false,\"targets\":{\"browsers\":[\"> 2%\"],\"uglify\":true}}]]}!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./resources/assets/js/components/UserFrontend/GoogleMaps.vue":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ "./node_modules/babel-loader/lib/index.js?cacheDirectory!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./resources/assets/js/components/UserFrontend/GoogleMaps.vue":
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
 //
 //
 //
@@ -5067,7 +5179,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 
-/* harmony default export */ __webpack_exports__["default"] = ({
+exports.default = {
     props: ['cords', 'zoomlevel'],
     data: function data() {
         return {
@@ -5101,15 +5213,19 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             });
         }
     }
-});
+};
 
 /***/ }),
 
-/***/ "./node_modules/babel-loader/lib/index.js?{\"cacheDirectory\":true,\"presets\":[[\"env\",{\"modules\":false,\"targets\":{\"browsers\":[\"> 2%\"],\"uglify\":true}}]]}!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./resources/assets/js/components/UserFrontend/InfoCard.vue":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ "./node_modules/babel-loader/lib/index.js?cacheDirectory!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./resources/assets/js/components/UserFrontend/InfoCard.vue":
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
 //
 //
 //
@@ -5138,7 +5254,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 
 
-/* harmony default export */ __webpack_exports__["default"] = ({
+exports.default = {
     props: ['data'],
     data: function data() {
         return {
@@ -5154,19 +5270,30 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             this.showbtn = !this.showbtn;
         }
     }
-});
+};
 
 /***/ }),
 
-/***/ "./node_modules/babel-loader/lib/index.js?{\"cacheDirectory\":true,\"presets\":[[\"env\",{\"modules\":false,\"targets\":{\"browsers\":[\"> 2%\"],\"uglify\":true}}]]}!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./resources/assets/js/components/UserFrontend/MarketInfo.vue":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ "./node_modules/babel-loader/lib/index.js?cacheDirectory!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./resources/assets/js/components/UserFrontend/MarketInfo.vue":
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__GoogleMaps_vue__ = __webpack_require__("./resources/assets/js/components/UserFrontend/GoogleMaps.vue");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__GoogleMaps_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__GoogleMaps_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__InfoCard_vue__ = __webpack_require__("./resources/assets/js/components/UserFrontend/InfoCard.vue");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__InfoCard_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__InfoCard_vue__);
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _GoogleMaps = __webpack_require__("./resources/assets/js/components/UserFrontend/GoogleMaps.vue");
+
+var _GoogleMaps2 = _interopRequireDefault(_GoogleMaps);
+
+var _InfoCard = __webpack_require__("./resources/assets/js/components/UserFrontend/InfoCard.vue");
+
+var _InfoCard2 = _interopRequireDefault(_InfoCard);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
 //
 //
 //
@@ -5175,25 +5302,33 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 
-
-
-
-/* harmony default export */ __webpack_exports__["default"] = ({
-    components: { GoogleMaps: __WEBPACK_IMPORTED_MODULE_0__GoogleMaps_vue___default.a, InfoCard: __WEBPACK_IMPORTED_MODULE_1__InfoCard_vue___default.a },
+exports.default = {
+    components: { GoogleMaps: _GoogleMaps2.default, InfoCard: _InfoCard2.default },
     props: ['data']
-});
+};
 
 /***/ }),
 
-/***/ "./node_modules/babel-loader/lib/index.js?{\"cacheDirectory\":true,\"presets\":[[\"env\",{\"modules\":false,\"targets\":{\"browsers\":[\"> 2%\"],\"uglify\":true}}]]}!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./resources/assets/js/components/UserFrontend/OfferShowcase.vue":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ "./node_modules/babel-loader/lib/index.js?cacheDirectory!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./resources/assets/js/components/UserFrontend/OfferShowcase.vue":
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__MarketInfo_vue__ = __webpack_require__("./resources/assets/js/components/UserFrontend/MarketInfo.vue");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__MarketInfo_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__MarketInfo_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ProductsPriceList_vue__ = __webpack_require__("./resources/assets/js/components/UserFrontend/ProductsPriceList.vue");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ProductsPriceList_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__ProductsPriceList_vue__);
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _MarketInfo = __webpack_require__("./resources/assets/js/components/UserFrontend/MarketInfo.vue");
+
+var _MarketInfo2 = _interopRequireDefault(_MarketInfo);
+
+var _ProductsPriceList = __webpack_require__("./resources/assets/js/components/UserFrontend/ProductsPriceList.vue");
+
+var _ProductsPriceList2 = _interopRequireDefault(_ProductsPriceList);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
 //
 //
 //
@@ -5202,12 +5337,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 
-
-
-
-/* harmony default export */ __webpack_exports__["default"] = ({
+exports.default = {
     props: ['marketData'],
-    components: { MarketInfo: __WEBPACK_IMPORTED_MODULE_0__MarketInfo_vue___default.a, ProductsPriceList: __WEBPACK_IMPORTED_MODULE_1__ProductsPriceList_vue___default.a },
+    components: { MarketInfo: _MarketInfo2.default, ProductsPriceList: _ProductsPriceList2.default },
     data: function data() {
         return {
             date: '',
@@ -5251,31 +5383,27 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             return _.uniq(_.map(data, 'type')).sort();
         }
     }
-});
+};
 
 /***/ }),
 
-/***/ "./node_modules/babel-loader/lib/index.js?{\"cacheDirectory\":true,\"presets\":[[\"env\",{\"modules\":false,\"targets\":{\"browsers\":[\"> 2%\"],\"uglify\":true}}]]}!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./resources/assets/js/components/UserFrontend/ProductPriceGraph.vue":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ "./node_modules/babel-loader/lib/index.js?cacheDirectory!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./resources/assets/js/components/UserFrontend/ProductPriceGraph.vue":
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__utils_zingchart__ = __webpack_require__("./resources/assets/js/utils/zingchart.js");
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
 
-/* harmony default export */ __webpack_exports__["default"] = ({
+var _zingchart = __webpack_require__("./resources/assets/js/utils/zingchart.js");
+
+var _zingchart2 = _interopRequireDefault(_zingchart);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.default = {
     props: ['products', 'selected'],
     data: function data() {
         return {
@@ -5305,15 +5433,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             var values = [];
 
             if (this.products.length > 0) {
-                title = this.products[0].product + " - ceny za: " + this.products[0].package;
-
                 this.products.forEach(function (item) {
                     labels.push([item.date]);
                     values.push([item.price_min, item.price_max]);
                 });
             }
 
-            __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__utils_zingchart__["a" /* chartInit */])(title, labels, values);
+            (0, _zingchart2.default)(labels, values);
         },
         updateGraphData: function updateGraphData() {
             this.$root.$emit('update-graph-data', {
@@ -5327,34 +5453,38 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             });
         }
     }
-});
+}; //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /***/ }),
 
-/***/ "./node_modules/babel-loader/lib/index.js?{\"cacheDirectory\":true,\"presets\":[[\"env\",{\"modules\":false,\"targets\":{\"browsers\":[\"> 2%\"],\"uglify\":true}}]]}!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./resources/assets/js/components/UserFrontend/ProductPriceGraphDialog.vue":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ "./node_modules/babel-loader/lib/index.js?cacheDirectory!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./resources/assets/js/components/UserFrontend/ProductPriceGraphDialog.vue":
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__ProductPriceGraph_vue__ = __webpack_require__("./resources/assets/js/components/UserFrontend/ProductPriceGraph.vue");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__ProductPriceGraph_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__ProductPriceGraph_vue__);
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
 
-/* harmony default export */ __webpack_exports__["default"] = ({
-    components: { ProductPriceGraph: __WEBPACK_IMPORTED_MODULE_0__ProductPriceGraph_vue___default.a },
+var _ProductPriceGraph = __webpack_require__("./resources/assets/js/components/UserFrontend/ProductPriceGraph.vue");
+
+var _ProductPriceGraph2 = _interopRequireDefault(_ProductPriceGraph);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.default = {
+    components: { ProductPriceGraph: _ProductPriceGraph2.default },
     props: ['data', 'visible', 'product', 'market'],
     data: function data() {
         return {
@@ -5383,51 +5513,47 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         }
     }
 
-});
+}; //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /***/ }),
 
-/***/ "./node_modules/babel-loader/lib/index.js?{\"cacheDirectory\":true,\"presets\":[[\"env\",{\"modules\":false,\"targets\":{\"browsers\":[\"> 2%\"],\"uglify\":true}}]]}!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./resources/assets/js/components/UserFrontend/ProductsPriceList.vue":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ "./node_modules/babel-loader/lib/index.js?cacheDirectory!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./resources/assets/js/components/UserFrontend/ProductsPriceList.vue":
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__SearchProduct_vue__ = __webpack_require__("./resources/assets/js/components/SearchProduct.vue");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__SearchProduct_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__SearchProduct_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__CheckboxTypes_vue__ = __webpack_require__("./resources/assets/js/components/UserFrontend/CheckboxTypes.vue");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__CheckboxTypes_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__CheckboxTypes_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ProductsPriceListTable_vue__ = __webpack_require__("./resources/assets/js/components/UserFrontend/ProductsPriceListTable.vue");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ProductsPriceListTable_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__ProductsPriceListTable_vue__);
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
 
+var _SearchProduct = __webpack_require__("./resources/assets/js/components/SearchProduct.vue");
 
+var _SearchProduct2 = _interopRequireDefault(_SearchProduct);
 
+var _CheckboxTypes = __webpack_require__("./resources/assets/js/components/UserFrontend/CheckboxTypes.vue");
 
-/* harmony default export */ __webpack_exports__["default"] = ({
-    components: { CheckboxTypes: __WEBPACK_IMPORTED_MODULE_1__CheckboxTypes_vue___default.a, ProductsPriceListTable: __WEBPACK_IMPORTED_MODULE_2__ProductsPriceListTable_vue___default.a, SearchProduct: __WEBPACK_IMPORTED_MODULE_0__SearchProduct_vue___default.a },
+var _CheckboxTypes2 = _interopRequireDefault(_CheckboxTypes);
+
+var _ProductsPriceListTable = __webpack_require__("./resources/assets/js/components/UserFrontend/ProductsPriceListTable.vue");
+
+var _ProductsPriceListTable2 = _interopRequireDefault(_ProductsPriceListTable);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.default = {
+    components: { CheckboxTypes: _CheckboxTypes2.default, ProductsPriceListTable: _ProductsPriceListTable2.default, SearchProduct: _SearchProduct2.default },
     props: ['data', 'date', 'types', 'market'],
     data: function data() {
         return {
@@ -5505,72 +5631,49 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             this.tableData = this.filterByType();
         }
     }
-});
+}; //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /***/ }),
 
-/***/ "./node_modules/babel-loader/lib/index.js?{\"cacheDirectory\":true,\"presets\":[[\"env\",{\"modules\":false,\"targets\":{\"browsers\":[\"> 2%\"],\"uglify\":true}}]]}!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./resources/assets/js/components/UserFrontend/ProductsPriceListTable.vue":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ "./node_modules/babel-loader/lib/index.js?cacheDirectory!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./resources/assets/js/components/UserFrontend/ProductsPriceListTable.vue":
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__ProductPriceGraphDialog_vue__ = __webpack_require__("./resources/assets/js/components/UserFrontend/ProductPriceGraphDialog.vue");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__ProductPriceGraphDialog_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__ProductPriceGraphDialog_vue__);
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
 
-/* harmony default export */ __webpack_exports__["default"] = ({
-    components: { ProductPriceGraphDialog: __WEBPACK_IMPORTED_MODULE_0__ProductPriceGraphDialog_vue___default.a },
+var _ProductPriceGraphDialog = __webpack_require__("./resources/assets/js/components/UserFrontend/ProductPriceGraphDialog.vue");
+
+var _ProductPriceGraphDialog2 = _interopRequireDefault(_ProductPriceGraphDialog);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.default = {
+    components: { ProductPriceGraphDialog: _ProductPriceGraphDialog2.default },
     props: ['data', 'market'],
     data: function data() {
         return {
@@ -5660,7 +5763,56 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             });
         }
     }
-});
+}; //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /***/ }),
 
@@ -101057,15 +101209,22 @@ module.exports = zingchart;
 /***/ }),
 
 /***/ "./resources/assets/js/app.js":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_element_ui__ = __webpack_require__("./node_modules/element-ui/lib/element-ui.common.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_element_ui___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_element_ui__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_element_ui_lib_locale_lang_en__ = __webpack_require__("./node_modules/element-ui/lib/locale/lang/en.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_element_ui_lib_locale_lang_en___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_element_ui_lib_locale_lang_en__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__utils_smoothscroll__ = __webpack_require__("./resources/assets/js/utils/smoothscroll.js");
+
+
+var _elementUi = __webpack_require__("./node_modules/element-ui/lib/element-ui.common.js");
+
+var _elementUi2 = _interopRequireDefault(_elementUi);
+
+var _en = __webpack_require__("./node_modules/element-ui/lib/locale/lang/en.js");
+
+var _en2 = _interopRequireDefault(_en);
+
+var _smoothscroll = __webpack_require__("./resources/assets/js/utils/smoothscroll.js");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /**
  * First we will load all of this project's JavaScript dependencies which
@@ -101075,11 +101234,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 __webpack_require__("./resources/assets/js/bootstrap.js");
 
-
-
-
-
-window.scroll = __WEBPACK_IMPORTED_MODULE_2__utils_smoothscroll__["a" /* scroll */];
+window.scroll = _smoothscroll.scroll;
 window.Vue = __webpack_require__("./node_modules/vue/dist/vue.common.js");
 
 /**
@@ -101088,7 +101243,7 @@ window.Vue = __webpack_require__("./node_modules/vue/dist/vue.common.js");
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-Vue.use(__WEBPACK_IMPORTED_MODULE_0_element_ui___default.a, { locale: __WEBPACK_IMPORTED_MODULE_1_element_ui_lib_locale_lang_en___default.a });
+Vue.use(_elementUi2.default, { locale: _en2.default });
 
 Vue.component('offer-showcase', __webpack_require__("./resources/assets/js/components/UserFrontend/OfferShowcase.vue"));
 Vue.component('vertical-nav', __webpack_require__("./resources/assets/js/components/Dashboard/VerticalNav.vue"));
@@ -101122,6 +101277,9 @@ window.noData = function (message) {
 
 /***/ "./resources/assets/js/bootstrap.js":
 /***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
 
 window._ = __webpack_require__("./node_modules/lodash/lodash.js");
 window.moment = __webpack_require__("./node_modules/moment/moment.js");
@@ -101172,7 +101330,7 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
 var Component = __webpack_require__("./node_modules/vue-loader/lib/component-normalizer.js")(
   /* script */
-  __webpack_require__("./node_modules/babel-loader/lib/index.js?{\"cacheDirectory\":true,\"presets\":[[\"env\",{\"modules\":false,\"targets\":{\"browsers\":[\"> 2%\"],\"uglify\":true}}]]}!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./resources/assets/js/components/ContactForm.vue"),
+  __webpack_require__("./node_modules/babel-loader/lib/index.js?cacheDirectory!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./resources/assets/js/components/ContactForm.vue"),
   /* template */
   __webpack_require__("./node_modules/vue-loader/lib/template-compiler/index.js?{\"id\":\"data-v-13075ade\"}!./node_modules/vue-loader/lib/selector.js?type=template&index=0!./resources/assets/js/components/ContactForm.vue"),
   /* scopeId */
@@ -101207,7 +101365,7 @@ module.exports = Component.exports
 
 var Component = __webpack_require__("./node_modules/vue-loader/lib/component-normalizer.js")(
   /* script */
-  __webpack_require__("./node_modules/babel-loader/lib/index.js?{\"cacheDirectory\":true,\"presets\":[[\"env\",{\"modules\":false,\"targets\":{\"browsers\":[\"> 2%\"],\"uglify\":true}}]]}!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./resources/assets/js/components/Dashboard/CheckboxPlaces.vue"),
+  __webpack_require__("./node_modules/babel-loader/lib/index.js?cacheDirectory!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./resources/assets/js/components/Dashboard/CheckboxPlaces.vue"),
   /* template */
   __webpack_require__("./node_modules/vue-loader/lib/template-compiler/index.js?{\"id\":\"data-v-6899dca6\"}!./node_modules/vue-loader/lib/selector.js?type=template&index=0!./resources/assets/js/components/Dashboard/CheckboxPlaces.vue"),
   /* scopeId */
@@ -101242,7 +101400,7 @@ module.exports = Component.exports
 
 var Component = __webpack_require__("./node_modules/vue-loader/lib/component-normalizer.js")(
   /* script */
-  __webpack_require__("./node_modules/babel-loader/lib/index.js?{\"cacheDirectory\":true,\"presets\":[[\"env\",{\"modules\":false,\"targets\":{\"browsers\":[\"> 2%\"],\"uglify\":true}}]]}!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./resources/assets/js/components/Dashboard/MarketsManager/CheckboxCategories.vue"),
+  __webpack_require__("./node_modules/babel-loader/lib/index.js?cacheDirectory!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./resources/assets/js/components/Dashboard/MarketsManager/CheckboxCategories.vue"),
   /* template */
   __webpack_require__("./node_modules/vue-loader/lib/template-compiler/index.js?{\"id\":\"data-v-0809b94a\"}!./node_modules/vue-loader/lib/selector.js?type=template&index=0!./resources/assets/js/components/Dashboard/MarketsManager/CheckboxCategories.vue"),
   /* scopeId */
@@ -101277,7 +101435,7 @@ module.exports = Component.exports
 
 var Component = __webpack_require__("./node_modules/vue-loader/lib/component-normalizer.js")(
   /* script */
-  __webpack_require__("./node_modules/babel-loader/lib/index.js?{\"cacheDirectory\":true,\"presets\":[[\"env\",{\"modules\":false,\"targets\":{\"browsers\":[\"> 2%\"],\"uglify\":true}}]]}!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./resources/assets/js/components/Dashboard/MarketsManager/MarketCard.vue"),
+  __webpack_require__("./node_modules/babel-loader/lib/index.js?cacheDirectory!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./resources/assets/js/components/Dashboard/MarketsManager/MarketCard.vue"),
   /* template */
   __webpack_require__("./node_modules/vue-loader/lib/template-compiler/index.js?{\"id\":\"data-v-8fa34612\"}!./node_modules/vue-loader/lib/selector.js?type=template&index=0!./resources/assets/js/components/Dashboard/MarketsManager/MarketCard.vue"),
   /* scopeId */
@@ -101312,7 +101470,7 @@ module.exports = Component.exports
 
 var Component = __webpack_require__("./node_modules/vue-loader/lib/component-normalizer.js")(
   /* script */
-  __webpack_require__("./node_modules/babel-loader/lib/index.js?{\"cacheDirectory\":true,\"presets\":[[\"env\",{\"modules\":false,\"targets\":{\"browsers\":[\"> 2%\"],\"uglify\":true}}]]}!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./resources/assets/js/components/Dashboard/MarketsManager/MarketLogsDialog.vue"),
+  __webpack_require__("./node_modules/babel-loader/lib/index.js?cacheDirectory!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./resources/assets/js/components/Dashboard/MarketsManager/MarketLogsDialog.vue"),
   /* template */
   __webpack_require__("./node_modules/vue-loader/lib/template-compiler/index.js?{\"id\":\"data-v-148d9efe\"}!./node_modules/vue-loader/lib/selector.js?type=template&index=0!./resources/assets/js/components/Dashboard/MarketsManager/MarketLogsDialog.vue"),
   /* scopeId */
@@ -101351,7 +101509,7 @@ __webpack_require__("./node_modules/vue-style-loader/index.js!./node_modules/css
 
 var Component = __webpack_require__("./node_modules/vue-loader/lib/component-normalizer.js")(
   /* script */
-  __webpack_require__("./node_modules/babel-loader/lib/index.js?{\"cacheDirectory\":true,\"presets\":[[\"env\",{\"modules\":false,\"targets\":{\"browsers\":[\"> 2%\"],\"uglify\":true}}]]}!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./resources/assets/js/components/Dashboard/MarketsManager/MarketLogsList.vue"),
+  __webpack_require__("./node_modules/babel-loader/lib/index.js?cacheDirectory!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./resources/assets/js/components/Dashboard/MarketsManager/MarketLogsList.vue"),
   /* template */
   __webpack_require__("./node_modules/vue-loader/lib/template-compiler/index.js?{\"id\":\"data-v-2406e6d4\"}!./node_modules/vue-loader/lib/selector.js?type=template&index=0!./resources/assets/js/components/Dashboard/MarketsManager/MarketLogsList.vue"),
   /* scopeId */
@@ -101386,7 +101544,7 @@ module.exports = Component.exports
 
 var Component = __webpack_require__("./node_modules/vue-loader/lib/component-normalizer.js")(
   /* script */
-  __webpack_require__("./node_modules/babel-loader/lib/index.js?{\"cacheDirectory\":true,\"presets\":[[\"env\",{\"modules\":false,\"targets\":{\"browsers\":[\"> 2%\"],\"uglify\":true}}]]}!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./resources/assets/js/components/Dashboard/MarketsManager/MarketsManager.vue"),
+  __webpack_require__("./node_modules/babel-loader/lib/index.js?cacheDirectory!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./resources/assets/js/components/Dashboard/MarketsManager/MarketsManager.vue"),
   /* template */
   __webpack_require__("./node_modules/vue-loader/lib/template-compiler/index.js?{\"id\":\"data-v-23568dfe\"}!./node_modules/vue-loader/lib/selector.js?type=template&index=0!./resources/assets/js/components/Dashboard/MarketsManager/MarketsManager.vue"),
   /* scopeId */
@@ -101425,7 +101583,7 @@ __webpack_require__("./node_modules/vue-style-loader/index.js!./node_modules/css
 
 var Component = __webpack_require__("./node_modules/vue-loader/lib/component-normalizer.js")(
   /* script */
-  __webpack_require__("./node_modules/babel-loader/lib/index.js?{\"cacheDirectory\":true,\"presets\":[[\"env\",{\"modules\":false,\"targets\":{\"browsers\":[\"> 2%\"],\"uglify\":true}}]]}!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./resources/assets/js/components/Dashboard/OfferDetails.vue"),
+  __webpack_require__("./node_modules/babel-loader/lib/index.js?cacheDirectory!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./resources/assets/js/components/Dashboard/OfferDetails.vue"),
   /* template */
   __webpack_require__("./node_modules/vue-loader/lib/template-compiler/index.js?{\"id\":\"data-v-17d41e04\"}!./node_modules/vue-loader/lib/selector.js?type=template&index=0!./resources/assets/js/components/Dashboard/OfferDetails.vue"),
   /* scopeId */
@@ -101460,7 +101618,7 @@ module.exports = Component.exports
 
 var Component = __webpack_require__("./node_modules/vue-loader/lib/component-normalizer.js")(
   /* script */
-  __webpack_require__("./node_modules/babel-loader/lib/index.js?{\"cacheDirectory\":true,\"presets\":[[\"env\",{\"modules\":false,\"targets\":{\"browsers\":[\"> 2%\"],\"uglify\":true}}]]}!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./resources/assets/js/components/Dashboard/OfferDetailsTable.vue"),
+  __webpack_require__("./node_modules/babel-loader/lib/index.js?cacheDirectory!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./resources/assets/js/components/Dashboard/OfferDetailsTable.vue"),
   /* template */
   __webpack_require__("./node_modules/vue-loader/lib/template-compiler/index.js?{\"id\":\"data-v-f3d9614c\"}!./node_modules/vue-loader/lib/selector.js?type=template&index=0!./resources/assets/js/components/Dashboard/OfferDetailsTable.vue"),
   /* scopeId */
@@ -101495,7 +101653,7 @@ module.exports = Component.exports
 
 var Component = __webpack_require__("./node_modules/vue-loader/lib/component-normalizer.js")(
   /* script */
-  __webpack_require__("./node_modules/babel-loader/lib/index.js?{\"cacheDirectory\":true,\"presets\":[[\"env\",{\"modules\":false,\"targets\":{\"browsers\":[\"> 2%\"],\"uglify\":true}}]]}!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./resources/assets/js/components/Dashboard/OfferForm.vue"),
+  __webpack_require__("./node_modules/babel-loader/lib/index.js?cacheDirectory!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./resources/assets/js/components/Dashboard/OfferForm.vue"),
   /* template */
   __webpack_require__("./node_modules/vue-loader/lib/template-compiler/index.js?{\"id\":\"data-v-d29cd91c\"}!./node_modules/vue-loader/lib/selector.js?type=template&index=0!./resources/assets/js/components/Dashboard/OfferForm.vue"),
   /* scopeId */
@@ -101530,7 +101688,7 @@ module.exports = Component.exports
 
 var Component = __webpack_require__("./node_modules/vue-loader/lib/component-normalizer.js")(
   /* script */
-  __webpack_require__("./node_modules/babel-loader/lib/index.js?{\"cacheDirectory\":true,\"presets\":[[\"env\",{\"modules\":false,\"targets\":{\"browsers\":[\"> 2%\"],\"uglify\":true}}]]}!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./resources/assets/js/components/Dashboard/OfferFormDialog.vue"),
+  __webpack_require__("./node_modules/babel-loader/lib/index.js?cacheDirectory!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./resources/assets/js/components/Dashboard/OfferFormDialog.vue"),
   /* template */
   __webpack_require__("./node_modules/vue-loader/lib/template-compiler/index.js?{\"id\":\"data-v-5f33fd5a\"}!./node_modules/vue-loader/lib/selector.js?type=template&index=0!./resources/assets/js/components/Dashboard/OfferFormDialog.vue"),
   /* scopeId */
@@ -101565,7 +101723,7 @@ module.exports = Component.exports
 
 var Component = __webpack_require__("./node_modules/vue-loader/lib/component-normalizer.js")(
   /* script */
-  __webpack_require__("./node_modules/babel-loader/lib/index.js?{\"cacheDirectory\":true,\"presets\":[[\"env\",{\"modules\":false,\"targets\":{\"browsers\":[\"> 2%\"],\"uglify\":true}}]]}!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./resources/assets/js/components/Dashboard/OfferManager.vue"),
+  __webpack_require__("./node_modules/babel-loader/lib/index.js?cacheDirectory!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./resources/assets/js/components/Dashboard/OfferManager.vue"),
   /* template */
   __webpack_require__("./node_modules/vue-loader/lib/template-compiler/index.js?{\"id\":\"data-v-d95ce422\"}!./node_modules/vue-loader/lib/selector.js?type=template&index=0!./resources/assets/js/components/Dashboard/OfferManager.vue"),
   /* scopeId */
@@ -101600,7 +101758,7 @@ module.exports = Component.exports
 
 var Component = __webpack_require__("./node_modules/vue-loader/lib/component-normalizer.js")(
   /* script */
-  __webpack_require__("./node_modules/babel-loader/lib/index.js?{\"cacheDirectory\":true,\"presets\":[[\"env\",{\"modules\":false,\"targets\":{\"browsers\":[\"> 2%\"],\"uglify\":true}}]]}!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./resources/assets/js/components/Dashboard/OfferManagerDialog.vue"),
+  __webpack_require__("./node_modules/babel-loader/lib/index.js?cacheDirectory!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./resources/assets/js/components/Dashboard/OfferManagerDialog.vue"),
   /* template */
   __webpack_require__("./node_modules/vue-loader/lib/template-compiler/index.js?{\"id\":\"data-v-5a4933d2\"}!./node_modules/vue-loader/lib/selector.js?type=template&index=0!./resources/assets/js/components/Dashboard/OfferManagerDialog.vue"),
   /* scopeId */
@@ -101635,7 +101793,7 @@ module.exports = Component.exports
 
 var Component = __webpack_require__("./node_modules/vue-loader/lib/component-normalizer.js")(
   /* script */
-  __webpack_require__("./node_modules/babel-loader/lib/index.js?{\"cacheDirectory\":true,\"presets\":[[\"env\",{\"modules\":false,\"targets\":{\"browsers\":[\"> 2%\"],\"uglify\":true}}]]}!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./resources/assets/js/components/Dashboard/OfferManagerList.vue"),
+  __webpack_require__("./node_modules/babel-loader/lib/index.js?cacheDirectory!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./resources/assets/js/components/Dashboard/OfferManagerList.vue"),
   /* template */
   __webpack_require__("./node_modules/vue-loader/lib/template-compiler/index.js?{\"id\":\"data-v-65c4bfa6\"}!./node_modules/vue-loader/lib/selector.js?type=template&index=0!./resources/assets/js/components/Dashboard/OfferManagerList.vue"),
   /* scopeId */
@@ -101670,7 +101828,7 @@ module.exports = Component.exports
 
 var Component = __webpack_require__("./node_modules/vue-loader/lib/component-normalizer.js")(
   /* script */
-  __webpack_require__("./node_modules/babel-loader/lib/index.js?{\"cacheDirectory\":true,\"presets\":[[\"env\",{\"modules\":false,\"targets\":{\"browsers\":[\"> 2%\"],\"uglify\":true}}]]}!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./resources/assets/js/components/Dashboard/OfferManagerTable.vue"),
+  __webpack_require__("./node_modules/babel-loader/lib/index.js?cacheDirectory!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./resources/assets/js/components/Dashboard/OfferManagerTable.vue"),
   /* template */
   __webpack_require__("./node_modules/vue-loader/lib/template-compiler/index.js?{\"id\":\"data-v-a8b3cb62\"}!./node_modules/vue-loader/lib/selector.js?type=template&index=0!./resources/assets/js/components/Dashboard/OfferManagerTable.vue"),
   /* scopeId */
@@ -101709,7 +101867,7 @@ __webpack_require__("./node_modules/vue-style-loader/index.js!./node_modules/css
 
 var Component = __webpack_require__("./node_modules/vue-loader/lib/component-normalizer.js")(
   /* script */
-  __webpack_require__("./node_modules/babel-loader/lib/index.js?{\"cacheDirectory\":true,\"presets\":[[\"env\",{\"modules\":false,\"targets\":{\"browsers\":[\"> 2%\"],\"uglify\":true}}]]}!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./resources/assets/js/components/Dashboard/VerticalNav.vue"),
+  __webpack_require__("./node_modules/babel-loader/lib/index.js?cacheDirectory!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./resources/assets/js/components/Dashboard/VerticalNav.vue"),
   /* template */
   __webpack_require__("./node_modules/vue-loader/lib/template-compiler/index.js?{\"id\":\"data-v-8cdbf202\"}!./node_modules/vue-loader/lib/selector.js?type=template&index=0!./resources/assets/js/components/Dashboard/VerticalNav.vue"),
   /* scopeId */
@@ -101744,7 +101902,7 @@ module.exports = Component.exports
 
 var Component = __webpack_require__("./node_modules/vue-loader/lib/component-normalizer.js")(
   /* script */
-  __webpack_require__("./node_modules/babel-loader/lib/index.js?{\"cacheDirectory\":true,\"presets\":[[\"env\",{\"modules\":false,\"targets\":{\"browsers\":[\"> 2%\"],\"uglify\":true}}]]}!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./resources/assets/js/components/DatePicker.vue"),
+  __webpack_require__("./node_modules/babel-loader/lib/index.js?cacheDirectory!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./resources/assets/js/components/DatePicker.vue"),
   /* template */
   __webpack_require__("./node_modules/vue-loader/lib/template-compiler/index.js?{\"id\":\"data-v-419ba242\"}!./node_modules/vue-loader/lib/selector.js?type=template&index=0!./resources/assets/js/components/DatePicker.vue"),
   /* scopeId */
@@ -101779,7 +101937,7 @@ module.exports = Component.exports
 
 var Component = __webpack_require__("./node_modules/vue-loader/lib/component-normalizer.js")(
   /* script */
-  __webpack_require__("./node_modules/babel-loader/lib/index.js?{\"cacheDirectory\":true,\"presets\":[[\"env\",{\"modules\":false,\"targets\":{\"browsers\":[\"> 2%\"],\"uglify\":true}}]]}!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./resources/assets/js/components/DateRangePicker.vue"),
+  __webpack_require__("./node_modules/babel-loader/lib/index.js?cacheDirectory!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./resources/assets/js/components/DateRangePicker.vue"),
   /* template */
   __webpack_require__("./node_modules/vue-loader/lib/template-compiler/index.js?{\"id\":\"data-v-ea58dbac\"}!./node_modules/vue-loader/lib/selector.js?type=template&index=0!./resources/assets/js/components/DateRangePicker.vue"),
   /* scopeId */
@@ -101814,7 +101972,7 @@ module.exports = Component.exports
 
 var Component = __webpack_require__("./node_modules/vue-loader/lib/component-normalizer.js")(
   /* script */
-  __webpack_require__("./node_modules/babel-loader/lib/index.js?{\"cacheDirectory\":true,\"presets\":[[\"env\",{\"modules\":false,\"targets\":{\"browsers\":[\"> 2%\"],\"uglify\":true}}]]}!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./resources/assets/js/components/MarketBox.vue"),
+  __webpack_require__("./node_modules/babel-loader/lib/index.js?cacheDirectory!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./resources/assets/js/components/MarketBox.vue"),
   /* template */
   __webpack_require__("./node_modules/vue-loader/lib/template-compiler/index.js?{\"id\":\"data-v-704d7d88\"}!./node_modules/vue-loader/lib/selector.js?type=template&index=0!./resources/assets/js/components/MarketBox.vue"),
   /* scopeId */
@@ -101849,7 +102007,7 @@ module.exports = Component.exports
 
 var Component = __webpack_require__("./node_modules/vue-loader/lib/component-normalizer.js")(
   /* script */
-  __webpack_require__("./node_modules/babel-loader/lib/index.js?{\"cacheDirectory\":true,\"presets\":[[\"env\",{\"modules\":false,\"targets\":{\"browsers\":[\"> 2%\"],\"uglify\":true}}]]}!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./resources/assets/js/components/Pagination.vue"),
+  __webpack_require__("./node_modules/babel-loader/lib/index.js?cacheDirectory!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./resources/assets/js/components/Pagination.vue"),
   /* template */
   __webpack_require__("./node_modules/vue-loader/lib/template-compiler/index.js?{\"id\":\"data-v-1ec724c6\"}!./node_modules/vue-loader/lib/selector.js?type=template&index=0!./resources/assets/js/components/Pagination.vue"),
   /* scopeId */
@@ -101884,7 +102042,7 @@ module.exports = Component.exports
 
 var Component = __webpack_require__("./node_modules/vue-loader/lib/component-normalizer.js")(
   /* script */
-  __webpack_require__("./node_modules/babel-loader/lib/index.js?{\"cacheDirectory\":true,\"presets\":[[\"env\",{\"modules\":false,\"targets\":{\"browsers\":[\"> 2%\"],\"uglify\":true}}]]}!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./resources/assets/js/components/SearchProduct.vue"),
+  __webpack_require__("./node_modules/babel-loader/lib/index.js?cacheDirectory!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./resources/assets/js/components/SearchProduct.vue"),
   /* template */
   __webpack_require__("./node_modules/vue-loader/lib/template-compiler/index.js?{\"id\":\"data-v-da704618\"}!./node_modules/vue-loader/lib/selector.js?type=template&index=0!./resources/assets/js/components/SearchProduct.vue"),
   /* scopeId */
@@ -101919,7 +102077,7 @@ module.exports = Component.exports
 
 var Component = __webpack_require__("./node_modules/vue-loader/lib/component-normalizer.js")(
   /* script */
-  __webpack_require__("./node_modules/babel-loader/lib/index.js?{\"cacheDirectory\":true,\"presets\":[[\"env\",{\"modules\":false,\"targets\":{\"browsers\":[\"> 2%\"],\"uglify\":true}}]]}!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./resources/assets/js/components/UserFrontend/CheckboxTypes.vue"),
+  __webpack_require__("./node_modules/babel-loader/lib/index.js?cacheDirectory!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./resources/assets/js/components/UserFrontend/CheckboxTypes.vue"),
   /* template */
   __webpack_require__("./node_modules/vue-loader/lib/template-compiler/index.js?{\"id\":\"data-v-0765bc72\"}!./node_modules/vue-loader/lib/selector.js?type=template&index=0!./resources/assets/js/components/UserFrontend/CheckboxTypes.vue"),
   /* scopeId */
@@ -101958,7 +102116,7 @@ __webpack_require__("./node_modules/vue-style-loader/index.js!./node_modules/css
 
 var Component = __webpack_require__("./node_modules/vue-loader/lib/component-normalizer.js")(
   /* script */
-  __webpack_require__("./node_modules/babel-loader/lib/index.js?{\"cacheDirectory\":true,\"presets\":[[\"env\",{\"modules\":false,\"targets\":{\"browsers\":[\"> 2%\"],\"uglify\":true}}]]}!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./resources/assets/js/components/UserFrontend/GoogleMaps.vue"),
+  __webpack_require__("./node_modules/babel-loader/lib/index.js?cacheDirectory!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./resources/assets/js/components/UserFrontend/GoogleMaps.vue"),
   /* template */
   __webpack_require__("./node_modules/vue-loader/lib/template-compiler/index.js?{\"id\":\"data-v-385ce5ef\"}!./node_modules/vue-loader/lib/selector.js?type=template&index=0!./resources/assets/js/components/UserFrontend/GoogleMaps.vue"),
   /* scopeId */
@@ -101993,7 +102151,7 @@ module.exports = Component.exports
 
 var Component = __webpack_require__("./node_modules/vue-loader/lib/component-normalizer.js")(
   /* script */
-  __webpack_require__("./node_modules/babel-loader/lib/index.js?{\"cacheDirectory\":true,\"presets\":[[\"env\",{\"modules\":false,\"targets\":{\"browsers\":[\"> 2%\"],\"uglify\":true}}]]}!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./resources/assets/js/components/UserFrontend/InfoCard.vue"),
+  __webpack_require__("./node_modules/babel-loader/lib/index.js?cacheDirectory!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./resources/assets/js/components/UserFrontend/InfoCard.vue"),
   /* template */
   __webpack_require__("./node_modules/vue-loader/lib/template-compiler/index.js?{\"id\":\"data-v-aea675c6\"}!./node_modules/vue-loader/lib/selector.js?type=template&index=0!./resources/assets/js/components/UserFrontend/InfoCard.vue"),
   /* scopeId */
@@ -102028,7 +102186,7 @@ module.exports = Component.exports
 
 var Component = __webpack_require__("./node_modules/vue-loader/lib/component-normalizer.js")(
   /* script */
-  __webpack_require__("./node_modules/babel-loader/lib/index.js?{\"cacheDirectory\":true,\"presets\":[[\"env\",{\"modules\":false,\"targets\":{\"browsers\":[\"> 2%\"],\"uglify\":true}}]]}!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./resources/assets/js/components/UserFrontend/MarketInfo.vue"),
+  __webpack_require__("./node_modules/babel-loader/lib/index.js?cacheDirectory!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./resources/assets/js/components/UserFrontend/MarketInfo.vue"),
   /* template */
   __webpack_require__("./node_modules/vue-loader/lib/template-compiler/index.js?{\"id\":\"data-v-381e38ee\"}!./node_modules/vue-loader/lib/selector.js?type=template&index=0!./resources/assets/js/components/UserFrontend/MarketInfo.vue"),
   /* scopeId */
@@ -102063,7 +102221,7 @@ module.exports = Component.exports
 
 var Component = __webpack_require__("./node_modules/vue-loader/lib/component-normalizer.js")(
   /* script */
-  __webpack_require__("./node_modules/babel-loader/lib/index.js?{\"cacheDirectory\":true,\"presets\":[[\"env\",{\"modules\":false,\"targets\":{\"browsers\":[\"> 2%\"],\"uglify\":true}}]]}!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./resources/assets/js/components/UserFrontend/OfferShowcase.vue"),
+  __webpack_require__("./node_modules/babel-loader/lib/index.js?cacheDirectory!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./resources/assets/js/components/UserFrontend/OfferShowcase.vue"),
   /* template */
   __webpack_require__("./node_modules/vue-loader/lib/template-compiler/index.js?{\"id\":\"data-v-44a0580c\"}!./node_modules/vue-loader/lib/selector.js?type=template&index=0!./resources/assets/js/components/UserFrontend/OfferShowcase.vue"),
   /* scopeId */
@@ -102102,7 +102260,7 @@ __webpack_require__("./node_modules/vue-style-loader/index.js!./node_modules/css
 
 var Component = __webpack_require__("./node_modules/vue-loader/lib/component-normalizer.js")(
   /* script */
-  __webpack_require__("./node_modules/babel-loader/lib/index.js?{\"cacheDirectory\":true,\"presets\":[[\"env\",{\"modules\":false,\"targets\":{\"browsers\":[\"> 2%\"],\"uglify\":true}}]]}!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./resources/assets/js/components/UserFrontend/ProductPriceGraph.vue"),
+  __webpack_require__("./node_modules/babel-loader/lib/index.js?cacheDirectory!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./resources/assets/js/components/UserFrontend/ProductPriceGraph.vue"),
   /* template */
   __webpack_require__("./node_modules/vue-loader/lib/template-compiler/index.js?{\"id\":\"data-v-e914c0b6\"}!./node_modules/vue-loader/lib/selector.js?type=template&index=0!./resources/assets/js/components/UserFrontend/ProductPriceGraph.vue"),
   /* scopeId */
@@ -102137,7 +102295,7 @@ module.exports = Component.exports
 
 var Component = __webpack_require__("./node_modules/vue-loader/lib/component-normalizer.js")(
   /* script */
-  __webpack_require__("./node_modules/babel-loader/lib/index.js?{\"cacheDirectory\":true,\"presets\":[[\"env\",{\"modules\":false,\"targets\":{\"browsers\":[\"> 2%\"],\"uglify\":true}}]]}!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./resources/assets/js/components/UserFrontend/ProductPriceGraphDialog.vue"),
+  __webpack_require__("./node_modules/babel-loader/lib/index.js?cacheDirectory!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./resources/assets/js/components/UserFrontend/ProductPriceGraphDialog.vue"),
   /* template */
   __webpack_require__("./node_modules/vue-loader/lib/template-compiler/index.js?{\"id\":\"data-v-059cd74d\"}!./node_modules/vue-loader/lib/selector.js?type=template&index=0!./resources/assets/js/components/UserFrontend/ProductPriceGraphDialog.vue"),
   /* scopeId */
@@ -102176,7 +102334,7 @@ __webpack_require__("./node_modules/vue-style-loader/index.js!./node_modules/css
 
 var Component = __webpack_require__("./node_modules/vue-loader/lib/component-normalizer.js")(
   /* script */
-  __webpack_require__("./node_modules/babel-loader/lib/index.js?{\"cacheDirectory\":true,\"presets\":[[\"env\",{\"modules\":false,\"targets\":{\"browsers\":[\"> 2%\"],\"uglify\":true}}]]}!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./resources/assets/js/components/UserFrontend/ProductsPriceList.vue"),
+  __webpack_require__("./node_modules/babel-loader/lib/index.js?cacheDirectory!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./resources/assets/js/components/UserFrontend/ProductsPriceList.vue"),
   /* template */
   __webpack_require__("./node_modules/vue-loader/lib/template-compiler/index.js?{\"id\":\"data-v-3afb48d4\"}!./node_modules/vue-loader/lib/selector.js?type=template&index=0!./resources/assets/js/components/UserFrontend/ProductsPriceList.vue"),
   /* scopeId */
@@ -102211,7 +102369,7 @@ module.exports = Component.exports
 
 var Component = __webpack_require__("./node_modules/vue-loader/lib/component-normalizer.js")(
   /* script */
-  __webpack_require__("./node_modules/babel-loader/lib/index.js?{\"cacheDirectory\":true,\"presets\":[[\"env\",{\"modules\":false,\"targets\":{\"browsers\":[\"> 2%\"],\"uglify\":true}}]]}!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./resources/assets/js/components/UserFrontend/ProductsPriceListTable.vue"),
+  __webpack_require__("./node_modules/babel-loader/lib/index.js?cacheDirectory!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./resources/assets/js/components/UserFrontend/ProductsPriceListTable.vue"),
   /* template */
   __webpack_require__("./node_modules/vue-loader/lib/template-compiler/index.js?{\"id\":\"data-v-51c6668a\"}!./node_modules/vue-loader/lib/selector.js?type=template&index=0!./resources/assets/js/components/UserFrontend/ProductsPriceListTable.vue"),
   /* scopeId */
@@ -102242,10 +102400,15 @@ module.exports = Component.exports
 /***/ }),
 
 /***/ "./resources/assets/js/utils/smoothscroll.js":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony export (immutable) */ __webpack_exports__["a"] = scroll;
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.scroll = scroll;
 function scroll() {
     $('a[href*="#"]')
     // Remove links that don't actually link to anything
@@ -102283,11 +102446,16 @@ function scroll() {
 /***/ }),
 
 /***/ "./resources/assets/js/utils/zingchart.js":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony export (immutable) */ __webpack_exports__["a"] = chartInit;
-function chartInit(title, labels, values) {
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.default = chartInit;
+function chartInit(labels, values) {
 
     var myConfig = {
         gui: {
@@ -102322,11 +102490,7 @@ function chartInit(title, labels, values) {
             }
         },
         backgroundColor: "#ffffff",
-        // title : {
-        //     text : title,
-        //     backgroundColor : "#ffffff",
-        //     fontColor : "#000"
-        // },
+
         plot: {
             aspect: "spline",
             marker: {

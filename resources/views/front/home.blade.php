@@ -28,7 +28,7 @@
             </el-col>
         </el-row>
     </div>
-    <div id="markets-logs">
+    <div id="markets-logos">
         <el-row>
             <el-col>
                 <h3>Monitorowane rynki hurtowe</h3>

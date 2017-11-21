@@ -10,7 +10,7 @@
 </template>
 
 <script>
-    import { chartInit } from '../../utils/zingchart';
+    import chartInit from '../../utils/zingchart';
 
     export default {
         props: ['products', 'selected'],
@@ -42,15 +42,13 @@
                 let values = [];
 
                 if(this.products.length > 0) {
-                    title = this.products[0].product + " - ceny za: " + this.products[0].package;
-
                     this.products.forEach((item) => {
                         labels.push([item.date]);
                         values.push([item.price_min, item.price_max]);
                     });
                 }
 
-                chartInit(title, labels, values);
+                chartInit(labels, values);
             },
             updateGraphData() {
                 this.$root.$emit('update-graph-data', {

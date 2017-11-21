@@ -1,4 +1,4 @@
-export function chartInit(title, labels, values) {
+export default function chartInit(labels, values) {
 
     let myConfig = {
         gui: {
@@ -33,11 +33,7 @@ export function chartInit(title, labels, values) {
             },
         },
         backgroundColor : "#ffffff",
-        // title : {
-        //     text : title,
-        //     backgroundColor : "#ffffff",
-        //     fontColor : "#000"
-        // },
+
         plot : {
             aspect : "spline",
             marker : {
