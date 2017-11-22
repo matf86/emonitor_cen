@@ -3,7 +3,7 @@
         <h4 class="center">{{market.name}} | {{product.product}} | {{ product.package }}</h4>
         <product-price-graph :products="productsList" :selected="selectedProduct" :market="market"></product-price-graph>
         <span slot="footer" class="dialog-footer">
-            <el-col class="mb-1 btn-stacked">
+            <el-col class="mb-1">
                 <el-button class="btn-mobile" type="primary" @click="hideDialog(false)">Zamknij</el-button>
             </el-col>
         </span>

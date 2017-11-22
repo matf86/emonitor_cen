@@ -33,7 +33,7 @@
                 </el-form>
                 </div>
                 <span slot="footer" class="dialog-footer">
-                <el-col :xs="24" :sm="{span:14, offset:5}" :md="{span:12, offset:6}" :lg="{span:10, offset:7}" class="mb-1 btn-stacked">
+                <el-col :xs="24" :sm="{span:14, offset:5}" :md="{span:12, offset:6}" :lg="{span:10, offset:7}" class="mb-1">
                     <div id="recaptcha"  data-size="invisible"></div>
                     <el-button class="btn-mobile" @click="closeForm">Anuluj</el-button>
                     <el-button class="btn-mobile" :loading="btnLoading" type="primary" @click="submitForm('contactForm')">Wyślij</el-button>

@@ -515,17 +515,12 @@ a:active {
 
 .btn-mobile {
   @include mobile {
+    display: block;
+    width: 100%;
     border-radius: 0;
   }
 }
 
-.btn-stacked {
-  @include mobile {
-    margin-bottom: 0;
-    display: grid;
-    padding: 0;
-  }
-}
 
 .el-dialog__footer {
   @include mobile {
@@ -616,7 +611,7 @@ footer {
     width:100%;
 
   @include mobile {
-    height: 300px;
+    min-height: 350px;
     width:100%;
   }
 }
