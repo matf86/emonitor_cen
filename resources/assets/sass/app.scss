@@ -387,7 +387,6 @@ a:active {
 //Markets list
 
 #markets-list {
-  min-height: 42%;
   margin: 20px 15px 20px 15px;
 }
 
@@ -612,10 +611,14 @@ footer {
 }
 
 //Chart
-
 #chart {
-  width: 100%;
-  height: 70vh;
+    height:70vh;
+    width:100%;
+
+  @include mobile {
+    height: 300px;
+    width:100%;
+  }
 }
 
 
