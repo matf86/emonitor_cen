@@ -13,30 +13,30 @@
                     sortable="custom"
                     prop="product"
                     label="Produkt"
-                    min-width="230">
+                    min-width="115">
             </el-table-column>
             <el-table-column
                     sortable
                     prop="origin"
                     label="Pochodzenie"
-                    min-width="150">
+                    min-width="80">
             </el-table-column>
             <el-table-column
                     prop="package"
                     label="Ilość"
-                    min-width="150">
+                    min-width="85">
             </el-table-column>
             <el-table-column
                     sortable
                     prop="price_min"
                     label="Cena min"
-                    min-width="120">
+                    min-width="65">
             </el-table-column>
             <el-table-column
                     sortable
                     prop="price_max"
                     label="Cena max"
-                    min-width="120">
+                    min-width="65">
             </el-table-column>
         </el-table>
         <product-price-graph-dialog :data="productPriceList"

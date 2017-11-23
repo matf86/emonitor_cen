@@ -613,6 +613,20 @@ footer {
   }
 }
 
+//ProductsPriceListTable
+
+.el-table {
+  @include mobile {
+    font-size: 12px;
+  }
+}
+
+.el-table__header-wrapper {
+  @include mobile {
+    font-size: 10px;
+  }
+}
+
 
 
 
