@@ -1,5 +1,5 @@
 <template>
-    <div v-loading="loading" element-loading-text="Wczytuje...">
+    <div>
         <el-table
                 :default-sort = "{prop: 'product', order: 'ascending'}"
                 @sort-change="sortAndPaginate"
@@ -61,7 +61,6 @@
                 productPriceList: [],
                 dialogFormVisible: false,
                 slug: location.pathname,
-                loading: false
             }
         },
         watch: {
@@ -113,14 +112,10 @@
                     });
                     console.log(error);
                 });
-
-                this.loading = false;
             },
             // Updates product price graph after picking new date range.
             // @data Object - passed by @update-graph-data event.
             updateProductList(data) {
-                this.loading = true;
-
                 let dateRange = [];
                 dateRange[0] = data.dateRange.from;
                 dateRange[1] = data.dateRange.to;
@@ -142,8 +137,6 @@
                     });
                     console.log(error);
                 });
-
-                this.loading = false;
             },
         }
     }

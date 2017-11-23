@@ -21,7 +21,6 @@
 </template>
 
 <script>
-
     import SearchProduct from '../SearchProduct.vue'
     import CheckboxTypes from './CheckboxTypes.vue';
     import ProductsPriceListTable from './ProductsPriceListTable.vue'

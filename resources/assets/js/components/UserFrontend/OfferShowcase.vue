@@ -1,7 +1,7 @@
 <template>
     <div>
         <market-info :data="marketData"></market-info>
-        <products-price-list :data="products" :date="date" :types="productsTypes" :market="marketData"></products-price-list>
+        <products-price-list v-loading="loading" element-loading-text="Wczytuje..." :data="products" :date="date" :types="productsTypes" :market="marketData"></products-price-list>
     </div>
 </template>
 
@@ -16,8 +16,8 @@
             return {
                 date:'',
                 products: [],
-                productsTypes: []
-//                placeData: {},
+                productsTypes: [],
+                loading: true
             }
         },
         created() {
@@ -26,6 +26,7 @@
         },
         methods: {
             getOffers(date) {
+                this.loading = true;
                 console.log(date);
                 axios.get('/markets/'+this.marketData.slug+'/offers',{ params:
                     {
@@ -33,8 +34,13 @@
                     }
                 }).then(response => {
                     this.setProductsData(response.data.data);
+                    this.loading = false;
                 }).catch(error => {
-                    return noData('Błąd serwera, spróbój ponownie puźniej.');
+                    this.$notify.error({
+                        message: 'Wystąpił błąd podczas pobierania danych...',
+                        duration: 0
+                    });
+                    this.loading = false;
                 })
             },
             setProductsData(data) {
