@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div v-loading="loading" element-loading-text="Wczytuje...">
         <el-table
                 :default-sort = "{prop: 'product', order: 'ascending'}"
                 @sort-change="sortAndPaginate"
@@ -61,6 +61,7 @@
                 productPriceList: [],
                 dialogFormVisible: false,
                 slug: location.pathname,
+                loading: false
             }
         },
         watch: {
@@ -89,6 +90,9 @@
             // Invoked by showDialog event handler.
             // @productName string - passed by @row-click event.
             getProductData(data) {
+
+                this.loading = true;
+
                 let params = { params: {
                     product: data.product,
                     package: data.package,
@@ -100,7 +104,7 @@
                         this.productPriceList = response.data.data;
                         this.selectedProduct = data;
                         this.dialogFormVisible = true;
-                    }).catch(error => {
+                }).catch(error => {
                     this.productPriceList = [];
                     this.$notify.error({
                         title: 'Error',
@@ -108,11 +112,15 @@
                         duration: 0
                     });
                     console.log(error);
-                })
+                });
+
+                this.loading = false;
             },
             // Updates product price graph after picking new date range.
             // @data Object - passed by @update-graph-data event.
             updateProductList(data) {
+                this.loading = true;
+
                 let dateRange = [];
                 dateRange[0] = data.dateRange.from;
                 dateRange[1] = data.dateRange.to;
@@ -133,7 +141,9 @@
                         duration: 0
                     });
                     console.log(error);
-                })
+                });
+
+                this.loading = false;
             },
         }
     }

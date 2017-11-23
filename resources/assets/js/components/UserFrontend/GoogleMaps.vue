@@ -1,5 +1,5 @@
 <template>
-    <el-row v-loading="loading">
+    <el-row v-loading="loading" element-loading-text="Wczytuje...">
         <div id="map"></div>
     </el-row>
 </template>
@@ -23,6 +23,8 @@
             },
             methods: {
                 createMap() {
+                    this.loading = true;
+
                     let map = new google.maps.Map(document.getElementById('map'), {
                         center:{lat: this.lat, lng: this.lng },
                         zoom: this.zoomlevel,
@@ -36,6 +38,8 @@
                         map: map,
                         position:{lat: this.lat, lng: this.lng},
                     });
+
+                    this.loading = false;
                 }
             }
         }

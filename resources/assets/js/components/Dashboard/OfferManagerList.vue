@@ -13,11 +13,9 @@
 <script>
     import OfferManagerTable from './OfferManagerTable.vue';
     import CheckboxPlaces from './CheckboxPlaces.vue';
-    import { Loading } from 'element-ui';
-
 
     export default {
-        components: { OfferManagerTable, CheckboxPlaces, Loading },
+        components: { OfferManagerTable, CheckboxPlaces },
         data() {
             return {
                 checkedPlaces:[],
@@ -25,7 +23,7 @@
                 tableData: [],
                 places: [],
                 entriesList:[],
-                loading:  false,
+                loading:  true,
             }
         },
         created() {

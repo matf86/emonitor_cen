@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div v-loading="loading" element-loading-text="Wczytuje...">
         <el-row>
             <date-range-picker :init-days="30" ref="picker" @set-date-range="setDateRange"></date-range-picker>
             <el-button type="success" icon="search" style="margin: 5px 0;" @click="updateGraphData">Szukaj</el-button>
@@ -17,6 +17,7 @@
         data() {
             return {
                 dateRange:[],
+                loading: false
             }
         },
         mounted() {
@@ -36,6 +37,8 @@
                 this.$refs['picker'].initDateRange();
             },
             prepChart() {
+                this.loading = true;
+
                 let labels= [];
                 let values = [];
 
@@ -47,8 +50,10 @@
                 }
 
                 chartInit(labels, values);
+                this.loading = false;
             },
             updateGraphData() {
+                this.loading = true;
                 this.$root.$emit('update-graph-data', {
                     dateRange: {
                                   'from': this.dateRange[0],
