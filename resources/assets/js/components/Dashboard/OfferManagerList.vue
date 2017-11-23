@@ -1,7 +1,7 @@
 <template>
     <div>
     <el-row>
-        <date-range-picker :init-days="30" @set-date-range="setDateRange"></date-range-picker>
+        <date-range-picker :init-days="7" @set-date-range="setDateRange"></date-range-picker>
         <checkbox-places :data="places" @set-places-list="setCheckedPlaces"></checkbox-places>
         <el-button type="success" icon="search" style="margin: 5px 0 0 0;" @click="getTableData">Szukaj</el-button>
     </el-row>

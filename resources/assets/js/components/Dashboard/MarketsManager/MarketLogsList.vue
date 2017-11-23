@@ -1,7 +1,7 @@
 <template>
     <el-alert
-            class="log"
-            :title="data.created_at + ' - ' + data.category"
+            class="mt-1"
+            :title="data.created_at"
             :type="data.category"
             :description="data.message"
             :closable="false"
@@ -21,8 +21,3 @@
     }
 </script>
 
-<style>
-    .log {
-        margin-top: 5px;
-    }
-</style>

@@ -154,7 +154,7 @@ class Offer extends Model
     {
         if (!$dateRange) {
             $latestDate = $this->all()->max('date');
-            $subtractMonth = $latestDate->copy()->subMonth();
+            $subtractMonth = $latestDate->copy()->subWeek();
 
             $max = $this->fromDateTime($latestDate);
             $min = $this->fromDateTime($subtractMonth);;

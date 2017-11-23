@@ -37,11 +37,11 @@ return [
             'host'     => env('DB_HOST', 'localhost'),//127.0.0.1
             'port'     => env('DB_PORT', 27017),
             'database' => env('DB_DATABASE'),
-            'username' => env('DB_USERNAME'),
-            'password' => env('DB_PASSWORD'),
+//            'username' => env('DB_USERNAME'),
+//           'password' => env('DB_PASSWORD'),
             'use_mongo_id' => true,
             'options' => [
-                'database' => env('DB_DATABASE')// Sets the authentication database required by mongo 3
+                'database' => env('DB_AUTH_DATABASE')// Sets the authentication database required by mongo 3
                 //['replicaSet' => 'replicaSetName'], // Connect to multiple servers or replica sets
             ]
         ],
