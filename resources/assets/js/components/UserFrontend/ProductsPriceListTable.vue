@@ -89,15 +89,22 @@
             // Invoked by showDialog event handler.
             // @productName string - passed by @row-click event.
             getProductData(data) {
-
                 this.loading = true;
+
+                //Set date range for query, default period of time 1 month.
+                let dateRange = [];
+                let end = moment();
+                let start = end.clone().subtract(1, 'months');
+
+                dateRange[0] = start.format('YYYY-MM-DD');
+                dateRange[1] = end.format('YYYY-MM-DD');
 
                 let params = { params: {
                     product: data.product,
                     package: data.package,
-                    origin: data.origin
+                    origin: data.origin,
+                    dateRange: dateRange
                 }};
-
 
                 axios.get(this.slug +'/offers', params).then(response => {
                         this.productPriceList = response.data.data;

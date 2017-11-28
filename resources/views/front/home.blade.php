@@ -5,7 +5,7 @@
         <div class="header-nav">
             <nav class="header-nav-items btn-decorator">
                 <a href="#markets-list">GIEŁDY</a>
-                <a href="#" @click="showContactForm">KONTAKT</a>
+                <a href="" @click.prevent="showContactForm">KONTAKT</a>
             </nav>
         </div>
         <div class="logo-text">
