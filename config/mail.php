@@ -29,7 +29,7 @@ return [
     |
     */
 
-    'host' => env('MAIL_HOST', 'smtp.mailgun.org'),
+    'host' => env('MAIL_HOST', 'smtp.googlemail.com'),
 
     /*
     |--------------------------------------------------------------------------
@@ -57,7 +57,7 @@ return [
 
     'from' => [
         'address' => env('MAIL_FROM_ADDRESS', 'kontakt@monitorcen.pl'),
-        'name' => env('MAIL_FROM_NAME', 'kontakt@monitorcen.pl'),
+        'name' => env('MAIL_FROM_NAME', 'kontakt@emonitorcen.pl'),
     ],
 
     /*
