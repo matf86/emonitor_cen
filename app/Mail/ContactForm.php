@@ -29,8 +29,8 @@ class ContactForm extends Mailable
      */
     public function build()
     {
-        return $this->from('E-MONITORCEN')
-                    ->subject('WIADOMOŚĆ- FORMULARZ KONTAKTOWY')
+        return $this->from($this->message['email'])
+                    ->subject('E-MONITORCEN- FORMULARZ KONTAKTOWY')
                     ->markdown('emails.contactForm');
     }
 }
