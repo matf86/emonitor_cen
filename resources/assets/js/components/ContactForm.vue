@@ -80,7 +80,7 @@
             loadCaptcha() {
                 if (window.grecaptcha) {
                     return grecaptcha.render('recaptcha', {
-                        'sitekey' : "6LfWijYUAAAAAC6Yq5584-CjsA9mbGbgInwij714",
+                        'sitekey' : "6Lf4vDgUAAAAAEs1OTXRfn4RNe2MxgQOKe9WNdIA",
                         'callback' : this.onSubmit
                     });
                 }
