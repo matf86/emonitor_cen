@@ -55,5 +55,16 @@ class ProdMarketsTableSeeder extends Seeder
             "www" => "http://www.agrohurtsa.pl",
             "cords" => [ 50.063539, 22.011549]
         ]);
+
+        DB::table('markets')->insert([
+            "_id" => new \MongoDB\BSON\ObjectID('50d3ec860774d5e62c000005'),
+            "slug" => "bronisze",
+            "name" => "Warszawski Rolno-Spożywczy Rynek Hurtowy S.A",
+            "city" => "Bronisze",
+            "street" => "Poznańska 98",
+            "zip_code" => "05-850",
+            "www" => "http://www.bronisze.com.pl",
+            "cords" => [ 52.216883, 20.840678]
+        ]);
     }
 }

@@ -1,5 +1,5 @@
 <template>
-    <el-col :xs="24" :sm="24" :md="12" :lg="6" class="mt-3 mb-2">
+    <el-col :xs="24" :sm="24" :md="12" :lg="8" class="mt-3 mb-2">
         <div class="market-box">
             <div class="market-box-title">
                 <h2 class="title" v-text="data.name"></h2>

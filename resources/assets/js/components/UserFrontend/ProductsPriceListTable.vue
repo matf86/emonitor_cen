@@ -11,9 +11,14 @@
             <el-table-column
                     fixed
                     sortable="custom"
-                    prop="product"
                     label="Produkt"
                     min-width="115">
+                <template scope="scope">
+                    <el-tooltip content="Kliknij by zobaczyc wykres..." placement="top-end">
+                        <el-icon name="information"></el-icon>
+                    </el-tooltip>
+                    <span style="margin-left: 10px">{{ scope.row.product }}</span>
+                </template>
             </el-table-column>
             <el-table-column
                     sortable
@@ -24,19 +29,23 @@
             <el-table-column
                     prop="package"
                     label="Ilość"
-                    min-width="85">
+                    min-width="75">
             </el-table-column>
             <el-table-column
                     sortable
-                    prop="price_min"
                     label="Cena min"
-                    min-width="65">
+                    min-width="70">
+                <template scope="scope">
+                    <span>{{ scope.row.price_min }} zł</span>
+                </template>
             </el-table-column>
             <el-table-column
                     sortable
-                    prop="price_max"
                     label="Cena max"
-                    min-width="65">
+                    min-width="70">
+                <template scope="scope">
+                    <span>{{ scope.row.price_max }} zł</span>
+                </template>
             </el-table-column>
         </el-table>
         <product-price-graph-dialog :data="productPriceList"

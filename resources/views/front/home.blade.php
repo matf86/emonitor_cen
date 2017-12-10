@@ -1,5 +1,9 @@
 @extends('layout.app')
 
+@section('title')
+    <title>EMONITOR CEN - aktualne ceny warzyw i owoców</title>
+@endsection
+
 @section('content')
     <div class="header-bg">
         <div class="header-nav">
@@ -35,17 +39,20 @@
             </el-col>
         </el-row>
         <el-row>
-            <el-col class="markets-logs-image mt-2 mb-2" :xs="24" :sm="12" :md="12" :lg="6">
-                <img src="/images/wgro_logo-min.png" alt="" width="225" height="75">
+            <el-col class="markets-logs-image mt-2 mb-2" :xs="24" :sm="12" :md="8" :lg="{span:4, offset:2}">
+                <img src="/images/wgro_logo-min.png" alt="Wielkopolska Gildia Rolno Ogrodnicza" width="175" height="70">
             </el-col>
-            <el-col class="markets-logs-image mt-2 mb-2" :xs="24" :sm="12" :md="12" :lg="6">
-                <img src="/images/zjazdowa_logo-min.png" alt="" width="225" height="75">
+            <el-col class="markets-logs-image mt-2 mb-2" :xs="24" :sm="12" :md="8" :lg="{span:4, offset:0}">
+                <img src="/images/zjazdowa_logo-min.png" alt='Łódzki Rynek Hurtowy Zjazdowa" S.A' width="175" height="70">
             </el-col>
-            <el-col class="markets-logs-image mt-2 mb-2" :xs="24" :sm="12" :md="12" :lg="6">
-                <img src="/images/elizowka_logo-min.png" alt="" width="225" height="75">
+            <el-col class="markets-logs-image mt-2 mb-2" :xs="24" :sm="12" :md="8" :lg="{span:4, offset:0}">
+                <img src="/images/elizowka_logo-min.png" alt="Lubelski Rynek Hurtowy w Elizówce" width="175" height="70">
             </el-col>
-            <el-col class="markets-logs-image mt-2 mb-2" :xs="24" :sm="12" :md="12" :lg="6">
-                <img src="/images/agrohurt_logo-min.png" alt="" width="225" height="75">
+            <el-col class="markets-logs-image mt-2 mb-2" :xs="24" :sm="12" :md="{span:8, offset:4}" :lg="{span:4, offset:0}">
+                <img src="/images/agrohurt_logo-min.png" alt='Podkarpackie Centrum Hurtowe "Agrohurt" S.A' width="175" height="70">
+            </el-col>
+            <el-col class="markets-logs-image mt-2 mb-2" :xs="24" :sm="{span:12, offset:6}" :md="{span:8, offset:0}" :lg="{span:4, offset:0}">
+                <img src="/images/bronisze_logo-min.png" alt="Warszawski Rolno-Spożywczy Rynek Hurtowy S.A" width="175" height="70">
             </el-col>
         </el-row>
     </div>
