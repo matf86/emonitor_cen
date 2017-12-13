@@ -26,8 +26,8 @@
             <el-col :xs="{span:24}" :sm="{span:12}" :md="{span:8 , offset:1}" :lg="{span:6}">
                 <p class="divider-secondary-text mt-2">Witam w naszym serwise.
                     <span class="logo-font">MONITOR CEN</span> powstał w celu gromadzenia oferty cenowej dotyczącej produktów oferowanych na największych w Polsce hurtowych rynkach spożywczych.
-                    Gromadzone dane udostępniamy użytkownikom w przystępnej i czytelnej formie. Oprócz udąstepniania bieżących zestawien cenn,
-                    dajemy równiez możliwośc prześledzenia cen historycznych.
+                    Gromadzone dane udostępniamy użytkownikom w przystępnej i czytelnej formie. Oprócz udąstepniania bieżących zestawien cen,
+                    dajemy równiez możliwośc prześledzenia notowań historycznych.
                 </p>
             </el-col>
         </el-row>
