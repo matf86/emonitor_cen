@@ -17,13 +17,15 @@
     </script>
 </head>
 <body>
-<div id="app" v-cloak>
-    @if(Route::current()->getName() !=='home')
-        @include('layout.nav')
-    @endif
-    @yield('content')
+<div id="wrapper" v-cloak>
+    <div id="app">
+        @if(Route::current()->getName() !=='home')
+            @include('layout.nav')
+        @endif
+        @yield('content')
+    </div>
+    @include('layout.footer')
 </div>
-@include('layout.footer')
 <script src="{{ mix('js/app.js') }}"></script>
 @yield('additional-scripts')
 </body>

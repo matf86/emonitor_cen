@@ -39,7 +39,7 @@ Vue.component('contactForm', require('./components/ContactForm.vue'));
 Vue.component('marketBox', require('./components/MarketBox.vue'));
 
 const app = window.app = new Vue({
-    el: '#app',
+    el: '#wrapper',
     methods: {
       showContactForm() {
           this.$emit('show-contact-form');
