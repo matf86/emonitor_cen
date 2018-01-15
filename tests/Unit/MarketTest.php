@@ -44,7 +44,7 @@ class MarketTest extends TestCase
     public function market_knows_date_of_latest_offer()
     {
         $market = Market::first();
-        $latestDateFromTestDB = '15-05-2017';
+        $latestDateFromTestDB = '16-05-2017';
 
         $latestDate = $market->getLatestOfferDate();
 

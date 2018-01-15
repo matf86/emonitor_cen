@@ -16,7 +16,6 @@ Route::get('/markets/{market}', 'MarketsController@show')->name('market');
 Route::get('/markets/{market}/offers', 'MarketOffersController@index');
 Route::post('/contact', 'ContactController@send');
 
-
 Route::prefix('dashboard')->group(function () {
 
     // Authentication Routes...

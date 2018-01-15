@@ -2,6 +2,7 @@
 
 namespace Tests\Feature;
 
+use App\Market;
 use Tests\TestCase;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 
@@ -13,7 +14,6 @@ class FetchOffersTest extends TestCase
     {
         parent::setUp();
 
-
         $this->seed('TestDatabaseSeeder');
     }
 
@@ -23,22 +23,21 @@ class FetchOffersTest extends TestCase
     public function user_fetch_latest_offers_when_there_are_no_filters_in_url()
     {
         $slug = 'wgro';
-        $offersCount = 5;
-        $latestDate = '2017-05-15';
+        $latestDate = '2017-05-16';
 
         $response = $this->json('get',"/markets/{$slug}/offers");
         $offers = $response->json();
         $offersDate = $offers['data'][0]['date'];
 
         $response->assertStatus(200);
-        $this->assertCount($offersCount, $offers['data']);
+        $this->assertCount(5, $offers['data']);
         $this->assertEquals($latestDate, $offersDate);
     }
 
     /**
      * @test
      */
-    public function user_gets_response_where_there_are_no_data_for_given_resource_call()
+    public function user_gets_response_where_there_is_no_data_for_given_resource_call()
     {
         $slug = 'wgro';
         $date = '2017-05-01';
@@ -91,7 +90,7 @@ class FetchOffersTest extends TestCase
         $offers = $response->json()['data'];
         $offerProduct = $offers[0]['product'];
 
-        $this->assertCount(6, $offers);
+        $this->assertCount(7, $offers);
 
         $this->assertEquals($product, $offerProduct);
     }
@@ -146,6 +145,7 @@ class FetchOffersTest extends TestCase
         $this->assertCount(5, $offers);
         $this->assertEquals($product, $offerProduct);
     }
+
 
     /**
      * @test

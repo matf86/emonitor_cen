@@ -9,6 +9,7 @@
     <link href="{{ mix('css/app.css') }}" rel="stylesheet">
     <link href='https://fonts.googleapis.com/css?family=Mogra&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB-EvHFWq7GkFpW0Z3_CQJx1xXpUTboSfs"></script>
+    <script src="https://use.fontawesome.com/9d260f9c97.js"></script>
     <script>
         window.Laravel = {!! json_encode([
             'csrfToken' => csrf_token(),
@@ -16,11 +17,10 @@
     </script>
 </head>
 <body>
-<div id="app">
+<div id="app" v-cloak>
     @if(Route::current()->getName() !=='home')
         @include('layout.nav')
     @endif
-
     @yield('content')
 </div>
 @include('layout.footer')

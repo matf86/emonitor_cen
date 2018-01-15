@@ -76,7 +76,7 @@ class FetchOfferStatiscticsTest extends TestCase
 
         $response->assertStatus(200);
         $this->assertEquals(5, $stats[0]['count']);
-        $this->assertCount(12, $stats);
+        $this->assertCount(13, $stats);
         $this->assertEquals(count($ids), count($market_ids));
     }
 

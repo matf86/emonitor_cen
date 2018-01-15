@@ -14,5 +14,6 @@ class DevDatabaseSeeder extends Seeder
         $this->call(DevMarketsTableSeeder::class);
         $this->call(DevOffersTableSeeder::class);
         $this->call(DevLogsTableSeeder::class);
+        $this->call(DevUsersTableSeeder::class);
     }
 }

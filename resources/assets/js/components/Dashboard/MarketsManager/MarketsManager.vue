@@ -57,7 +57,7 @@
                 });
             },
             updateLogs(data) {
-               let categories = (data.categories.length === 0)? [null] : data.categories;
+               let categories = (data.categories.length === 0) ? [null] : data.categories;
                axios.get('/dashboard/markets/'+data.market.slug+'/logs', { params:
                     {
                         categories: categories,

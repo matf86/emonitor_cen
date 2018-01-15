@@ -10,7 +10,6 @@ class Market extends Model
 
     protected $appends = ['count_offers', 'latest_offer'];
 
-
     /**
      * Get the route key for the model.
      *

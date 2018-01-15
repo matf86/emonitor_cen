@@ -2,6 +2,7 @@
 
 namespace App\Filters;
 
+use App\Log;
 use Carbon\Carbon;
 
 
@@ -10,6 +11,10 @@ class LogsFilters extends Filters
     protected $filters = ['categories', 'dateRange'];
 
     protected function categories(array $value) {
+
+//        if($value[0] === 'null') {
+//            $value = Log::getCategories();
+//        }
 
         return $this->builder->whereIn('category', $value);
     }

@@ -13,6 +13,7 @@ class TestMarketsTableSeeder extends Seeder
     public function run()
     {
         DB::table('markets')->insert([
+            "_id" => new \MongoDB\BSON\ObjectID('10d3ec860774d5e62c000001'),
             "slug" => "wgro",
             "name" => "Wielkopolska Giełda Rolno-Ogrodnicza",
             "city" => "Poznań",
@@ -23,6 +24,7 @@ class TestMarketsTableSeeder extends Seeder
         ]);
 
         DB::table('markets')->insert([
+            "_id" => new \MongoDB\BSON\ObjectID('10d3ec860774d5e62c000002'),
             "slug" => "lrh",
             "name" => "Łódzki Rynek Hurtowy „Zjazdowa” S.A",
             "city" => " Łódź",

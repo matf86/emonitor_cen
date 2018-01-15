@@ -7,29 +7,16 @@
                 border
                 empty-text="Brak danch..."
                 style="width:100%; margin: 5px 0;"
-                @row-click='showDialog'>>
+                @cell-click='showDialog'>>
             <el-table-column
-                    fixed
+                    fixed="left"
                     sortable="custom"
                     label="Produkt"
-                    min-width="115">
+                    min-width="125">
                 <template scope="scope">
-                    <el-tooltip content="Kliknij by zobaczyc wykres..." placement="top-end">
-                        <el-icon name="information"></el-icon>
-                    </el-tooltip>
+                    <el-tag><i class="fa fa-line-chart" aria-hidden="true"></i></el-tag>
                     <span style="margin-left: 10px">{{ scope.row.product }}</span>
                 </template>
-            </el-table-column>
-            <el-table-column
-                    sortable
-                    prop="origin"
-                    label="Pochodzenie"
-                    min-width="80">
-            </el-table-column>
-            <el-table-column
-                    prop="package"
-                    label="Ilość"
-                    min-width="75">
             </el-table-column>
             <el-table-column
                     sortable
@@ -47,9 +34,20 @@
                     <span>{{ scope.row.price_max }} zł</span>
                 </template>
             </el-table-column>
+            <el-table-column
+                    prop="package"
+                    label="Ilość"
+                    min-width="75">
+            </el-table-column>
+            <el-table-column
+                    sortable
+                    prop="origin"
+                    label="Pochodzenie"
+                    min-width="80">
+            </el-table-column>
         </el-table>
         <product-price-graph-dialog :data="productPriceList"
-                                    :visible="dialogFormVisible"
+                                    :visible="chartDialogVisible"
                                     :product="selectedProduct"
                                     :market="market">
         </product-price-graph-dialog>
@@ -61,14 +59,14 @@
     import ProductPriceGraphDialog from './ProductPriceGraphDialog.vue';
 
     export default {
-        components: { ProductPriceGraphDialog },
+        components: { ProductPriceGraphDialog},
         props: ['data', 'market'],
         data() {
             return {
                 selectedProduct: '',
                 entriesList: this.data,
                 productPriceList: [],
-                dialogFormVisible: false,
+                chartDialogVisible: false,
                 slug: location.pathname,
             }
         },
@@ -88,11 +86,11 @@
             sortAndPaginate(data) {
                 this.$root.$emit('paginate', data);
             },
-            showDialog(data) {
-                this.getProductData(data);
+            showDialog(row, col) {
+                this.getProductData(row);
             },
             hideDialog() {
-                this.dialogFormVisible = false;
+                this.chartDialogVisible = false;
                 this.productPriceList = [];
             },
             // Invoked by showDialog event handler.
@@ -118,7 +116,7 @@
                 axios.get(this.slug +'/offers', params).then(response => {
                         this.productPriceList = response.data.data;
                         this.selectedProduct = data;
-                        this.dialogFormVisible = true;
+                        this.chartDialogVisible = true;
                 }).catch(error => {
                     this.productPriceList = [];
                     this.$notify.error({
@@ -153,7 +151,7 @@
                     });
                     console.log(error);
                 });
-            },
+            }
         }
     }
 </script>

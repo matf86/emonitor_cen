@@ -3,6 +3,8 @@
 namespace Tests\Feature;
 
 use App\User;
+use Carbon\Carbon;
+use Illuminate\Support\Facades\Cache;
 use Tests\TestCase;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 

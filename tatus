@@ -1,0 +1,209 @@
+[33mcommit 20933ae7620c1e673b6d303c87e2850db60c4393[m
+Author: mateusz_fludra <mateusz.fludra@gmail.com>
+Date:   Wed Dec 13 21:12:29 2017 +0100
+
+    fixed spelling mistakes
+
+[33mcommit 82ee8f7ec8956aa90ed2baa3065a3951a8309d5d[m
+Author: mateusz_fludra <mateusz.fludra@gmail.com>
+Date:   Sun Dec 10 22:19:53 2017 +0100
+
+    Bronisze added
+
+[33mcommit 3eda02f098ba5bc33aee7c54f598f656ae511f09[m
+Author: mateusz_fludra <mateusz.fludra@gmail.com>
+Date:   Sat Dec 2 17:01:56 2017 +0100
+
+    footer disable margin on p
+
+[33mcommit fd454d54044f3e7e2bbf43f8a2499bece56b7085[m
+Author: mateusz_fludra <mateusz.fludra@gmail.com>
+Date:   Sat Dec 2 16:55:42 2017 +0100
+
+    footer blank space fix
+
+[33mcommit 97bde44494eee4de86142fb908584298ec5fcc16[m
+Author: mateusz_fludra <mateusz.fludra@gmail.com>
+Date:   Sat Dec 2 16:43:37 2017 +0100
+
+    footer fix
+
+[33mcommit 368f946d53ba05fdbb8d43fb30b3991d592223ab[m
+Author: mateusz_fludra <mateusz.fludra@gmail.com>
+Date:   Fri Dec 1 20:15:14 2017 +0100
+
+    email sender added
+
+[33mcommit a0999e4728ff4a4f1099d14445eadbd36876cf13[m
+Author: mateusz_fludra <mateusz.fludra@gmail.com>
+Date:   Thu Nov 30 22:04:49 2017 +0100
+
+    Contact form mail fixes
+
+[33mcommit 56676cbee3dc19add2e79d628ddbb4557fb1ff6e[m
+Author: mateusz_fludra <mateusz.fludra@gmail.com>
+Date:   Tue Nov 28 21:32:52 2017 +0100
+
+    chart default date range set to 1 month
+
+[33mcommit 5ee955c12d7e13e8987c328a4f3b8386e71b764f[m
+Author: mateusz_fludra <mateusz.fludra@gmail.com>
+Date:   Sat Nov 25 19:33:01 2017 +0100
+
+    veu devtools only in dev env
+
+[33mcommit cd0cc15f82dc12c10c50cbffafc70cfdabfbeee4[m
+Author: mateusz_fludra <mateusz.fludra@gmail.com>
+Date:   Thu Nov 23 22:51:51 2017 +0100
+
+    fixed date range interval for OfferStatsCount
+
+[33mcommit f4e66911516eb2c064adb9d625fc898657a0c201[m
+Author: mateusz_fludra <mateusz.fludra@gmail.com>
+Date:   Thu Nov 23 22:35:22 2017 +0100
+
+    Product table mobile font size changed
+
+[33mcommit 3ca20ec9444f3595a8974c477f72bf38cd8f1738[m
+Author: mateusz_fludra <mateusz.fludra@gmail.com>
+Date:   Thu Nov 23 22:10:15 2017 +0100
+
+    loading indicator fixes
+
+[33mcommit 3689db5bbdb9accb30cef497883f2db3d9cf799d[m
+Author: mateusz_fludra <mateusz.fludra@gmail.com>
+Date:   Thu Nov 23 21:31:53 2017 +0100
+
+    loading indicator added to frontend components
+
+[33mcommit 1e782833f6f997e80f60423906df2f8fa60dfae0[m
+Author: mateusz_fludra <mateusz.fludra@gmail.com>
+Date:   Wed Nov 22 22:39:48 2017 +0100
+
+    mobile btn fixed
+
+[33mcommit cb3eb1715679cfa0f4431b09e895ca89a1472dad[m
+Author: mateusz_fludra <mateusz.fludra@gmail.com>
+Date:   Wed Nov 22 22:20:10 2017 +0100
+
+    Graph fixes
+
+[33mcommit 9a3904789abbc4f17f81201705a77e269e513137[m
+Author: mateusz_fludra <mateusz.fludra@gmail.com>
+Date:   Tue Nov 21 22:20:50 2017 +0100
+
+    Chart size styles changes
+
+[33mcommit a3a76449da34619e74eb4c923806d0389ea3620c[m
+Author: mateusz_fludra <mateusz.fludra@gmail.com>
+Date:   Tue Nov 21 21:52:44 2017 +0100
+
+    Chart styles changes
+
+[33mcommit 70a85d629fc4903066acdc3db0b040754451b9ec[m
+Author: mateusz_fludra <mateusz.fludra@gmail.com>
+Date:   Tue Nov 21 21:40:40 2017 +0100
+
+    chart move styles props to app.scss
+
+[33mcommit 56fc8958106f3d42207b1a6b1b87650bc005689d[m
+Author: mateusz_fludra <mateusz.fludra@gmail.com>
+Date:   Tue Nov 21 21:34:00 2017 +0100
+
+    chart fix
+
+[33mcommit f25f12a0e232a93c86d315dd87b9c9a428def0a2[m
+Author: mateusz_fludra <mateusz.fludra@gmail.com>
+Date:   Tue Nov 21 21:18:34 2017 +0100
+
+    babel preset 2015 added
+
+[33mcommit d5b89ff585dbbf289f4498d5f375f4baa856684e[m
+Author: mateusz_fludra <mateusz.fludra@gmail.com>
+Date:   Mon Nov 20 21:02:59 2017 +0100
+
+    Graph fixes
+
+[33mcommit aea5c4c7bbf2a04d9eeeb8c18328ba6ae21eb5fe[m
+Author: mateusz_fludra <mateusz.fludra@gmail.com>
+Date:   Fri Nov 17 21:42:31 2017 +0100
+
+    notifications fix in vue components
+
+[33mcommit 45c6c7a128e46ddd2bbbb5f8777ef81ddb07486c[m
+Author: mateusz_fludra <mateusz.fludra@gmail.com>
+Date:   Thu Nov 16 22:51:44 2017 +0100
+
+    logs show order fixed
+
+[33mcommit aeb430d5242a31c22b7f33649ad7c13c5a9f5ea5[m
+Author: mateusz_fludra <mateusz.fludra@gmail.com>
+Date:   Thu Nov 16 21:43:58 2017 +0100
+
+    added sorting offers by date in MarketOffersController@index
+
+[33mcommit 9f7deb9a179d9a98221cf69e32b58c016345471a[m
+Author: mateusz_fludra <mateusz.fludra@gmail.com>
+Date:   Mon Nov 13 20:11:54 2017 +0100
+
+    pre deploy
+
+[33mcommit 8f731110749b596ad2212234ebca1702146c2a5f[m
+Author: Mateusz Fludra <=>
+Date:   Sun Nov 12 21:28:32 2017 +0000
+
+    element ui added to dependencies
+
+[33mcommit b5bdd68696c907dffaf4509acc5634fdb77ad916[m
+Author: Mateusz Fludra <=>
+Date:   Sun Nov 12 21:10:46 2017 +0000
+
+    pre adding element ui dep v1.1
+
+[33mcommit 2565258dd030def58486637eeab7cb3f60d55000[m
+Author: Mateusz Fludra <=>
+Date:   Sun Nov 12 20:48:14 2017 +0000
+
+    pre adding element ui dep
+
+[33mcommit 455d2341c6c35ea9c86df8f2f6061476d69a3975[m
+Author: Mateusz Fludra <=>
+Date:   Mon Sep 11 19:21:07 2017 +0000
+
+    Admin dashborad v1.0
+
+[33mcommit 171634d8599918671edb7975821eb58a47a656b4[m
+Author: Mateusz Fludra <=>
+Date:   Tue Aug 15 18:43:21 2017 +0000
+
+    Tests and frontend refactor completed
+
+[33mcommit 5fe4124a8446fdbb391f3cb017ed9e0ce7f1a84c[m
+Author: Mateusz Fludra <=>
+Date:   Sun Jul 30 19:32:42 2017 +0000
+
+    Pre Controller Refactor
+
+[33mcommit 9202b82ccabd5f386c63fc81ed64182feda970b7[m
+Author: Mateusz Fludra <=>
+Date:   Sun Jul 23 16:09:53 2017 +0000
+
+    Pre controlers refactor
+
+[33mcommit f7746d408ee01a1c70389f632ddb11a1f33a4e33[m
+Author: Mateusz Fludra <=>
+Date:   Sat Jul 1 19:36:17 2017 +0000
+
+    Checkbox bug fixed
+
+[33mcommit 0a46d6128c03724565279722e1be36ec9049a20a[m
+Author: Mateusz Fludra <=>
+Date:   Thu Jun 29 19:08:26 2017 +0000
+
+    Pre priceList component refactor
+
+[33mcommit b4bfc2b7ff1a6571c5b7c246358dcebd9501a6ba[m
+Author: Mateusz Fludra <=>
+Date:   Wed Jun 28 19:05:25 2017 +0000
+
+    Pre component refactor version

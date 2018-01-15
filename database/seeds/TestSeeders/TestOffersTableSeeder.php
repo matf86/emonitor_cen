@@ -29,7 +29,7 @@ class TestOffersTableSeeder extends Seeder
 
 
             foreach ($this->products as $name => $type) {
-                for ($x = 10; $x <= 15; $x++) {
+                for ($x = 10; $x <= 16; $x++) {
                     DB::table('offers')->insert([
                         "product" => $name,
                         "type" => $type,

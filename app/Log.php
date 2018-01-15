@@ -8,7 +8,7 @@ class Log extends Model
 {
     protected $dates = ['created_at'];
 
-//    protected $dateFormat = 'Y-m-d';
+    protected $dateFormat = 'Y-m-d';
 
     /**
      * Get offers relationship.
@@ -32,4 +32,5 @@ class Log extends Model
     {
         return $filters->apply($query);
     }
+
 }
