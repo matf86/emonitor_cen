@@ -2,7 +2,7 @@
     <div>
         <el-table
                 :default-sort = "{prop: 'product', order: 'ascending'}"
-                @sort-change="sortAndPaginate"
+                @sort-change="sort"
                 :data="entriesList"
                 border
                 empty-text="Brak danch..."
@@ -19,7 +19,6 @@
                 </template>
             </el-table-column>
             <el-table-column
-                    sortable
                     label="Cena min"
                     min-width="70">
                 <template scope="scope">
@@ -27,7 +26,6 @@
                 </template>
             </el-table-column>
             <el-table-column
-                    sortable
                     label="Cena max"
                     min-width="70">
                 <template scope="scope">
@@ -40,7 +38,6 @@
                     min-width="75">
             </el-table-column>
             <el-table-column
-                    sortable
                     prop="origin"
                     label="Pochodzenie"
                     min-width="80">
@@ -80,10 +77,10 @@
             this.$root.$on('hide-dialog', this.hideDialog);
         },
         methods: {
-            sortEntries(column) {
-                this.sortAndPaginate(column);
-            },
-            sortAndPaginate(data) {
+//            sortEntries(column) {
+//                this.sortAndPaginate(column);
+//            },
+            sort(data) {
                 this.$root.$emit('paginate', data);
             },
             showDialog(row, col) {

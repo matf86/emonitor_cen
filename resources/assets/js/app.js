@@ -20,6 +20,10 @@ if (process.env.MIX_APP_ENV === 'production') {
     Vue.config.silent = true;
 }
 
+let loader = document.getElementsByClassName("loader");
+loader[0].className += " hide";
+
+
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
@@ -51,7 +55,6 @@ const app = window.app = new Vue({
 });
 
 window.events = new Vue();
-
 window.noData = function(message) {
     window.events.$emit('no-data', message);
 };
