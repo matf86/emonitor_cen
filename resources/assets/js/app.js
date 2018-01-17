@@ -49,10 +49,13 @@ const app = window.app = new Vue({
     mounted() {
         window.scroll();
         let loader = document.getElementsByClassName("loader");
-        let loader_bg = document.getElementsByClassName("loader-bg");
-
         loader[0].className += " hide";
-        loader_bg[0].className += " clear";
+
+        setTimeout(function(){
+            let loader_bg = document.getElementsByClassName("loader-bg");
+            loader_bg[0].className += " clear";
+        }, 500);
+
     }
 });
 
