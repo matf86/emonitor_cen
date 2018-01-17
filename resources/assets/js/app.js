@@ -20,9 +20,6 @@ if (process.env.MIX_APP_ENV === 'production') {
     Vue.config.silent = true;
 }
 
-let loader = document.getElementsByClassName("loader");
-loader[0].className += " hide";
-
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -51,6 +48,11 @@ const app = window.app = new Vue({
     },
     mounted() {
         window.scroll();
+        let loader = document.getElementsByClassName("loader");
+        let loader_bg = document.getElementsByClassName("loader-bg");
+
+        loader[0].className += " hide";
+        loader_bg[0].className += " clear";
     }
 });
 

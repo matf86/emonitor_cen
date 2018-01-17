@@ -25,7 +25,7 @@
         ]) !!};
     </script>
 </head>
-<body>
+<body class="loader-bg">
 <div class="loader">
     <div class="sk-fading-circle">
         <div class="sk-circle1 sk-circle"></div>

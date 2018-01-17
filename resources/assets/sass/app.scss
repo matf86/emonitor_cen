@@ -49,6 +49,14 @@ body, html {
   font-family: $main-font;
 }
 
+.loader-bg {
+  background-color: rgba(75, 174, 231, .85);
+}
+
+.clear {
+  background-color: rgba(243, 243, 243, .7);
+}
+
 // Vuejs styles
 
 [v-cloak] { display:none; }
@@ -635,7 +643,7 @@ footer p {
 .loader {
   display: block;
   position: absolute;
-  top:240px;
+  top: 0;
   bottom: 0;
   left: 0;
   right: 0;
@@ -669,7 +677,7 @@ footer p {
   margin: 0 auto;
   width: 20%;
   height: 25%;
-  background-color: rgba(32, 160, 255, .6);
+  background-color: rgba(239, 239, 240, 0.6);
   border-radius: 40%;
   -webkit-animation: sk-circleFadeDelay 1.2s infinite ease-in-out both;
   animation: sk-circleFadeDelay 1.2s infinite ease-in-out both;
