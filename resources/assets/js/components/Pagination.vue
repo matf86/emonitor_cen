@@ -28,6 +28,9 @@
             data() {
                 this.tableData = this.data;
                 this.passSlicedData();
+            },
+            tableData() {
+                this.passSlicedData();
             }
         },
         computed: {
@@ -49,18 +52,26 @@
                 this.passSlicedData();
             },
             sortEntries(column) {
-                this.tableData.sort((a, b) => {
-                    if (a[column.prop] > b[column.prop]) {
-                        return 1
-                    } else if (a[column.prop] < b[column.prop]) {
-                        return -1
-                    } else {
-                        return 0
-                    }
-                });
-                if (column.order === 'descending') {
-                    this.tableData.reverse()
+                if(column.order === "descending"){
+                    this.tableData = _.orderBy(this.tableData, [offer => offer.product.toLowerCase()], ['desc']);
                 }
+
+                if(column.order === "ascending"){
+                    this.tableData = _.orderBy(this.tableData, [offer => offer.product.toLowerCase()], ['asc']);
+                }
+
+//                this.tableData.sort((a, b) => {
+//                    if (a[column.prop] > b[column.prop]) {
+//                        return 1
+//                    } else if (a[column.prop] < b[column.prop]) {
+//                        return -1
+//                    } else {
+//                        return 0
+//                    }
+//                });
+//                if (column.order === 'descending') {
+//                    this.tableData.reverse()
+//                }
             },
         }
     }

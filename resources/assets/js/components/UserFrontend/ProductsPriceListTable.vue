@@ -12,7 +12,7 @@
                     fixed="left"
                     sortable="custom"
                     label="Produkt"
-                    min-width="125">
+                    min-width="150">
                 <template scope="scope">
                     <el-tag><i class="fa fa-line-chart" aria-hidden="true"></i></el-tag>
                     <span style="margin-left: 10px">{{ scope.row.product }}</span>
@@ -35,12 +35,12 @@
             <el-table-column
                     prop="package"
                     label="Ilość"
-                    min-width="75">
+                    min-width="90">
             </el-table-column>
             <el-table-column
                     prop="origin"
                     label="Pochodzenie"
-                    min-width="80">
+                    min-width="75">
             </el-table-column>
         </el-table>
         <product-price-graph-dialog :data="productPriceList"
