@@ -59,19 +59,6 @@
                 if(column.order === "ascending"){
                     this.tableData = _.orderBy(this.tableData, [offer => offer.product.toLowerCase()], ['asc']);
                 }
-
-//                this.tableData.sort((a, b) => {
-//                    if (a[column.prop] > b[column.prop]) {
-//                        return 1
-//                    } else if (a[column.prop] < b[column.prop]) {
-//                        return -1
-//                    } else {
-//                        return 0
-//                    }
-//                });
-//                if (column.order === 'descending') {
-//                    this.tableData.reverse()
-//                }
             },
         }
     }

@@ -47,7 +47,6 @@ body, html {
   height: 100%;
   margin: 0;
   font-family: $main-font;
-  background-color: rgba(195, 195, 195, .1);
 }
 
 // Vuejs styles
@@ -425,7 +424,6 @@ a:active {
   border-bottom: 1px solid rgba(125, 125, 125, 0.55);
   box-shadow: 1px 6px 14px 0 rgba(194, 194, 195, 0.7);
   border-top: 6px solid rgba(32, 160, 255, 1);
-  background-color: rgba(245, 245, 245, .9);
 }
 
 .market-box-title {
