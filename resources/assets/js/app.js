@@ -50,12 +50,6 @@ const app = window.app = new Vue({
         window.scroll();
         let loader = document.getElementsByClassName("loader");
         loader[0].className += " hide";
-
-        setTimeout(function(){
-            let loader_bg = document.getElementsByClassName("loader-bg");
-            loader_bg[0].className += " clear";
-        }, 500);
-
     }
 });
 

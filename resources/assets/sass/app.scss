@@ -47,14 +47,7 @@ body, html {
   height: 100%;
   margin: 0;
   font-family: $main-font;
-}
-
-.loader-bg {
-  background-color: rgba(75, 174, 231, .85);
-}
-
-.clear {
-  background-color: rgba(243, 243, 243, .7);
+  background-color: rgba(195, 195, 195, .1);
 }
 
 // Vuejs styles
@@ -432,6 +425,7 @@ a:active {
   border-bottom: 1px solid rgba(125, 125, 125, 0.55);
   box-shadow: 1px 6px 14px 0 rgba(194, 194, 195, 0.7);
   border-top: 6px solid rgba(32, 160, 255, 1);
+  background-color: rgba(245, 245, 245, .9);
 }
 
 .market-box-title {
@@ -677,7 +671,7 @@ footer p {
   margin: 0 auto;
   width: 20%;
   height: 25%;
-  background-color: rgba(239, 239, 240, 0.6);
+  background-color:rgba(32, 160, 255, .75);
   border-radius: 40%;
   -webkit-animation: sk-circleFadeDelay 1.2s infinite ease-in-out both;
   animation: sk-circleFadeDelay 1.2s infinite ease-in-out both;
