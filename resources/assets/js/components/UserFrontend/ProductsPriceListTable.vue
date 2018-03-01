@@ -14,7 +14,7 @@
                     label="Produkt"
                     min-width="150">
                 <template scope="scope">
-                    <el-tag><i class="fa fa-line-chart" aria-hidden="true"></i></el-tag>
+                    <el-tag><i class="fa fa-line-chart icon-mobile" aria-hidden="true"></i></el-tag>
                     <span style="margin-left: 10px">{{ scope.row.product }}</span>
                 </template>
             </el-table-column>

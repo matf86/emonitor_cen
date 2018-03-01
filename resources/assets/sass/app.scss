@@ -300,6 +300,13 @@ a:active {
   font-family: $header-font
 }
 
+//Chart icon
+.icon-mobile {
+  @include mobile {
+    font-size: 10px;
+  }
+}
+
 //Info
 
 #info {
