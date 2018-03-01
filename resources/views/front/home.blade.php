@@ -24,7 +24,7 @@
                 <p class="info-main-text mt-2">Aktualne notowania cen warzyw i owoców z największych polskich giełd...</p>
             </el-col>
             <el-col :xs="{span:24}" :sm="{span:12}" :md="{span:8 , offset:1}" :lg="{span:6}">
-                <p class="info-secondary-text mt-2">Witam w naszym serwise.
+                <p class="info-secondary-text mt-2">
                     <span class="logo-font">E-MONITOR CEN</span> powstał w celu gromadzenia oferty cenowej dotyczącej produktów oferowanych na największych w Polsce hurtowych rynkach spożywczych.
                     Gromadzone dane udostępniamy użytkownikom w przystępnej i czytelnej formie. Oprócz udąstepniania bieżących zestawień cen,
                     dajemy równiez możliwośc prześledzenia notowań historycznych.
