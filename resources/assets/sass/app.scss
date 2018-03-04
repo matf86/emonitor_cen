@@ -43,13 +43,17 @@ $big-desktop: 1600px;
   }
 }
 
+// Basic styles setup + Vuejs styles
+
 body, html {
   height: 100%;
   margin: 0;
   font-family: $main-font;
 }
 
-// Vuejs styles
+#app {
+  min-height: 100vh;
+}
 
 [v-cloak] { display:none; }
 
@@ -60,441 +64,37 @@ body, html {
   opacity: 0
 }
 
-// Monitor cen styles
-
-#app {
-  min-height: 100vh;
-}
-
-//Links reset styles
-a:link {
-  color: inherit;
-  text-decoration: none;
-}
-
-a:visited {
-  color: inherit;
-  text-decoration: none;
-}
-
-a:hover {
-  text-decoration: none;
-}
-
-a:active {
-  text-decoration: none;
-}
-
-//Helper classes
-
-.center {
-  text-align: center;
-}
-
-.mb-1 {
-  margin-bottom: 10px;
-}
-
-.mb-2 {
-  margin-bottom: 20px;
-}
-
-.mt-1 {
-  margin-top: 10px;
-}
-
-.mt-2 {
-  margin-top: 20px;
-}
-
-.mt-3 {
-  margin-top: 30px;
-}
-
-.ml-4 {
-  margin-left: 40px;
-}
-
-// Home page //
-
-// Header
-.header-bg {
-  background-image: url("/images/header_main-min.jpg");
-  height: 100vh;
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  position: relative;
-}
-
-.header-nav-items {
-  position: absolute;
-  top: 5%;
-  right: 5%;
-}
-
-.header-nav-items span,
-.header-nav-items a {
-  color: #eeeeee;
-  font-size: 1.25em;
-  margin: 10px 10px 5px 10px;
-  padding: 10px 10px 5px 10px;
-  border-bottom: 2px solid transparent;
-  transition: 0.2s;
-
-  @include small-desktop {
-    font-size: 1.25em;
-  }
-
-  @include tablet {
-    font-size: 1.25em;
-  }
-
+//Buttons styles
+.btn-mobile {
   @include mobile {
-    font-size: 1.75em;
+    display: block;
+    width: 100%;
+    border-radius: 0;
   }
 }
 
-.header-nav-items a:hover {
-  border-bottom: 2px solid #eeeeee;
-}
-
-.logo-text {
-  text-align: center;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: #eeeeee;
-}
-
-.scroll-down {
-  font-size: 4em;
-  position: absolute;
-  bottom: 10%;
-  left: 49%;
-  color: #eeeeee;
-
-  @include tablet {
-    left: 47%;
-    font-size: 3.5em;
-
-  }
-
+.el-dialog__footer {
   @include mobile {
-    left: 44%;
-    font-size: 3em;
-  }
-
-}
-
-.scroll-down,
-.scroll-down:hover,
-.scroll-down:focus {
-  color: #eeeeee;
-}
-
-.scroll-down {
-  -webkit-animation: floating-arrow 1.6s infinite ease-in-out 0s;
-  -o-animation: floating-arrow 1.6s infinite ease-in-out 0s;
-  animation: floating-arrow 1.6s infinite ease-in-out 0s;
-}
-
-@-webkit-keyframes floating-arrow {
-  from {
-    -webkit-transform: translateY(0);
-    transform: translateY(0);
-  }
-  65% {
-    -webkit-transform: translateY(11px);
-    transform: translateY(11px);
-  }
-  to {
-    -webkit-transform: translateY(0);
-    transform: translateY(0);
+    padding: 0;
   }
 }
 
-@-o-keyframes floating-arrow {
-  from {
-    -webkit-transform: translateY(0);
-    transform: translateY(0);
-  }
-  65% {
-    -webkit-transform: translateY(11px);
-    transform: translateY(11px);
-  }
-  to {
-    -webkit-transform: translateY(0);
-    transform: translateY(0);
-  }
-}
-
-@keyframes floating-arrow {
-  from {
-    -webkit-transform: translateY(0);
-    transform: translateY(0);
-  }
-  65% {
-    -webkit-transform: translateY(11px);
-    transform: translateY(11px);
-  }
-  to {
-    -webkit-transform: translateY(0);
-    transform: translateY(0);
-  }
-}
-
-.logo-text-size {
-  width: 99vw;
-  font-family: $header-font;
-  font-size: 5em;
-
-  @include desktop {
-    width: 98vw;
-    font-size: 4em;
-  }
-
-  @include small-desktop {
-    width: 98vw;
-    font-size: 3em;
-  }
-
-  @include tablet {
-    width: 98vw;
-    font-size: 2.7em;
-  }
-
+.el-button + .el-button {
   @include mobile {
-    width: 96vw;
-    font-size: 2.2em;
+    margin-left: 0;
   }
 }
 
-.logo-text p {
-  width: 99vw;
-  font-size: 2em;
-
-  @include desktop {
-    width: 98vw;
-    font-size: 1.75em;
-  }
-
-  @include small-desktop {
-    width: 98vw;
-    font-size: 1.3em;
-  }
-
-  @include tablet {
-    width: 98vw;
-    font-size: 1.3em;
-  }
-
-  @include mobile {
-    display: none;
-  }
+//Checkbox order fix
+.el-checkbox + .el-checkbox {
+  margin-left: 0;
 }
 
-.logo-font {
-  font-family: $header-font
+.el-checkbox {
+  margin-right: 10px;
 }
 
-//Chart icon
-.icon-mobile {
-  @include mobile {
-    font-size: 10px;
-  }
-}
-
-//Info
-
-#info {
-  color: #d1dbe5;
-  background-color: #1c5c88;
-  padding: 0 15px 10px 15px;
-  min-height: 26%;
-}
-
-.info-main-text {
-  font-size: 2em;
-
-  @include desktop {
-    font-size: 1.7em;
-  }
-
-  @include small-desktop {
-    font-size: 1.65em;
-  }
-
-  @include tablet {
-    font-size: 1.6em;
-  }
-
-  @include mobile {
-    font-size: 1.5em;
-    text-align: center;
-  }
-}
-
-.info-secondary-text {
-  font-size: 1.25em;
-
-  @include desktop {
-    font-size: 1.15em;
-  }
-
-  @include small-desktop {
-    font-size: 1.1em;
-  }
-
-  @include tablet {
-    font-size: 1.1em;
-  }
-
-  @include mobile {
-    font-size: 1.2em;
-    text-align: center;
-  }
-
-}
-
-// Markets logos
-
-#markets-logos {
-  min-height: 22%;
-  background-color: rgba(224, 218, 207, 0.4);
-  padding-bottom: 15px;
-
-  @include mobile {
-    display: none;
-  }
-}
-
-#markets-logos h3 {
-  text-align: center;
-}
-
-#markets-logos img {
-  opacity: 0.75;
-  filter: grayscale(90%);
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  transition: 1s;
-}
-
-#markets-logos img:hover {
-  opacity: 1;
-  filter: grayscale(0%);
-
-}
-
-//Markets list
-
-#markets-list {
-  margin: 20px 15px 20px 15px;
-}
-
-#markets-list:focus {
-  outline: none;
-}
-
-.market-box {
-  border-top: 6px solid rgba(32, 160, 255, 0.45);
-  border-left: 1px solid rgba(107, 107, 107, 0.2);
-  border-right: 1px solid rgba(107, 107, 107, 0.2);
-  border-bottom: 1px solid rgba(107, 107, 107, 0.2);
-  box-shadow: 1px 4px 6px 0 rgba(194, 194, 195, 0.4);
-  max-width: 100%;
-  margin: auto;
-  text-align: center;
-  position: relative;
-  transition: all .3s ease-in-out;
-
-  @include small-desktop {
-    max-width: 85%;
-  }
-
-  @include tablet {
-    max-width: 80%;
-  }
-
-  @include mobile {
-    max-width: 95%;
-  }
-}
-
-.market-box:hover {
-  border-left: 1px solid rgba(125, 125, 125, 0.55);
-  border-right: 1px solid rgba(125, 125, 125, 0.55);
-  border-bottom: 1px solid rgba(125, 125, 125, 0.55);
-  box-shadow: 1px 6px 14px 0 rgba(194, 194, 195, 0.7);
-  border-top: 6px solid rgba(32, 160, 255, 1);
-}
-
-.market-box-title {
-  margin: 5px;
-  min-height: 45px;
-}
-
-.title {
-  color: #6e6e6e;
-
-  @include big-desktop {
-    font-size: 1.3em;
-  }
-
-  @include desktop {
-    font-size: 1.25em;
-  }
-
-  @include small-desktop {
-    font-size: 1.45em;
-  }
-
-  @include tablet {
-    font-size: 1.4em;
-  }
-
-  @include mobile {
-    font-size: 1.4em;
-  }
-}
-
-
-// Dashboard manager
-
-.manager-size {
-  @include big-desktop {
-    padding-left: 5px;
-    margin: 0 40px 0 50px;
-  }
-
-  @include desktop {
-    padding-left: 10px;
-    margin: 0 10px 0 100px;
-  }
-
-  @include small-desktop {
-    padding-left: 10px;
-    margin: 0 5px 0 105px;
-  }
-
-  @include tablet {
-    padding-left: 10px;
-    margin: 0 2px 0 15px;
-  }
-
-  @include mobile {
-    padding-left: 10px;
-    margin: 0 2px 0 30px;
-  }
-
-}
-
-//Input size
-
+//Search products input field
 .input-size {
   @include big-desktop {
     width: 500px;
@@ -517,278 +117,22 @@ a:active {
   }
 }
 
-// Modal buttons styles for mobile layout
-
-.btn-mobile {
-  @include mobile {
-    display: block;
-    width: 100%;
-    border-radius: 0;
-  }
-}
-
-
-.el-dialog__footer {
-  @include mobile {
-    padding: 0;
-  }
-}
-
-.el-button + .el-button {
-  @include mobile {
-    margin-left: 0;
-  }
-}
-
-// Info Card Component Styles
-
-.info-card {
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-  transition: 0.4s;
-  opacity: 0.8;
-  background: white;
-  height: 100%;
-}
-
-.info-card:hover {
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.1);
-  opacity: 0.9;
-}
-
-.info-card-header {
-  text-align: center;
-  background-color: rgb(32, 160, 255);
-}
+@import './partials/reset';
+@import './partials/helpers';
+@import './partials/loader';
+@import './partials/home_page_header';
+@import './partials/home_page_info';
+@import './partials/home_page_logos';
+@import './partials/home_page_markets_list';
+@import './partials/market_info_card';
+@import './partials/market_chart';
+@import './partials/market_products_table';
+@import './partials/dashboard_offer_manager';
+@import './partials/login';
+@import './partials/footer';
 
 
-.info-card-header h3 {
-  margin-top: 0;
-  padding: 10px;
-  color: rgba(255, 255, 255, 1);
-}
 
-.info-card-body {
-  padding: 5px 10px;
-}
 
-.info-card-footer {
-  margin-top: 25px;
-}
-
-.info-card-btn {
-  margin: 0 0 2% 85%;
-}
-
-footer {
-  color: #C2C2C3;
-  min-height: 5%;
-  background-color: #373737;
-}
-
-footer p {
-  margin-bottom: 0;
-}
-
-.footer-date {
-  padding-top: 10px;
-  text-align: center;
-}
-
-//Checkbox fix
-.el-checkbox + .el-checkbox {
-  margin-left: 0;
-}
-
-.el-checkbox {
-  margin-right: 10px;
-}
-
-.login-footer {
-  position: relative;
-}
-
-.btn-login {
-  position:absolute;
-  right: 0;
-}
-
-//Chart
-#chart {
-    height:70vh;
-    width:100%;
-
-  @include mobile {
-    min-height: 350px;
-    width:100%;
-  }
-}
-
-//ProductsPriceListTable
-
-.el-table {
-  @include mobile {
-    font-size: 10px;
-  }
-}
-
-.el-table__header-wrapper {
-  @include mobile {
-    font-size: 10px;
-  }
-}
-
-//Loading spinner
-
-.loader {
-  display: block;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  margin: auto;
-  width: 100px;
-  height: 100px;
-  z-index: 9999;
-}
-
-.loader.hide {
-  display: none;
-}
-
-.sk-fading-circle {
-  margin: 0 auto;
-  width: 80px;
-  height: 80px;
-}
-
-.sk-fading-circle .sk-circle {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  left: 0;
-  top: 0;
-}
-
-.sk-fading-circle .sk-circle:before {
-  content: '';
-  display: block;
-  margin: 0 auto;
-  width: 20%;
-  height: 25%;
-  background-color:rgba(32, 160, 255, .75);
-  border-radius: 40%;
-  -webkit-animation: sk-circleFadeDelay 1.2s infinite ease-in-out both;
-  animation: sk-circleFadeDelay 1.2s infinite ease-in-out both;
-}
-.sk-fading-circle .sk-circle2 {
-  -webkit-transform: rotate(30deg);
-  -ms-transform: rotate(30deg);
-  transform: rotate(30deg);
-}
-.sk-fading-circle .sk-circle3 {
-  -webkit-transform: rotate(60deg);
-  -ms-transform: rotate(60deg);
-  transform: rotate(60deg);
-}
-.sk-fading-circle .sk-circle4 {
-  -webkit-transform: rotate(90deg);
-  -ms-transform: rotate(90deg);
-  transform: rotate(90deg);
-}
-.sk-fading-circle .sk-circle5 {
-  -webkit-transform: rotate(120deg);
-  -ms-transform: rotate(120deg);
-  transform: rotate(120deg);
-}
-.sk-fading-circle .sk-circle6 {
-  -webkit-transform: rotate(150deg);
-  -ms-transform: rotate(150deg);
-  transform: rotate(150deg);
-}
-.sk-fading-circle .sk-circle7 {
-  -webkit-transform: rotate(180deg);
-  -ms-transform: rotate(180deg);
-  transform: rotate(180deg);
-}
-.sk-fading-circle .sk-circle8 {
-  -webkit-transform: rotate(210deg);
-  -ms-transform: rotate(210deg);
-  transform: rotate(210deg);
-}
-.sk-fading-circle .sk-circle9 {
-  -webkit-transform: rotate(240deg);
-  -ms-transform: rotate(240deg);
-  transform: rotate(240deg);
-}
-.sk-fading-circle .sk-circle10 {
-  -webkit-transform: rotate(270deg);
-  -ms-transform: rotate(270deg);
-  transform: rotate(270deg);
-}
-.sk-fading-circle .sk-circle11 {
-  -webkit-transform: rotate(300deg);
-  -ms-transform: rotate(300deg);
-  transform: rotate(300deg);
-}
-.sk-fading-circle .sk-circle12 {
-  -webkit-transform: rotate(330deg);
-  -ms-transform: rotate(330deg);
-  transform: rotate(330deg);
-}
-.sk-fading-circle .sk-circle2:before {
-  -webkit-animation-delay: -1.1s;
-  animation-delay: -1.1s;
-}
-.sk-fading-circle .sk-circle3:before {
-  -webkit-animation-delay: -1s;
-  animation-delay: -1s;
-}
-.sk-fading-circle .sk-circle4:before {
-  -webkit-animation-delay: -0.9s;
-  animation-delay: -0.9s;
-}
-.sk-fading-circle .sk-circle5:before {
-  -webkit-animation-delay: -0.8s;
-  animation-delay: -0.8s;
-}
-.sk-fading-circle .sk-circle6:before {
-  -webkit-animation-delay: -0.7s;
-  animation-delay: -0.7s;
-}
-.sk-fading-circle .sk-circle7:before {
-  -webkit-animation-delay: -0.6s;
-  animation-delay: -0.6s;
-}
-.sk-fading-circle .sk-circle8:before {
-  -webkit-animation-delay: -0.5s;
-  animation-delay: -0.5s;
-}
-.sk-fading-circle .sk-circle9:before {
-  -webkit-animation-delay: -0.4s;
-  animation-delay: -0.4s;
-}
-.sk-fading-circle .sk-circle10:before {
-  -webkit-animation-delay: -0.3s;
-  animation-delay: -0.3s;
-}
-.sk-fading-circle .sk-circle11:before {
-  -webkit-animation-delay: -0.2s;
-  animation-delay: -0.2s;
-}
-.sk-fading-circle .sk-circle12:before {
-  -webkit-animation-delay: -0.1s;
-  animation-delay: -0.1s;
-}
-
-@-webkit-keyframes sk-circleFadeDelay {
-  0%, 39%, 100% { opacity: 0; }
-  40% { opacity: 1; }
-}
-
-@keyframes sk-circleFadeDelay {
-  0%, 39%, 100% { opacity: 0; }
-  40% { opacity: 1; }
-}
 
 

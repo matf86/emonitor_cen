@@ -1,0 +1,49 @@
+#info {
+  color: #d1dbe5;
+  background-color: #1c5c88;
+  padding: 0 15px 10px 15px;
+  min-height: 26%;
+}
+
+.info-main-text {
+  font-size: 2em;
+
+  @include desktop {
+    font-size: 1.7em;
+  }
+
+  @include small-desktop {
+    font-size: 1.65em;
+  }
+
+  @include tablet {
+    font-size: 1.6em;
+  }
+
+  @include mobile {
+    font-size: 1.5em;
+    text-align: center;
+  }
+}
+
+.info-secondary-text {
+  font-size: 1.25em;
+
+  @include desktop {
+    font-size: 1.15em;
+  }
+
+  @include small-desktop {
+    font-size: 1.1em;
+  }
+
+  @include tablet {
+    font-size: 1.1em;
+  }
+
+  @include mobile {
+    font-size: 1.2em;
+    text-align: center;
+  }
+
+}

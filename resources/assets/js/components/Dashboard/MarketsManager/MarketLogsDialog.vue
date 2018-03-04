@@ -1,7 +1,7 @@
 <template>
     <el-dialog :title="'Dziennik logów dla '+ market.name+':'" :visible.sync="dialogFormVisible" size="large" @visible-change="hideDialog">
         <date-range-picker :init-days="7" @set-date-range="setDateRange"></date-range-picker>
-        <el-button type="success" icon="search" style="margin: 5px 0 0 0;" @click="updateLogs">Szukaj</el-button>
+        <el-button type="success" icon="search" class="mt-1 mb-1" @click="updateLogs">Szukaj</el-button>
         <checkbox-categories :data="categories" @filter-by-category="setCheckedCategories"></checkbox-categories>
         <market-logs-list v-for="log in data" :key="log" :data="log"></market-logs-list>
         <span slot="footer" class="dialog-footer">

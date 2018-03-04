@@ -2,7 +2,7 @@
     <div v-loading="loading" element-loading-text="Wczytuje...">
         <el-row>
             <date-range-picker :init-days="30" ref="picker" @set-date-range="setDateRange"></date-range-picker>
-            <el-button type="success" icon="search" style="margin: 5px 0;" @click="updateGraphData">Szukaj</el-button>
+            <el-button type="success" icon="search" class="mt-1 mb-1" @click="updateGraphData">Szukaj</el-button>
         </el-row>
         <hr/>
         <div id="chart"></div>

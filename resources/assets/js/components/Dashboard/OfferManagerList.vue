@@ -3,7 +3,7 @@
     <el-row>
         <date-range-picker :init-days="7" @set-date-range="setDateRange"></date-range-picker>
         <checkbox-places :data="places" @set-places-list="setCheckedPlaces"></checkbox-places>
-        <el-button type="success" icon="search" style="margin: 5px 0 0 0;" @click="getTableData">Szukaj</el-button>
+        <el-button type="success" icon="search" class="mt-1 mb-1" @click="getTableData">Szukaj</el-button>
     </el-row>
         <offer-manager-table v-loading="loading" element-loading-text="Wczytuje..." :data="entriesList"></offer-manager-table>
         <pagination :data="tableData" @set-sliced-table-data="setEntriesList"></pagination>

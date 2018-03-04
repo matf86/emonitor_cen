@@ -1,5 +1,5 @@
 <template>
-    <el-checkbox-group v-model="checkedTypes" size="small" style="margin: 10px 0 0 0;" @change="checkedTypesList">
+    <el-checkbox-group v-model="checkedTypes" size="small" class="mt-1" @change="checkedTypesList">
         <el-checkbox v-for="type in data" :label="type" :key="type">{{ type }}</el-checkbox>
     </el-checkbox-group>
 </template>

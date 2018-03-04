@@ -1,6 +1,6 @@
 <template>
-    <el-row style="position: relative;">
-        <info-card :data="data" style="position: absolute; top: 5%; left:1%; z-index: 10;"></info-card>
+    <el-row class="market-info">
+        <info-card :data="data" class="market-info__card"></info-card>
         <google-maps :cords="data.cords" :zoomlevel="14"></google-maps>
     </el-row>
 </template>
@@ -16,5 +16,16 @@
 
 </script>
 
+<style lang="scss" scoped>
+    .market-info {
+        position: relative;
+    }
 
+    .market-info__card {
+        position: absolute;
+        top: 5%;
+        left:1%;
+        z-index: 10;
+    }
+</style>
 

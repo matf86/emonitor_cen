@@ -1,15 +1,15 @@
 <template>
-    <div style="margin: 15px 15px 0 15px;">
+    <div class="m-1">
         <el-row>
             <date-picker :date="date">
                 <span slot="title">Dane dla dnia:</span>
             </date-picker>
         </el-row>
-        <el-row style="margin: 15px 0;">
-            <el-col :xs="24" :sm="24" :md="10" :lg="10" style="margin: 5px 0;">
+        <el-row class="mt-1 mb-1">
+            <el-col :xs="24" :sm="24" :md="10" :lg="10" class="mt-1 mb-1">
                 <checkbox-types :data="types"></checkbox-types>
             </el-col>
-            <el-col :xs="24" :sm="24" :md="14" :lg="14" style="margin: 5px 0;">
+            <el-col :xs="24" :sm="24" :md="14" :lg="14" class="mt-1 mb-1">
                 <search-product :data="productsNames" @show-product-by-name="showProduct" @reset-table-data="resetTableData"></search-product>
             </el-col>
         </el-row>
@@ -104,8 +104,5 @@
 </script>
 
 <style>
-    .el-table tr {
-        background-color: #fff;
-        cursor: pointer;
-    }
+
 </style>

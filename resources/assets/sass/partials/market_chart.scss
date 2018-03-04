@@ -1,0 +1,9 @@
+#chart {
+  height:70vh;
+  width:100%;
+
+  @include mobile {
+    min-height: 350px;
+    width:100%;
+  }
+}

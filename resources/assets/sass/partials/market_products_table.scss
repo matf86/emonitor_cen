@@ -1,0 +1,22 @@
+.el-table {
+  @include mobile {
+    font-size: 10px;
+  }
+}
+
+.el-table tr {
+  background-color: #fff;
+  cursor: pointer;
+}
+
+.el-table__header-wrapper {
+  @include mobile {
+    font-size: 10px;
+  }
+}
+
+.icon-mobile {
+  @include mobile {
+    font-size: 10px;
+  }
+}

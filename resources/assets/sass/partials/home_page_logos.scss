@@ -1,0 +1,28 @@
+#markets-logos {
+  min-height: 22%;
+  background-color: rgba(224, 218, 207, 0.4);
+  padding-bottom: 15px;
+
+  @include mobile {
+    display: none;
+  }
+}
+
+#markets-logos h3 {
+  text-align: center;
+}
+
+#markets-logos img {
+  opacity: 0.75;
+  filter: grayscale(90%);
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  transition: 1s;
+}
+
+#markets-logos img:hover {
+  opacity: 1;
+  filter: grayscale(0%);
+
+}

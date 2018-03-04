@@ -6,7 +6,7 @@
                 :data="entriesList"
                 border
                 empty-text="Brak danch..."
-                style="width:100%; margin: 5px 0;"
+                class="mt-1 mb-1"
                 @cell-click='showDialog'>>
             <el-table-column
                     fixed="left"
@@ -15,7 +15,7 @@
                     min-width="150">
                 <template scope="scope">
                     <el-tag><i class="fa fa-line-chart icon-mobile" aria-hidden="true"></i></el-tag>
-                    <span style="margin-left: 10px">{{ scope.row.product }}</span>
+                    <span class="ml-1">{{ scope.row.product }}</span>
                 </template>
             </el-table-column>
             <el-table-column
@@ -77,9 +77,6 @@
             this.$root.$on('hide-dialog', this.hideDialog);
         },
         methods: {
-//            sortEntries(column) {
-//                this.sortAndPaginate(column);
-//            },
             sort(data) {
                 this.$root.$emit('paginate', data);
             },

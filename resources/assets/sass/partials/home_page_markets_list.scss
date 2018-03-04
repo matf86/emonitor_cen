@@ -1,0 +1,69 @@
+#markets-list {
+  margin: 20px 15px 20px 15px;
+}
+
+#markets-list:focus {
+  outline: none;
+}
+
+.market-box {
+  border-top: 6px solid rgba(32, 160, 255, 0.45);
+  border-left: 1px solid rgba(107, 107, 107, 0.2);
+  border-right: 1px solid rgba(107, 107, 107, 0.2);
+  border-bottom: 1px solid rgba(107, 107, 107, 0.2);
+  box-shadow: 1px 4px 6px 0 rgba(194, 194, 195, 0.4);
+  max-width: 100%;
+  margin: auto;
+  text-align: center;
+  position: relative;
+  transition: all .3s ease-in-out;
+
+  @include small-desktop {
+    max-width: 85%;
+  }
+
+  @include tablet {
+    max-width: 80%;
+  }
+
+  @include mobile {
+    max-width: 95%;
+  }
+}
+
+.market-box:hover {
+  border-left: 1px solid rgba(125, 125, 125, 0.55);
+  border-right: 1px solid rgba(125, 125, 125, 0.55);
+  border-bottom: 1px solid rgba(125, 125, 125, 0.55);
+  box-shadow: 1px 6px 14px 0 rgba(194, 194, 195, 0.7);
+  border-top: 6px solid rgba(32, 160, 255, 1);
+}
+
+.market-box-title {
+  margin: 5px;
+  min-height: 45px;
+}
+
+.title {
+  color: #6e6e6e;
+
+  @include big-desktop {
+    font-size: 1.3em;
+  }
+
+  @include desktop {
+    font-size: 1.25em;
+  }
+
+  @include small-desktop {
+    font-size: 1.45em;
+  }
+
+  @include tablet {
+    font-size: 1.4em;
+  }
+
+  @include mobile {
+    font-size: 1.4em;
+  }
+}
