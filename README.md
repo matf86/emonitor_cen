@@ -2,7 +2,7 @@
 
 Agregator cen warzyw i owoców z najwiekszych polskich giełd spożywczych.
 
-# Śledzone rynki hurtowe:
+## Śledzone rynki hurtowe:
 
 * Wielkopolska Gildia Rolno-Ogrodnicza S.A
 * Łódzki Rynek Hurtowy „Zjazdowa” S.A
