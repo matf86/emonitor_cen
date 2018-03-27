@@ -10,7 +10,7 @@ Agregator cen warzyw i owoców z najwiekszych polskich giełd spożywczych.
 * Podkarpackie Centrum Hurtowe Agrohurt S.A
 * Warszawski Rolno-Spożywczy Rynek Hurtowy S.A
 
-## Built With
+## Wykorzystane technologie i biblioteki
 
 * [Laravel](https://laravel.com/) - PHP framework.
 * [VueJS](https://vuejs.org/) - JS framework.
