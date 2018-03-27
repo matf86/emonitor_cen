@@ -21,10 +21,10 @@ Agregator cen warzyw i owoców z najwiekszych polskich giełd spożywczych.
 
 ### Ponadto 
 
-HTML
-SCSS
-Google Maps API
-Invisible reCAPTCHA
+HTML,
+SCSS,
+Google Maps API,
+Invisible reCAPTCHA.
 
 
 
