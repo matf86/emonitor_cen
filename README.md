@@ -1,6 +1,6 @@
 # Opis projektu
 
-Agregator cen warzyw i owoców z najwiekszych polskich giełd spożywczych.
+Agregator cen warzyw i owoców z największych polskich giełd spożywczych.
 
 ## Śledzone rynki hurtowe:
 
